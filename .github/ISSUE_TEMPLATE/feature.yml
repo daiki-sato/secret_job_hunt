@@ -26,4 +26,3 @@ body:
       value: "A bug happened!"
     validations:
       required: true
-  ...
