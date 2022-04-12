@@ -36,22 +36,14 @@
 ## MVPとは
 顧客のニーズを満たす最小限のプロダクトです。
 
-## miroのURL
-https://miro.com/app/board/uXjVOHj7f5o=/
+## バックログのURL
+https://docs.google.com/spreadsheets/d/14Tzry6vR5MDXCyXmSo8Mhk05u9zpoyu4FT1xdyhM5yk/edit#gid=1382531569
 
 ## FigmaのURL
 https://www.figma.com/file/TJMMQBKs9Yp0zCCOIzMnO0/fertilizer?node-id=0%3A1
 
-
 ## Goggle DriveのURL
 https://drive.google.com/drive/folders/0APws78aegjXNUk9PVA
-
-
-## ヒアリングで聞くこと
-https://docs.google.com/spreadsheets/d/1yvUp7z4U2lNOQcGzEY08wmigLCScsLjS9Ja_ptR1kOg/edit#gid=0
-
-## 要件定義のお勉強
-https://docs.google.com/presentation/d/1sWmmI1Y8h8ZH45-TLHb0iXSFcRXj6R1eh9esqBX6X_E/edit#slide=id.gce243821c3_0_260
 
 ## チーム開発キックオフ資料
 https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvytok/edit#slide=id.gce243821c3_0_260
