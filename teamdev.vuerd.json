@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1,
-    "scrollLeft": -196,
+    "scrollTop": -46,
+    "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -70,6 +70,52 @@
             "id": "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           },
           {
+            "name": "email",
+            "comment": "メールアドレス",
+            "dataType": "string",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 93,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "25c3b101-3b81-4579-bef6-1deb255c8678"
+          },
+          {
+            "name": "password",
+            "comment": "パスワード",
+            "dataType": "string",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 63.970947265625,
+              "widthComment": 67,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "21609d19-3b6d-4871-9b1d-73dcb62ad43d"
+          },
+          {
             "name": "first_name",
             "comment": "性",
             "dataType": "string",
@@ -116,31 +162,8 @@
             "id": "57d72950-fa5b-4596-937f-31a4be5bb8c8"
           },
           {
-            "name": "email",
-            "comment": "メールアドレス",
-            "dataType": "string",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 93,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "25c3b101-3b81-4579-bef6-1deb255c8678"
-          },
-          {
             "name": "first_name_ruby",
-            "comment": "性のふりがな",
+            "comment": "性のフリガナ",
             "dataType": "string",
             "default": "",
             "option": {
@@ -163,7 +186,7 @@
           },
           {
             "name": "last_name_ruby",
-            "comment": "名のふりがな",
+            "comment": "名のフリガナ",
             "dataType": "string",
             "default": "",
             "option": {
@@ -185,55 +208,9 @@
             "id": "4c9d1e08-fb76-49c8-8d29-72749916eafd"
           },
           {
-            "name": "password",
-            "comment": "パスワード",
+            "name": "nickname",
+            "comment": "ニックネーム",
             "dataType": "string",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 63.970947265625,
-              "widthComment": 67,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "21609d19-3b6d-4871-9b1d-73dcb62ad43d"
-          },
-          {
-            "name": "role_id",
-            "comment": "解決側か相談側か",
-            "dataType": "INTEGER",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 106,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "ee0f62fd-990d-478f-93ab-2daa6b359c57"
-          },
-          {
-            "name": "evaluation",
-            "comment": "評価",
-            "dataType": "?",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -246,12 +223,12 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 67.06494140625,
-              "widthComment": 60,
+              "widthName": 63.372955322265625,
+              "widthComment": 80,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "e6ab3fae-b349-4d40-92ec-88da106cb2dc"
+            "id": "8f4a9b4a-8497-4e80-be13-bc01fc279d05"
           },
           {
             "name": "sex",
@@ -275,6 +252,29 @@
               "widthDefault": 60
             },
             "id": "b1ed58dd-d545-457b-8ccb-a9181a1c2eaf"
+          },
+          {
+            "name": "role_id",
+            "comment": "解決側か相談側か",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 106,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ee0f62fd-990d-478f-93ab-2daa6b359c57"
           },
           {
             "name": "company",
@@ -346,9 +346,9 @@
             "id": "bfa45b17-a7e2-4da1-83e2-e66b7d0ff12c"
           },
           {
-            "name": "nickname",
-            "comment": "ニックネーム",
-            "dataType": "string",
+            "name": "evaluation",
+            "comment": "評価",
+            "dataType": "?",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -361,12 +361,12 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 63.372955322265625,
-              "widthComment": 80,
+              "widthName": 67.06494140625,
+              "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "8f4a9b4a-8497-4e80-be13-bc01fc279d05"
+            "id": "e6ab3fae-b349-4d40-92ec-88da106cb2dc"
           },
           {
             "name": "created_at",
@@ -439,12 +439,13 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 301.7778,
-          "top": 21.5555,
-          "zIndex": 702,
+          "active": true,
+          "left": 578.3333,
+          "top": 70.5556,
+          "zIndex": 243,
           "widthName": 60,
-          "widthComment": 95.24897766113281
+          "widthComment": 95.24897766113281,
+          "color": "#0068FF"
         },
         "visible": true,
         "id": "12b2e0c2-b8eb-4123-91b6-9f91ac5f1b32"
@@ -515,7 +516,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 74.53993225097656,
+              "widthName": 70.44493103027344,
               "widthComment": 60,
               "widthDataType": 70.00294494628906,
               "widthDefault": 60
@@ -538,9 +539,9 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 74.53993225097656,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 70.00294494628906,
               "widthDefault": 60
             },
             "id": "c11d11a7-056a-48a8-a4e2-f899fa0a396f"
@@ -567,13 +568,36 @@
               "widthDefault": 60
             },
             "id": "834ded8f-4336-450d-b5d9-9738d8356c63"
+          },
+          {
+            "name": "通話_id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6fa4a298-cbeb-48cb-9619-37d577212e93"
           }
         ],
         "ui": {
           "active": false,
-          "left": 332.6674,
-          "top": 630.3332,
-          "zIndex": 666,
+          "left": 622.6672,
+          "top": 633.6665,
+          "zIndex": 227,
           "widthName": 60,
           "widthComment": 80
         },
@@ -631,7 +655,7 @@
             "id": "88f8c5a4-c576-437b-80e0-9ba7e08f7a69"
           },
           {
-            "name": "role_id",
+            "name": "role",
             "comment": "解決側か相談側か",
             "dataType": "INTEGER",
             "default": "",
@@ -644,7 +668,7 @@
             "ui": {
               "active": false,
               "pk": false,
-              "fk": true,
+              "fk": false,
               "pfk": false,
               "widthName": 60,
               "widthComment": 106,
@@ -715,7 +739,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 74.53993225097656,
+              "widthName": 70.44493103027344,
               "widthComment": 60,
               "widthDataType": 70.00294494628906,
               "widthDefault": 60
@@ -738,9 +762,9 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 74.53993225097656,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 70.00294494628906,
               "widthDefault": 60
             },
             "id": "96719fa9-26c2-42d8-a71b-0d9af7dcebae"
@@ -771,9 +795,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 850.5556,
-          "top": 591.1112,
-          "zIndex": 667,
+          "left": 1109.4445,
+          "top": 616.6668,
+          "zIndex": 241,
           "widthName": 66.14193725585938,
           "widthComment": 93
         },
@@ -846,7 +870,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 74.53993225097656,
+              "widthName": 70.44493103027344,
               "widthComment": 60,
               "widthDataType": 70.00294494628906,
               "widthDefault": 60
@@ -869,9 +893,9 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 74.53993225097656,
               "widthComment": 60,
-              "widthDataType": 60,
+              "widthDataType": 70.00294494628906,
               "widthDefault": 60
             },
             "id": "5889412c-b567-4d91-b2ad-65402f2608a0"
@@ -879,14 +903,391 @@
         ],
         "ui": {
           "active": false,
-          "left": 978.7776,
-          "top": 126.6669,
-          "zIndex": 665,
+          "left": 1189.8886,
+          "top": 195.5558,
+          "zIndex": 146,
           "widthName": 60,
           "widthComment": 93
         },
         "visible": true,
         "id": "e834ad1f-793f-4cf5-b880-542b66e0f4d8"
+      },
+      {
+        "name": "相談",
+        "comment": "",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "bbd8b63c-8574-4493-86d2-2f5063328ab0"
+          },
+          {
+            "name": "user_id",
+            "comment": "id",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "76fa8ce7-e8c8-440b-9016-9ddf3b0bdfd7"
+          },
+          {
+            "name": "解決のuser_id",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 87.25395202636719,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b3af08e5-b6cb-44ac-842b-88c1cd3a83d1"
+          },
+          {
+            "name": "承諾 or 拒否",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 76.37298583984375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d4045467-363c-48dc-9380-cef1d8d4369c"
+          },
+          {
+            "name": "date",
+            "comment": "",
+            "dataType": "text",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3de73c63-bca1-43e0-8b8c-e6c3405943d2"
+          },
+          {
+            "name": "created_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74.53993225097656,
+              "widthComment": 60,
+              "widthDataType": 70.00294494628906,
+              "widthDefault": 60
+            },
+            "id": "ddaf725e-a0e2-4c4b-80ad-164be1d433fd"
+          },
+          {
+            "name": "updated_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "99693106-d3eb-402a-9f8e-abc2c8f3b441"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 66.6665,
+          "top": 186.6666,
+          "zIndex": 231,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "8c892333-6857-4827-b6a1-f3143affbb79"
+      },
+      {
+        "name": "通話",
+        "comment": "",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "7a65a2bb-d68c-446a-8449-0adbf84d93d3"
+          },
+          {
+            "name": "解決のuser_id",
+            "comment": "必要か不明",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 87.25395202636719,
+              "widthComment": 67,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b9fffb50-de48-4e5f-b039-91530d6ba38f"
+          },
+          {
+            "name": "確定面談日時",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 80,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5ce8df16-eb9a-4428-a191-e1795111c99e"
+          },
+          {
+            "name": "開始日",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "503c93db-6ff9-46ce-853e-010b7b161b40"
+          },
+          {
+            "name": "終了日",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9f0014f7-d30a-4f24-9d35-a7add72d616b"
+          },
+          {
+            "name": "評価",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2aa8e8fc-d55e-4161-b42d-846b5502d1cb"
+          },
+          {
+            "name": "created_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74.53993225097656,
+              "widthComment": 60,
+              "widthDataType": 70.00294494628906,
+              "widthDefault": 60
+            },
+            "id": "d66ad3f7-bc4b-4f1c-b15a-03989008280b"
+          },
+          {
+            "name": "updated_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c077c3b6-a12f-43c0-aae8-0495a321c292"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 105.5554,
+          "top": 611.1117,
+          "zIndex": 235,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "adbffb38-7c61-4c4b-817a-fc4381b2a29a"
       }
     ],
     "indexes": []
@@ -905,8 +1306,8 @@
           "columnIds": [
             "3d13b939-b2a2-43c6-9a49-71cea4e42200"
           ],
-          "x": 978.7776,
-          "y": 202.1669,
+          "x": 1189.8886,
+          "y": 271.0558,
           "direction": "left"
         },
         "end": {
@@ -914,8 +1315,8 @@
           "columnIds": [
             "ee0f62fd-990d-478f-93ab-2daa6b359c57"
           ],
-          "x": 750.0136551025391,
-          "y": 230.3055,
+          "x": 1026.569155102539,
+          "y": 279.3056,
           "direction": "right"
         },
         "constraintName": "fk_roles_to_users",
@@ -931,8 +1332,8 @@
           "columnIds": [
             "8f6708cb-4f22-4be4-848d-febbc766bf82"
           ],
-          "x": 704.2102771972657,
-          "y": 716.0832,
+          "x": 994.2100771972656,
+          "y": 729.6665,
           "direction": "right"
         },
         "end": {
@@ -940,8 +1341,8 @@
           "columnIds": [
             "88f8c5a4-c576-437b-80e0-9ba7e08f7a69"
           ],
-          "x": 850.5556,
-          "y": 707.6112,
+          "x": 1109.4445,
+          "y": 733.1668,
           "direction": "left"
         },
         "constraintName": "fk_threads_to_messages",
@@ -953,26 +1354,52 @@
         "relationshipType": "ZeroOne",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "e834ad1f-793f-4cf5-b880-542b66e0f4d8",
+          "tableId": "12b2e0c2-b8eb-4123-91b6-9f91ac5f1b32",
           "columnIds": [
-            "3d13b939-b2a2-43c6-9a49-71cea4e42200"
+            "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           ],
-          "x": 1181.406536767578,
-          "y": 277.6669,
+          "x": 802.4512275512695,
+          "y": 488.0556,
           "direction": "bottom"
         },
         "end": {
-          "tableId": "fd722b61-3f2c-4882-b656-c5b24ccfe25f",
+          "tableId": "0c3cb4d1-c760-41fa-9ad8-f585a5ec1cca",
           "columnIds": [
-            "9de6868d-67be-4ff8-bfff-d67fe085e459"
+            "0a3a7e58-3f4b-4d28-a633-092d53c0eb8b"
           ],
-          "x": 1066.327038598633,
-          "y": 591.1112,
+          "x": 808.4386385986328,
+          "y": 633.6665,
           "direction": "top"
         },
-        "constraintName": "fk_roles_to_messages",
+        "constraintName": "fk_users_to_threads",
         "visible": true,
-        "id": "88f76c4b-1d60-4a03-ba0d-0eebf21cf69c"
+        "id": "d27734f6-dd95-4730-b135-881d340d69fa"
+      },
+      {
+        "identification": false,
+        "relationshipType": "ZeroOne",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "adbffb38-7c61-4c4b-817a-fc4381b2a29a",
+          "columnIds": [
+            "7a65a2bb-d68c-446a-8449-0adbf84d93d3"
+          ],
+          "x": 496.81229697265627,
+          "y": 727.6117,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "0c3cb4d1-c760-41fa-9ad8-f585a5ec1cca",
+          "columnIds": [
+            "6fa4a298-cbeb-48cb-9619-37d577212e93"
+          ],
+          "x": 622.6672,
+          "y": 729.6665,
+          "direction": "left"
+        },
+        "constraintName": "fk_通話_to_threads",
+        "visible": true,
+        "id": "664e6332-7236-4f8e-bc85-03da08857df7"
       },
       {
         "identification": false,
@@ -983,22 +1410,22 @@
           "columnIds": [
             "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           ],
-          "x": 525.8957275512696,
-          "y": 439.0555,
-          "direction": "bottom"
+          "x": 578.3333,
+          "y": 279.3056,
+          "direction": "left"
         },
         "end": {
-          "tableId": "0c3cb4d1-c760-41fa-9ad8-f585a5ec1cca",
+          "tableId": "8c892333-6857-4827-b6a1-f3143affbb79",
           "columnIds": [
-            "0a3a7e58-3f4b-4d28-a633-092d53c0eb8b"
+            "76fa8ce7-e8c8-440b-9016-9ddf3b0bdfd7"
           ],
-          "x": 518.4388385986329,
-          "y": 630.3332,
-          "direction": "top"
+          "x": 450.92339697265623,
+          "y": 292.9166,
+          "direction": "right"
         },
-        "constraintName": "fk_users_to_threads",
+        "constraintName": "fk_users_to_相談",
         "visible": true,
-        "id": "d27734f6-dd95-4730-b135-881d340d69fa"
+        "id": "9813973c-3b10-4e17-9552-a6f83c3aceb1"
       }
     ]
   }
