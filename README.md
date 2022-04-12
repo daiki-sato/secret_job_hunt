@@ -5,36 +5,40 @@
 
 3.LGTMをもらったら、だいきorまゆながマージする。
 
-## ⚠レビューなしでマージ禁止
+### ⚠レビューなしでマージ禁止
 
 
-## ⚠issue番号と合致したブランチを使用する。
+### ⚠issue番号と合致したブランチを使用する。
 
 
-## ⚠不要な変更が入らないようにプルリクエストを出す際に確認する。
+### ⚠不要な変更が入らないようにプルリクエストを出す際に確認する。
 
 
 
 ----
 
+
+
+
+
 # teamdev-2022-posse1-team1B
 
-## MVPとは
+### MVPとは
 顧客のニーズを満たす最小限のプロダクトです。
 
-## バックログのURL
+### バックログのURL
 https://docs.google.com/spreadsheets/d/14Tzry6vR5MDXCyXmSo8Mhk05u9zpoyu4FT1xdyhM5yk/edit#gid=1382531569
 
-## FigmaのURL
+### FigmaのURL
 https://www.figma.com/file/TJMMQBKs9Yp0zCCOIzMnO0/fertilizer?node-id=0%3A1
 
-## Goggle DriveのURL
+### Goggle DriveのURL
 https://drive.google.com/drive/folders/0APws78aegjXNUk9PVA
 
-## チーム開発キックオフ資料
+### チーム開発キックオフ資料
 https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvytok/edit#slide=id.gce243821c3_0_260
 
-
+----
 
 
 # 環境構築手順
