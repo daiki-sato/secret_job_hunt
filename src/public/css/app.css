@@ -11390,7 +11390,7 @@ a.text-dark:focus {
 /***** Import Common Settings  *****/
 
 .navbar-green {
-  background: #78A663;
+  background: #5C462B;
   color: #fff;
 }
 
@@ -11517,41 +11517,15 @@ a.text-dark:focus {
   display: block;
 }
 
-.order-confirm .block {
-  padding: 0 20px 20px;
-  margin-bottom: 40px;
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 3px;
-}
-
-.order-confirm .block .title {
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.order-detail .block {
-  padding: 0 20px 20px;
-  margin-bottom: 40px;
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 3px;
-}
-
-.order-detail .block .title {
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.order-index .link-area {
+.reservation-list-index .link-area {
   color: #212529;
 }
 
-.order-index .link-area:hover {
+.reservation-list-index .link-area:hover {
   text-decoration: none;
 }
 
-.order-index .block {
+.reservation-list-index .block {
   padding: 0 20px 20px;
   margin-bottom: 40px;
   background-color: #f8f9fa;
@@ -11559,52 +11533,42 @@ a.text-dark:focus {
   border-radius: 3px;
 }
 
-.order-thanks .block {
-  margin-bottom: 40px;
-  margin-top: 65px;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 3px;
-  text-align: center;
-  padding: 70px 0;
-}
-
-.product-index {
+.top-index {
   /* //モーダルウィンドウの縦表示位置を調整 */
   /* //表示予定のテキストとボタンを中央揃え */
 }
 
-.product-index img.fly {
+.top-index img.fly {
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 
-.product-index img.fly:hover {
+.top-index img.fly:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.product-index .modal-dialog .input-group {
+.top-index .modal-dialog .input-group {
   -webkit-box-pack: end;
           justify-content: flex-end;
   margin-right: 16px;
 }
 
-.product-index .modal-middle {
+.top-index .modal-middle {
   margin: 5% auto;
 }
 
-.product-index .modal-img_footer {
+.top-index .modal-img_footer {
   padding: 0.5em;
   text-align: center;
 }
 
-.product-index .hour,
-.product-index .minute,
-.product-index .seconds {
+.top-index .hour,
+.top-index .minute,
+.top-index .seconds {
   font-size: 22px;
   padding: 3px;
   background-color: orange;

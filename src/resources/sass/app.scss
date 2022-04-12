@@ -11,14 +11,14 @@
 @import './cart/cart-index';
 @import './delivery/address/delivery-address-create';
 @import './delivery/address/delivery-address-index';
-@import './delivery/time/delivery-time-index';
+// @import './delivery/time/delivery-time-index';
 @import './delivery/delivery-detail';
 @import './delivery/delivery-index';
-@import './order/order-confirm';
-@import './order/order-detail';
-@import './order/order-index';
-@import './order/order-thanks';
-@import './product/product-index';
+// @import './order/order-confirm';
+// @import './order/order-detail';
+@import './reservation-list/reservation-list-index';
+// @import './order/order-thanks';
+@import './top/top-index';
 
 /***** Common Setting *****/
 ul,li {

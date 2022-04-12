@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Support\Facades\Route;
 
 // 未ログイン
 Route::middleware([])->group(function () {
@@ -29,48 +20,32 @@ Route::middleware([])->group(function () {
         // ログアウト
         Route::get('/logout', 'LoginController@logout')->name('logout');
     });
-
-    // 製品
-    Route::get('/',         'ProductsController@index')->name('home');
-    Route::get('/products', 'ProductsController@index')->name('products');
-
-    // カート
-    Route::prefix('cart')->group(function () {
-        Route::get('/', 		              'CartController@index')->name('cart');
-        Route::get('/{productid}/{quantity?}', 'CartController@add');
-        Route::get('/flush',                  'CartController@flush');
-    });
+    
+    // top
+    Route::get('/',         'TopController@index')->name('home');
 });
 
 // ログイン済
 Route::middleware(['auth'])->group(function () {
     // 一般ユーザー
     Route::middleware(['role:user'])->group(function () {
-        // 配送先
-        Route::prefix('delivery-address')->group(function () {
-            Route::get('/',       'DeliveryAddressController@index')->name('delivery-address');
-            Route::get('/create', 'DeliveryAddressController@showCreateForm')->name('delivery-address.showCreateForm');
-            Route::post('/create', 'DeliveryAddressController@create')->name('delivery-address.create');
+        // 検索
+        Route::prefix('search')->group(function () {
+            Route::get('/',       'SearchController@index')->name('search');
         });
 
-        // 配送時間
-        Route::post('/delivery-time', 'DeliveryTimeController@index')->name('delivery-time');
-
-        // 注文
-        Route::prefix('order')->group(function () {
-            Route::get('/', 	    'OrderController@index')->name('order');
-            Route::get('/thanks',   'OrderController@thanks')->name('order.thanks');
-            Route::get('/{id}',     'OrderController@detail')->name('order.detail');
-            Route::post('/confirm', 'OrderController@confirm')->name('order.confirm');
-            Route::post('/cancel',  'OrderController@cancel')->name('order.cancel');
+        // 予約一覧
+        Route::prefix('reservation-list')->group(function () {
+            Route::get('/', 	    'ReservationListController@index')->name('reservation-list');
         });
-    });
-
-    // 配送業者・管理者
-    Route::middleware(['role:delivery-agent'])->group(function () {
-        Route::prefix('delivery-list')->group(function () {
-            Route::get('/',     'DeliveryListController@index')->name('delivery-list');
-            Route::get('/{id}', 'DeliveryListDetailController@detail')->name('delivery-list.detail');
+        
+        Route::prefix('message')->group(function () {
+            Route::get('/', 	    'MessageController@index')->name('message');
+            Route::post('/', 	    'MessageController@store')->name('message.store');
+        });
+        
+        Route::prefix('my-page')->group(function () {
+            Route::get('/', 	    'MyPageController@index')->name('my-page');
         });
     });
 });
