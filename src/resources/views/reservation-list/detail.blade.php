@@ -96,8 +96,8 @@
             </div>
         </div>
         <div class="text-right pr15">
-            <button type="button" class="btn btn-ash" onclick="location.href='{{ route('order') }}'">
-                注文履歴一覧に戻る
+            <button type="button" class="btn btn-ash" onclick="location.href='{{ route('reservation-list') }}'">
+                予約一覧に戻る
             </button>
         </div>
     </div>
