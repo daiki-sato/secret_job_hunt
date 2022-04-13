@@ -1,8 +1,54 @@
+# 開発のフロー
+1.ブランチは、feature/issue番号で切る(例）feature/41
+  
+2.プルリクエストを出したら、だいきorまゆなにレビューしてもらう。
+
+3.LGTMをもらったら、だいきorまゆながマージする。
+
+### ⚠レビューなしでマージ禁止
+
+
+### ⚠issue番号と合致したブランチを使用する。
+
+
+### ⚠不要な変更が入らないようにプルリクエストを出す際に確認する。
+
+### ⚠コミットメッセージ、issue、プルリクエストは分かりやすく記載する
+→コミットメッセージ：https://qiita.com/itosho/items/9565c6ad2ffc24c09364
+
+
+
+----
+
+
+
+
+
+# teamdev-2022-posse1-team1B
+
+### MVPとは
+顧客のニーズを満たす最小限のプロダクトです。
+
+### バックログのURL
+https://docs.google.com/spreadsheets/d/14Tzry6vR5MDXCyXmSo8Mhk05u9zpoyu4FT1xdyhM5yk/edit#gid=1382531569
+
+### FigmaのURL
+https://www.figma.com/file/TJMMQBKs9Yp0zCCOIzMnO0/fertilizer?node-id=0%3A1
+
+### Goggle DriveのURL
+https://drive.google.com/drive/folders/0APws78aegjXNUk9PVA
+
+### チーム開発キックオフ資料
+https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvytok/edit#slide=id.gce243821c3_0_260
+
+----
+
+
 # 環境構築手順
 
-1. `git clone git@github.com:posse-ap/hackathon-202202-sample.git`
+1. `git@github.com:posse-ap/teamdev-2022-posse1-team1B.git`
 
-2. `cd hackathon-202202-sample`
+2. `cd teamdev-2022-posse1-team1B`
 
 3. `cp ./src/.env.dev ./src/.env`
 
@@ -30,28 +76,3 @@
  修正した場合は`npm run dev`を再実行することで
  src/public/css/app.css に出力され、画面に反映されます
 ``` 
-
-# teamdev-2022-posse1-team1B
-
-## MVPとは
-顧客のニーズを満たす最小限のプロダクトです。
-
-## miroのURL
-https://miro.com/app/board/uXjVOHj7f5o=/
-
-## FigmaのURL
-https://www.figma.com/file/TJMMQBKs9Yp0zCCOIzMnO0/fertilizer?node-id=0%3A1
-
-
-## Goggle DriveのURL
-https://drive.google.com/drive/folders/0APws78aegjXNUk9PVA
-
-
-## ヒアリングで聞くこと
-https://docs.google.com/spreadsheets/d/1yvUp7z4U2lNOQcGzEY08wmigLCScsLjS9Ja_ptR1kOg/edit#gid=0
-
-## 要件定義のお勉強
-https://docs.google.com/presentation/d/1sWmmI1Y8h8ZH45-TLHb0iXSFcRXj6R1eh9esqBX6X_E/edit#slide=id.gce243821c3_0_260
-
-## チーム開発キックオフ資料
-https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvytok/edit#slide=id.gce243821c3_0_260
