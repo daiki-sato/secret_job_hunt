@@ -47,5 +47,11 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('my-page')->group(function () {
             Route::get('/', 	    'MyPageController@index')->name('my-page');
         });
+
+        //通話機能
+        Route::prefix('call')->group(function () {
+            Route::get('/', 	    'CallController@index')->name('call');
+        });
+
     });
 });
