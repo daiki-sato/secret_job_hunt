@@ -21,6 +21,8 @@ services:
     container_name: teamdev-php
     volumes       :
       - ./src:/var/www/teamdev:cached
+    depends_on:
+      - mailhog
   mysql:
     #restart: always
     build         :
@@ -35,6 +37,11 @@ services:
       - MYSQL_DATABASE=teamdev
     ports         :
       - 3306:3306
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
 networks:
   default:
     name: teamdev-network
