@@ -14,17 +14,14 @@ class DatabaseSeeder extends Seeder
         // マスターテーブルの作成
         $this->call([
             RoleTableSeeder::class,
-            DeliveryMethodTableSeeder::class,
-            DeliveryStatusTableSeeder::class,
         ]);
 
         $this->call([
-            TruckTableSeeder::class,
+            CallSeeder::class,
             UserTableSeeder::class,
-            DeliveryAddressTableSeeder::class,
-            ProductTableSeeder::class,
-            OrderTableSeeder::class,
-            OrderDetailTableSeeder::class,
+            MessageSeeder::class,
+            RequestSeeder::class,
+            ThreadSeeder::class,
         ]);
     }
 }
