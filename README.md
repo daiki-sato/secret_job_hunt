@@ -58,7 +58,7 @@ https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvy
 
 5. `docker-compose exec php bash`
 
-6. `cd ichiichiban`
+6. `cd teamdev/`
 
 7. `composer install`
 

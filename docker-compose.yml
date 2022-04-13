@@ -4,37 +4,37 @@ services:
   nginx:
     build         :
       context: ./nginx
-    image         : ichiichiban-web
-    hostname      : ichiichiban-web
-    container_name: ichiichiban-web
+    image         : teamdev-web
+    hostname      : teamdev-web
+    container_name: teamdev-web
     depends_on    :
       - php
     ports         :
       - 80:80
     volumes       :
-      - ./src:/var/www/ichiichiban:cached
+      - ./src:/var/www/teamdev:cached
   php:
     build         :
       context: ./phpfpm
-    image         : ichiichiban-php
-    hostname      : ichiichiban-php
-    container_name: ichiichiban-php
+    image         : teamdev-php
+    hostname      : teamdev-php
+    container_name: teamdev-php
     volumes       :
-      - ./src:/var/www/ichiichiban:cached
+      - ./src:/var/www/teamdev:cached
   mysql:
     #restart: always
     build         :
       context: ./mysql
-    image         : ichiichiban-db
-    hostname      : ichiichiban-db
-    container_name: ichiichiban-db
+    image         : teamdev-db
+    hostname      : teamdev-db
+    container_name: teamdev-db
     volumes       :
       - ./mysql/data:/var/lib/mysql
     environment   :
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=ichiichiban
+      - MYSQL_DATABASE=teamdev
     ports         :
       - 3306:3306
 networks:
   default:
-    name: ichiichiban-network
+    name: teamdev-network
