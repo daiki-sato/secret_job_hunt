@@ -98,7 +98,7 @@ return [
     */
     'attributes' => [
         'email'                 => 'メールアドレス',
-        'company_name'          => '会社名',
+        'company'          => '会社名',
         'password'              => 'パスワード',
         'password_confirmation' => 'パスワード確認',
     ],

@@ -15,7 +15,15 @@ class CreateCallsTable extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('thread_id');
+            $table->integer('solver_id');
+            $table->date('confirmed_interview_date')->nullable();
+            $table->boolean('evaluation')->nullable();
+
             $table->timestamps();
+            $table->softDeletes();
+
+            // $table->foreign('thread_id')->references('id')->on('threads');
         });
     }
 

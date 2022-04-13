@@ -15,7 +15,14 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('thread_id');
+            $table->morphs('sender');
+            $table->text('message')->nullable();
+            
+            // $table->foreign('thread_id')->references('id')->on('threads')->onDelete('cascade');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

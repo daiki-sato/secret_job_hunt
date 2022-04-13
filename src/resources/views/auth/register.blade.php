@@ -25,8 +25,8 @@
             <div class="form-row">
                 <div class="form-group col-12">
                     <label for="inputCompanyName">会社名</label>
-                    <input type="text" class="form-control @error('company_name') is-invalid @enderror" id="inputCompanyName" name="company_name" value="{{ old('company_name') }}" placeholder="会社名" required>
-                    @error('company_name')
+                    <input type="text" class="form-control @error('company') is-invalid @enderror" id="inputCompanyName" name="company" value="{{ old('company') }}" placeholder="会社名" required>
+                    @error('company')
                         <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
                 </div>

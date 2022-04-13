@@ -15,7 +15,15 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('user_id');
+            $table->integer('solver_id');
+            $table->boolean('is_agreement')->nullable();
+            $table->string('date');
+
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
