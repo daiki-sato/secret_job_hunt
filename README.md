@@ -46,7 +46,7 @@ https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvy
 
 # 環境構築手順
 
-1. `git@github.com:posse-ap/teamdev-2022-posse1-team1B.git`
+1. `git clone git@github.com:posse-ap/teamdev-2022-posse1-team1B.git`
 
 2. `cd teamdev-2022-posse1-team1B`
 
