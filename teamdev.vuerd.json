@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -111,
-    "scrollLeft": -121,
+    "scrollTop": -83,
+    "scrollLeft": -155.671875,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -417,9 +417,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 679.4444,
-          "top": 70.5556,
-          "zIndex": 471,
+          "left": 923.2223,
+          "top": 350.5553,
+          "zIndex": 315,
           "widthName": 60,
           "widthComment": 95.24897766113281,
           "color": "#0068FF"
@@ -476,6 +476,29 @@
               "widthDefault": 60
             },
             "id": "0a3a7e58-3f4b-4d28-a633-092d53c0eb8b"
+          },
+          {
+            "name": "solver_id",
+            "comment": "解決側のid",
+            "dataType": "INTEGER",
+            "default": "2",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 65.49198913574219,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2ccb9fa8-d1e1-4a13-a9de-edaf32ef548a"
           },
           {
             "name": "created_at",
@@ -549,9 +572,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 732.6671,
-          "top": 751.4445,
-          "zIndex": 432,
+          "left": 933.7778,
+          "top": 905.8888,
+          "zIndex": 309,
           "widthName": 60,
           "widthComment": 80
         },
@@ -610,7 +633,7 @@
           },
           {
             "name": "sender_type",
-            "comment": "解決側か相談側か",
+            "comment": "いらないかな？解決側か相談側か",
             "dataType": "string",
             "default": "相談側",
             "option": {
@@ -625,7 +648,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 81.15693664550781,
-              "widthComment": 106,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -633,7 +656,7 @@
           },
           {
             "name": "sender_id",
-            "comment": "",
+            "comment": "いらないかな？",
             "dataType": "INTEGER",
             "default": "",
             "option": {
@@ -648,7 +671,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 64.29594421386719,
-              "widthComment": 60,
+              "widthComment": 93,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -748,10 +771,10 @@
           }
         ],
         "ui": {
-          "active": true,
-          "left": 1270.5553,
-          "top": 452.2225,
-          "zIndex": 490,
+          "active": false,
+          "left": 1556.1105,
+          "top": 844.4445,
+          "zIndex": 310,
           "widthName": 66.14193725585938,
           "widthComment": 93
         },
@@ -880,9 +903,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1263.2219,
-          "top": 196.6669,
-          "zIndex": 427,
+          "left": 1533.2218,
+          "top": 504.4447,
+          "zIndex": 313,
           "widthName": 60,
           "widthComment": 93
         },
@@ -917,10 +940,10 @@
             "id": "bbd8b63c-8574-4493-86d2-2f5063328ab0"
           },
           {
-            "name": "user_id",
-            "comment": "相談側のid",
+            "name": "request_id",
+            "comment": "",
             "dataType": "INTEGER",
-            "default": "1",
+            "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
@@ -932,35 +955,12 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 65.49198913574219,
+              "widthName": 69.39193725585938,
+              "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "76fa8ce7-e8c8-440b-9016-9ddf3b0bdfd7"
-          },
-          {
-            "name": "solver_id",
-            "comment": "解決側のid",
-            "dataType": "INTEGER",
-            "default": "2",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 65.49198913574219,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "b3af08e5-b6cb-44ac-842b-88c1cd3a83d1"
+            "id": "d79b91b9-40ad-4d78-b0af-09b32049e221"
           },
           {
             "name": "is_agreement",
@@ -986,27 +986,50 @@
             "id": "d4045467-363c-48dc-9380-cef1d8d4369c"
           },
           {
-            "name": "date",
-            "comment": "面談希望日",
-            "dataType": "text",
-            "default": "11/11 14:10",
+            "name": " from_what_time",
+            "comment": "何時から面談が始まるか",
+            "dataType": "DATE",
+            "default": "14:10",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 67,
+              "widthName": 109.13290405273438,
+              "widthComment": 120,
               "widthDataType": 60,
-              "widthDefault": 83.99085998535156
+              "widthDefault": 60
             },
-            "id": "3de73c63-bca1-43e0-8b8c-e6c3405943d2"
+            "id": "935b77a9-ccae-4472-9bcc-a069292cc61d"
+          },
+          {
+            "name": "to_what_time",
+            "comment": "何時まで面談が続くか",
+            "dataType": "DATE",
+            "default": "15:40",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86.78591918945312,
+              "widthComment": 120,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6ae629f4-9af9-4f11-9498-dee4410d33d9"
           },
           {
             "name": "created_at",
@@ -1080,14 +1103,168 @@
         ],
         "ui": {
           "active": false,
-          "left": 66.6665,
-          "top": 186.6666,
-          "zIndex": 423,
+          "left": 47.3333,
+          "top": 38.4441,
+          "zIndex": 191,
           "widthName": 60,
           "widthComment": 119
         },
         "visible": true,
         "id": "8c892333-6857-4827-b6a1-f3143affbb79"
+      },
+      {
+        "name": "requests",
+        "comment": "面談日程を依頼する",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INTEGER",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "81b14c1c-78fb-4759-af54-17ebe37d39f4"
+          },
+          {
+            "name": "user_id",
+            "comment": "相談側のid",
+            "dataType": "INTEGER",
+            "default": "1",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 65.49198913574219,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e8b5f8d3-f046-412a-8850-3ace17b282d7"
+          },
+          {
+            "name": "solver_id",
+            "comment": "解決側のid",
+            "dataType": "INTEGER",
+            "default": "2",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 65.49198913574219,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6f93634e-d815-4603-a4ea-844e3b8db71a"
+          },
+          {
+            "name": "created_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 74.53993225097656,
+              "widthComment": 60,
+              "widthDataType": 70.00294494628906,
+              "widthDefault": 60
+            },
+            "id": "1c695a36-8441-4977-9dd0-8317ba207bf2"
+          },
+          {
+            "name": "updated_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "20435f7a-1176-48bf-b942-8a7969d7dc88"
+          },
+          {
+            "name": "deleted_at",
+            "comment": "",
+            "dataType": "timestamp",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 68.92393493652344,
+              "widthComment": 60,
+              "widthDataType": 70.00294494628906,
+              "widthDefault": 60
+            },
+            "id": "b9c443eb-0293-4517-9c6f-a5392ae0af3f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 328.5551,
+          "top": 364.5559,
+          "zIndex": 331,
+          "widthName": 60,
+          "widthComment": 119
+        },
+        "visible": true,
+        "id": "6f3aeb4c-d648-4e85-abd2-ee857546c3da"
       },
       {
         "name": "calls",
@@ -1140,29 +1317,6 @@
             "id": "f39d44ef-65ae-4ff2-ac23-2f424dfe0a71"
           },
           {
-            "name": "solver_id",
-            "comment": "解決側のid",
-            "dataType": "INTEGER",
-            "default": "2",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 65.49198913574219,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "b9fffb50-de48-4e5f-b039-91530d6ba38f"
-          },
-          {
             "name": "confirmed_interview_date",
             "comment": "確定面談日時",
             "dataType": "date",
@@ -1184,6 +1338,75 @@
               "widthDefault": 124.26478576660156
             },
             "id": "5ce8df16-eb9a-4428-a191-e1795111c99e"
+          },
+          {
+            "name": "call_start_time",
+            "comment": "通話開始時間",
+            "dataType": "DATE",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 94.22187805175781,
+              "widthComment": 80,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c331d776-bc26-43a9-9117-9060db10dd69"
+          },
+          {
+            "name": "call_end_time",
+            "comment": "通話終了時間",
+            "dataType": "DATE",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 88.05990600585938,
+              "widthComment": 80,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a5f371b2-ed7a-4419-b9a6-56067be337ae"
+          },
+          {
+            "name": "is_ complete",
+            "comment": "通話が完了したかどうか",
+            "dataType": "BOOLEAN",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 82.46992492675781,
+              "widthComment": 120,
+              "widthDataType": 67.92295837402344,
+              "widthDefault": 60
+            },
+            "id": "07591c91-a398-4211-bb6e-2a24cc1bb8fd"
           },
           {
             "name": "evaluation",
@@ -1280,14 +1503,29 @@
         ],
         "ui": {
           "active": false,
-          "left": 45.5554,
-          "top": 691.1117,
-          "zIndex": 454,
+          "left": 52.5554,
+          "top": 674.1117,
+          "zIndex": 300,
           "widthName": 60,
           "widthComment": 93
         },
         "visible": true,
         "id": "adbffb38-7c61-4c4b-817a-fc4381b2a29a"
+      },
+      {
+        "name": "wallets",
+        "comment": "",
+        "columns": [],
+        "ui": {
+          "active": false,
+          "left": 914.111,
+          "top": 14.7778,
+          "zIndex": 340,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "e29f19ed-d994-4790-8f80-a038c9be822e"
       }
     ],
     "indexes": []
@@ -1306,8 +1544,8 @@
           "columnIds": [
             "3d13b939-b2a2-43c6-9a49-71cea4e42200"
           ],
-          "x": 1263.2219,
-          "y": 282.4169,
+          "x": 1533.2218,
+          "y": 590.1947,
           "direction": "left"
         },
         "end": {
@@ -1315,8 +1553,8 @@
           "columnIds": [
             "ee0f62fd-990d-478f-93ab-2daa6b359c57"
           ],
-          "x": 1134.680255102539,
-          "y": 269.0556,
+          "x": 1378.458155102539,
+          "y": 549.0553,
           "direction": "right"
         },
         "constraintName": "fk_roles_to_users",
@@ -1332,8 +1570,8 @@
           "columnIds": [
             "8f6708cb-4f22-4be4-848d-febbc766bf82"
           ],
-          "x": 1109.701966333008,
-          "y": 837.1945,
+          "x": 1310.8126663330077,
+          "y": 1001.8888,
           "direction": "right"
         },
         "end": {
@@ -1341,8 +1579,8 @@
           "columnIds": [
             "88f8c5a4-c576-437b-80e0-9ba7e08f7a69"
           ],
-          "x": 1270.5553,
-          "y": 568.7225000000001,
+          "x": 1556.1105,
+          "y": 960.9445,
           "direction": "left"
         },
         "constraintName": "fk_threads_to_messages",
@@ -1358,8 +1596,8 @@
           "columnIds": [
             "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           ],
-          "x": 907.0623275512695,
-          "y": 467.5556,
+          "x": 1150.8402275512694,
+          "y": 747.5553,
           "direction": "bottom"
         },
         "end": {
@@ -1367,8 +1605,8 @@
           "columnIds": [
             "0a3a7e58-3f4b-4d28-a633-092d53c0eb8b"
           ],
-          "x": 921.1845331665039,
-          "y": 751.4445,
+          "x": 1122.2952331665037,
+          "y": 905.8888,
           "direction": "top"
         },
         "constraintName": "fk_users_to_threads",
@@ -1380,26 +1618,52 @@
         "relationshipType": "ZeroN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "12b2e0c2-b8eb-4123-91b6-9f91ac5f1b32",
+          "tableId": "6f3aeb4c-d648-4e85-abd2-ee857546c3da",
           "columnIds": [
-            "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
+            "81b14c1c-78fb-4759-af54-17ebe37d39f4"
           ],
-          "x": 679.4444,
-          "y": 269.0556,
+          "x": 328.5551,
+          "y": 460.5559,
           "direction": "left"
         },
         "end": {
           "tableId": "8c892333-6857-4827-b6a1-f3143affbb79",
           "columnIds": [
-            "76fa8ce7-e8c8-440b-9016-9ddf3b0bdfd7"
+            "d79b91b9-40ad-4d78-b0af-09b32049e221"
           ],
-          "x": 483.5262259521484,
-          "y": 303.1666,
+          "x": 280.4012244995117,
+          "y": 271.4441,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_requests_to_requests",
+        "visible": true,
+        "id": "75eb0458-c50b-4b9d-acbe-2848cf28a523"
+      },
+      {
+        "identification": false,
+        "relationshipType": "ZeroN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "12b2e0c2-b8eb-4123-91b6-9f91ac5f1b32",
+          "columnIds": [
+            "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
+          ],
+          "x": 923.2223,
+          "y": 549.0553,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "6f3aeb4c-d648-4e85-abd2-ee857546c3da",
+          "columnIds": [
+            "e8b5f8d3-f046-412a-8850-3ace17b282d7"
+          ],
+          "x": 705.5899663330079,
+          "y": 460.5559,
           "direction": "right"
         },
-        "constraintName": "fk_users_to_相談",
+        "constraintName": "fk_users_to_requests",
         "visible": true,
-        "id": "9813973c-3b10-4e17-9552-a6f83c3aceb1"
+        "id": "0427ed71-b091-402d-b089-d6f1d37f3cbf"
       },
       {
         "identification": false,
@@ -1410,8 +1674,8 @@
           "columnIds": [
             "8f6708cb-4f22-4be4-848d-febbc766bf82"
           ],
-          "x": 732.6671,
-          "y": 837.1945,
+          "x": 933.7778,
+          "y": 1001.8888,
           "direction": "left"
         },
         "end": {
@@ -1419,8 +1683,8 @@
           "columnIds": [
             "f39d44ef-65ae-4ff2-ac23-2f424dfe0a71"
           ],
-          "x": 593.208003149414,
-          "y": 807.6117,
+          "x": 640.208003149414,
+          "y": 811.1117,
           "direction": "right"
         },
         "constraintName": "fk_threads_to_通話",
