@@ -7,6 +7,7 @@ Route::middleware([])->group(function () {
     Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
+            Route::get('/top',  'RegisterController@index')->name('register.top');
             Route::get('/',  'RegisterController@showRegistrationForm')->name('register');
             Route::post('/', 'RegisterController@register')->name('register.post');
         });
