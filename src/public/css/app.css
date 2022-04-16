@@ -11466,6 +11466,12 @@ a.text-dark:focus {
   border-top-right-radius: 0;
 }
 
+.auth_register_title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
 .delivery-detail .block {
   padding: 0 20px 20px;
   margin-bottom: 40px;
