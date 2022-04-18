@@ -14,6 +14,14 @@ Route::middleware([])->group(function () {
             Route::post('/main_register', 'RegisterController@mainRegister')->name('register.main.registered');
         });
 
+        // パスワードリセット
+        Route::get('password/update', 'ForgotPasswordController@showLinkRequestForm')->name('password.update');
+        Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+        Route::post('password/update', 'ResetPasswordController@reset');
+        Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        Route::post('password/reset', 'ResetPasswordController@reset');
+
         // ログイン
         Route::prefix('login')->group(function() {
             Route::get('/',  'LoginController@showLoginForm')->name('login');
