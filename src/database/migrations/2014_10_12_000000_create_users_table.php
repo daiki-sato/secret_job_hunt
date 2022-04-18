@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email')->unique();
+            $table->boolean('email_verified')->default(0);
+            $table->string('email_verify_token')->nullable();
+            $table->boolean('status')->default(0)->comment('本会員登録済みか');
             $table->string('password');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="email_register">
-        <form action="{{ route('register.post') }}" method="POST" class="max-width-800-center">
+        <form method="POST" action="{{ route('register') }}">
+            <h2 class="email_register_title">会員登録</h2>
             @csrf
             <div class="form-row">
                 <div class="form-group col-12">
@@ -18,7 +19,8 @@
                 <div class="form-group col-12">
                     <label for="inputEmailConfirmation">メールアドレス確認</label>
                     <input type="email" class="form-control @error('email_confirmation') is-invalid @enderror"
-                        id="inputemailConfirmation" name="email_confirmation" value="{{ old('email_confirmation') }}" placeholder="例）aya.yamada@example.com" required>
+                        id="inputemailConfirmation" name="email_confirmation" value="{{ old('email_confirmation') }}"
+                        placeholder="例）aya.yamada@example.com" required>
                     @error('email_confirmation')
                         <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
