@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
             CallSeeder::class,
             UserTableSeeder::class,
             MessageSeeder::class,
-            RequestSeeder::class,
+            InterviewSeeder::class,
+            InterviewTimeSeeder::class,
+            WalletSeeder::class,
             ThreadSeeder::class,
         ]);
     }
