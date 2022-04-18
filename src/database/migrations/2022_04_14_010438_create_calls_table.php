@@ -16,8 +16,10 @@ class CreateCallsTable extends Migration
         Schema::create('calls', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('thread_id');
-            $table->integer('solver_id');
             $table->date('confirmed_interview_date')->nullable();
+            $table->date('call_start_time')->nullable();
+            $table->date('call_end_time')->nullable();
+            $table->boolean('is_ complete')->nullable();
             $table->boolean('evaluation')->nullable();
 
             $table->timestamps();
