@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Anovey</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}"></script>
 
     @stack('scripts')
