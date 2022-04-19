@@ -24,8 +24,17 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('company_name');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('first_name_ruby');
+            $table->string('last_name_ruby');
+            $table->string('nickname');
+            $table->string('sex');
             $table->unsignedInteger('role_id');
+            $table->string('company')->nullable();
+            $table->string('department')->nullable();
+            $table->integer('working_period')->nullable();
+            
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

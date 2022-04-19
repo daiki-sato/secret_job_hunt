@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDeliveryAddressesTable extends Migration
+class CreateThreadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,11 @@ class CreateDeliveryAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('delivery_addresses', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('threads', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedInteger('user_id');
-            $table->string('name');
-            $table->unsignedInteger('sort_number');
-            $table->string('postal_code');
-            $table->string('prefecture');
-            $table->string('city');
-            $table->string('address_1');
-            $table->string('address_2');
-            $table->string('tel');
+            $table->integer('solver_id');
+
             $table->timestamps();
             $table->softDeletes();
 
@@ -38,6 +32,6 @@ class CreateDeliveryAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('delivery_addresses');
+        Schema::dropIfExists('threads');
     }
 }
