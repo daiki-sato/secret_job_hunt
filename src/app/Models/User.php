@@ -31,6 +31,21 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Role');
     }
+    
+    public function wallet()
+    {
+        return $this->hasOne('App\Models\Wallet');
+    }
+    
+    public function interviews()
+    {
+        return $this->hasMany('App\Models\Interview');
+    }
+    
+    public function thread()
+    {
+        return $this->hasOne('App\Models\Thread');
+    }
 
     public function delivery_addresses()
     {
