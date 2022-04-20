@@ -1,2 +1,7 @@
-.auth-register {
+.auth_register {
+  &_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+  }
 }

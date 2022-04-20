@@ -7,8 +7,11 @@ Route::middleware([])->group(function () {
     Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
-            Route::get('/',  'RegisterController@showRegistrationForm')->name('register');
+            Route::get('/',  'RegisterController@index')->name('register');
+            Route::get('/email',  'RegisterController@showRegistrationForm')->name('register.email');
             Route::post('/', 'RegisterController@register')->name('register.post');
+            Route::get('/main_register/{token}', 'RegisterController@showForm');
+            Route::post('/main_register', 'RegisterController@mainRegister')->name('register.main.registered');
         });
 
         // ログイン

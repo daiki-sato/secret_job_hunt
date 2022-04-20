@@ -11466,6 +11466,20 @@ a.text-dark:focus {
   border-top-right-radius: 0;
 }
 
+.auth_register_title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.email_register_next_button {
+  background-color: #5C462B;
+  display: block;
+  color: #fff;
+  width: 100%;
+  border-radius: 8px;
+}
+
 .delivery-detail .block {
   padding: 0 20px 20px;
   margin-bottom: 40px;
