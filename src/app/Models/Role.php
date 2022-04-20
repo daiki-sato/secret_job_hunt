@@ -25,8 +25,8 @@ class Role extends Model
         return 2;
     }
 
-    public static function getDeliveryAgentId()
-    {
-        return 3;
-    }
+    // public static function getDeliveryAgentId()
+    // {
+    //     return 3;
+    // }
 }
