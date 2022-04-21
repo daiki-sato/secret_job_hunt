@@ -20,13 +20,13 @@ class Role extends Model
         return 1;
     }
 
-    public static function getUserId()
+    public static function getIntervieweeId()
     {
         return 2;
     }
-
-    // public static function getDeliveryAgentId()
-    // {
-    //     return 3;
-    // }
+    
+    public static function getSolverId()
+    {
+        return 3;
+    }
 }
