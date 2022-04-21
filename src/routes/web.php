@@ -7,9 +7,20 @@ Route::middleware([])->group(function () {
     Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
-            Route::get('/',  'RegisterController@showRegistrationForm')->name('register');
+            Route::get('/',  'RegisterController@index')->name('register');
+            Route::get('/email',  'RegisterController@showRegistrationForm')->name('register.email');
             Route::post('/', 'RegisterController@register')->name('register.post');
+            Route::get('/main_register/{token}', 'RegisterController@showForm');
+            Route::post('/main_register', 'RegisterController@mainRegister')->name('register.main.registered');
         });
+
+        // パスワードリセット
+        Route::get('password/update', 'ForgotPasswordController@showLinkRequestForm')->name('password.update');
+        Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+        Route::post('password/update', 'ResetPasswordController@reset');
+        Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        Route::post('password/reset', 'ResetPasswordController@reset');
 
         // ログイン
         Route::prefix('login')->group(function() {

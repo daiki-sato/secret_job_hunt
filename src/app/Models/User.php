@@ -2,23 +2,30 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Role;
 
 class User extends Authenticatable
 {
     use SoftDeletes, Notifiable;
 
     protected $fillable = [
-        'name',
         'email',
         'password',
-        'company',
+        'email_verified',
+        'email_verify_token',
+        'first_name',
+        'last_name',
+        'first_name_ruby',
+        'last_name_ruby',
+        'nickname',
+        'sex',
         'role_id',
+        'company',
+        'department',
+        'working_period',
         // 'remembe_token',
     ];
 
@@ -32,8 +39,8 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Role');
     }
 
-    public function hasRole(string $role)
-    {
-        return $this->role->id === Role::getAdminId() || $this->role->name === $role;
-    }
+    // public function hasRole(string $role)
+    // {
+    //     return $this->role->id === Role::getAdminId() || $this->role->name === $role;
+    // }
 }
