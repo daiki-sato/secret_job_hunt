@@ -13,7 +13,7 @@ class RoleTableSeeder extends Seeder
     public function run()
     {
         $now = date("Y-m-d H:i:s");
-        foreach (['admin', 'user', 'delivery-agent'] as $index => $name) {
+        foreach (['admin', 'interviewee', 'solver'] as $index => $name) {
             Role::insert([
                 'id'         => $index + 1,
                 'name'       => $name,
