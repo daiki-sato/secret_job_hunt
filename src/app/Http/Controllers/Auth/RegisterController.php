@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
+use App\Mail\EmailVerification;
 use App\Models\User;
-use App\Models\Role;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -24,6 +27,11 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    public function index()
+    {
+        return view('auth.index');
+    }
+    
     /**
      * Where to redirect users after registration.
      *
@@ -50,11 +58,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name'                  => ['required', 'string', 'max:255'],
-            'email'                 => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'company_name'          => ['required', 'string', 'max:255'],
-            'password'              => ['required', 'string', 'min:6', 'confirmed'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email_confirmation' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
             'password_confirmation' => ['required', 'string', 'min:6'],
+            'email_confirmation' => [
+                'same:email',
+            ],
         ]);
     }
 
@@ -66,12 +76,66 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name'         => $data['name'],
-            'email'        => $data['email'],
-            'company_name' => $data['company_name'],
-            'password'     => Hash::make($data['password']),
-            'role_id'      => Role::getUserId(),
+        $user = User::create([
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'email_verify_token' => base64_encode($data['email']),
         ]);
+        $email = new EmailVerification($user);
+        Mail::to($user->email)->send($email);
+        return $user;
+    }
+
+    public function register(Request $request)
+    {
+        event(new Registered($user = $this->create($request->all())));
+
+        return view('auth.registered');
+    }
+
+    public function showForm($email_token)
+    {
+        // 使用可能なトークンか
+        if ( !User::where('email_verify_token',$email_token)->exists() )
+        {
+            return view('auth.main.register')->with('message', '無効なトークンです。');
+        } else {
+            $user = User::where('email_verify_token', $email_token)->first();
+            // 本登録済みユーザーか
+            if ($user->status == config('const.USER_STATUS.REGISTER')) //REGISTER=1
+            {
+                logger("status". $user->status );
+                return view('auth.main.register')->with('message', 'すでに本登録されています。ログインして利用してください。');
+            }
+            // ユーザーステータス更新
+            $user->status = config('const.USER_STATUS.MAIL_AUTHED');
+            if($user->save()) {
+                return view('auth.main.register', compact('email_token'));
+            } else{
+                return view('auth.main.register')->with('message', 'メール認証に失敗しました。再度、メールからリンクをクリックしてください。');
+            }
+        }
+    }
+
+    public function mainRegister(Request $request)
+    {
+        $user = User::where('email_verify_token',$request->email_token)->first();
+        $user->status = config('const.USER_STATUS.REGISTER');
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->first_name_ruby = $request->first_name_ruby;
+        $user->last_name_ruby = $request->last_name_ruby;
+        $user->nickname = $request->nickname;
+        $user->sex = $request->sex;
+        $user->role_id = $request->role_id;
+        $user->company = $request->company;
+        $user->department = $request->department;
+        $user->working_period = $request->working_period;
+        $user->save();
+
+        // TODO:遷移先どうする？https://github.com/posse-ap/teamdev-2022-posse1-team1B/issues/98
+        return redirect()->route('search');
+        return '/';
+        return view('top.index');
     }
 }
