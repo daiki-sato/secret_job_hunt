@@ -65,5 +65,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 	    'CallController@index')->name('call');
         });
 
+        //ビデオチャット
+        // Route::prefix('video_chat')->group(function () {
+            Route::get('/video_chat', 'VideoChatController@index');      // チャットページ
+            Route::post('auth/video_chat', 'VideoChatController@auth'); // 認証ページ
+        // });
     });
 });
