@@ -19,7 +19,7 @@ class CreateCallsTable extends Migration
             $table->date('confirmed_interview_date')->nullable();
             $table->date('call_start_time')->nullable();
             $table->date('call_end_time')->nullable();
-            $table->boolean('is_ complete')->nullable();
+            $table->boolean('is_complete')->nullable();
             $table->boolean('evaluation')->nullable();
 
             $table->timestamps();
