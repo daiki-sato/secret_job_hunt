@@ -24,8 +24,9 @@ Route::middleware([])->group(function () {
 
         // ログイン
         Route::prefix('login')->group(function () {
-            Route::get('/', 'LoginController@showLoginForm')->name('login');
-            Route::post('/', 'LoginController@login')->name('login.post');
+            Route::get('/', 'LoginController@index')->name('login.top');
+            Route::get('/email', 'LoginController@showLoginForm')->name('login.email');
+            Route::post('/email', 'LoginController@login')->name('login.post');
         });
 
         // ログアウト
