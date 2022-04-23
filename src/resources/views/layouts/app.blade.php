@@ -3,10 +3,9 @@
 <head>
     <meta http-equiv="content-type" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Anovey</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-    <script src="{{ mix('/js/app.js') }}"></script>
-
     @stack('scripts')
 </head>
 
@@ -72,6 +71,7 @@
             </div>
         </footer>
     @show
+    <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>

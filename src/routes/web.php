@@ -51,9 +51,11 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'ReservationListController@index')->name('reservation-list');
         });
 
+        // メッセージ
         Route::prefix('message')->group(function () {
             Route::get('/', 'MessageController@index')->name('message');
-            Route::post('/', 'MessageController@store')->name('message.store');
+            Route::get('/get', 'Ajax\MessageController@index'); // メッセージ一覧を取得
+            Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
         });
 
         Route::prefix('my-page')->group(function () {
