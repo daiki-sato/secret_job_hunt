@@ -44,7 +44,7 @@
                                     class="material-icons md-light cartColor">input</i>新規登録</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="nav-link"><i
+                            <a href="{{ route('login.top') }}" class="nav-link"><i
                                     class="material-icons md-light cartColor">input</i>ログイン</a>
                         </li>
                     @endguest
