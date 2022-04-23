@@ -80,21 +80,14 @@
         }
 
     </style>
-    <div id="chat" class="message">
+    {{-- <div id="chat" class="message">
         <div class="wrapper">
             <div class="message_area">
                 <div v-for="message in messages">
                     <div class="date_area">
-
-                        <!-- 登録された日時 -->
                         <span v-text="message.created_at"></span>：&nbsp;
                     </div>
-                    {{-- <div class="message_box  employee_box"> --}}
                     <div class="message_box" :class="message.sender_id == 2  ? 'employee_box' : 'consultant_box'">
-                        {{-- {{ $item->is_approved ? '承認済' : '未承認' }} --}}
-
-
-                        <!-- メッセージ内容 -->
                         <span v-text="message.message"></span>
                     </div>
                 </div>
@@ -102,7 +95,8 @@
             <textarea v-model="message" class="textarea"></textarea>
             <button type="button" @click="send()">送信</button>
         </div>
-    </div>
+    </div> --}}
+    <div id="message"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -117,11 +111,11 @@
             // updated() {
             //     this.$el.scrollTop = this.$el.scrollHeight
             // },
-            computed: {
-                isInterviewee() {
-                    return this.message.sender_id == 2
-                },
-            },
+            // computed: {
+            //     isInterviewee() {
+            //         return this.message.sender_id == 2
+            //     },
+            // },
             methods: {
                 getMessages() {
                     const url = 'message/get';
