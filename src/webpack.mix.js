@@ -11,20 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .browserSync({
-        files: [
-            'resources/js/*',
-            'resources/lang/**/*',
-            'resources/lang/**/*',
-            'resources/sass/*',
-            'resources/views/*',
-            'resources/views/**/*',
-            'resources/views/**/**/*',
-            'resources/views/**/**/**/*',
-            'public/**/*'
-        ],
-        proxy: 'localhost:80'
-    })
-    .version();
+mix.react('resources/js/app.js', 'public/js')
+   .sass('resources/sass/app.scss', 'public/css');
