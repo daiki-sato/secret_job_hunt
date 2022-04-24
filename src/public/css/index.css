@@ -1,3 +1,112 @@
+/*--------------------------------------
+  header
+--------------------------------------*/
+.navbar-brand {
+  font-size: 2rem;
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+.nav-link {
+  padding: 0.8rem 1rem;
+}
+a.nav-link {
+  background-color: #ffeb38;
+  color: #007fc3;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+}
+.navbar-green {
+  background: #ffffff;
+  color: #000;
+}
+.navbar-green a {
+  font-family: Metrophobic;
+  color: #000; 
+}
+span.sub-title {
+  color: #98A2B0;
+  font-size: 50%;
+  padding-left: 10px;
+}
+
+
+
+/*--------------------------------------
+　　main
+--------------------------------------*/
+/* headerとcontainerの幅揃え */
+body{
+  width: 100%;
+}
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+div.top-index.mx-5{
+  margin-right: 0;
+  margin-left: 0;
+}
+img.first-view_img{
+  width: 100%;
+}
+/* 「無料」の文字に円枠 */
+.letter-strong{
+  padding: 0 0.5em;
+  margin: 0.5em;
+  color: #007FC3;
+  background: #FFEB3B;
+  border: solid 1px #007FC3;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 70%;
+  vertical-align: middle;
+}
+p.letter-strong{
+  margin: 0;
+  padding: 0;
+}
+.before{
+  background-color: #223A50;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: normal;
+}
+.after{
+  background-color: #007FC3;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: normal;
+}
+p.sub-title{
+  font-size: 1em;
+  color: #565656;
+}
+.title{
+  color: #007FC3;
+  font-size: 2em;
+  font-weight: 100;
+}
+.explanation{
+  text-align: left;
+  padding-left: 2rem;
+  margin: 0 auto;
+}
+p.h5{
+  line-height: normal;
+}
+.pros{
+  background-color: #E4EEF7;
+}
+.pros-container{
+  background-color: #fff;
+  border-radius: 20px;
+}
+
 /*タブ切り替え全体のスタイル*/
 .tabs {
   margin-top: 50px;
@@ -49,18 +158,16 @@ input[name="tab_item"] {
 
 /*選択されているタブのスタイルを変える*/
 .tabs input:checked + .tab_item {
-  background-color: #7f9fee;
-  color: #fff;
+  background-color: #FFEB3B;
+  color: #007FC3;
+  font-weight: normal;
 }
 
 .btn_register {
-  background-color: #7f9fee;
-  color: #fff;
-}
-.first_view {
-  background-color: #d3cbc4;
-  height: 500px;
-  /* 最終的にパーセント表示？？ */
+  background-color: #FFEB3B;
+  color: #007FC3;
+  display: block;
+  font-size: 180%;
 }
 .underbar_brown {
   background-color: #5c472b;
