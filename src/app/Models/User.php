@@ -49,9 +49,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Interview');
     }
     
-    public function thread()
+    public function threads()
     {
-        return $this->hasOne('App\Models\Thread');
+        return $this->hasMany('App\Models\Thread');
     }
 
     // public function hasRole(string $role)
