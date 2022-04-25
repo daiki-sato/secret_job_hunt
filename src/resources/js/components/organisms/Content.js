@@ -53,9 +53,9 @@ const Content = () => {
   };
 
   return (
-    <Grid container>
-      <Grid sm={2} />
-      <Grid lg={8} sm={8} spacing={10}>
+    <Grid item={true} container>
+      <Grid item={true} sm={2} />
+      <Grid item={true} lg={8} sm={8}>
         <Stepper activeStep={activeStep} alternativeLabel>
           {steps.map((label) => (
             <Step key={label}>
@@ -70,7 +70,7 @@ const Content = () => {
           </div>
         ) : (
           <div>
-            <Typography>{getStepContent(activeStep)}</Typography>
+            <div>{getStepContent(activeStep)}</div>
             activeStep:{activeStep}
             <Button disabled={activeStep === 0} onClick={handleBack}>
               戻る

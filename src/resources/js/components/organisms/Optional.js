@@ -19,9 +19,9 @@ function Optional(props) {
         }
     };
     return (
-        <Grid container>
-            <Grid sm={2}/>
-            <Grid lg={8} sm={8} spacing={10}>
+        <Grid item={true} container>
+            <Grid item={true} sm={2}/>
+            <Grid item={true} lg={8} sm={8}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Controller
                         control={control}

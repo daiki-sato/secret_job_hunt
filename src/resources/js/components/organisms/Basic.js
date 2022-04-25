@@ -40,9 +40,9 @@ function Basic(props) {
         .catch((error) => console.log(error));
     };
     return (
-    <Grid container>
-        <Grid sm={2} />
-        <Grid lg={8} sm={8} spacing={10}>
+    <Grid item={true} container>
+        <Grid item={true} sm={2} />
+        <Grid item={true} lg={8} sm={8}>
         <form onSubmit={handleSubmit(onSubmit)}>
             <Box sx={{ display: "flex" }}>
             <TextField

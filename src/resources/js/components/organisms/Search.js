@@ -5,7 +5,7 @@ import Content from "./Content";
 
 const Search = () => {
   return (
-    <Grid container direction="column">
+    <Grid item={true} container direction="column">
       <div style={{ padding: 30 }}>
         <Content />
       </div>
