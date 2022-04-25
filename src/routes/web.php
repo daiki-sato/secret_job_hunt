@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
         // 検索
         Route::prefix('search')->group(function () {
             Route::get('/', 'SearchController@index')->name('search');
+            Route::get('/getUser/{companyKeyword?}/{departmentKeyword?}', 'Ajax\GetUsersController@index')->name('search.getUser');
         });
 
         // 予約一覧
