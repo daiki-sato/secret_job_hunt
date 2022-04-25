@@ -1,6 +1,6 @@
 import { useForm, Controller } from "react-hook-form";
 import React, { useState} from "react";
-import { TextField, Button, Typography, Grid, Box} from "@material-ui/core/";
+import { TextField, Button, Typography, Grid, Box, Checkbox } from "@material-ui/core/";
 
 const ListItems = (props) => (
     <Box
@@ -10,6 +10,7 @@ const ListItems = (props) => (
         mb: 3,
     }}
     >
+        <Checkbox />
         <Typography>{props.sex}/</Typography>
         <Typography>{props.company}/</Typography>
         <Typography>{props.department}/</Typography>
