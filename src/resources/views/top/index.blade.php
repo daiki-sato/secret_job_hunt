@@ -26,9 +26,9 @@
             </div>
             <div class="px-3 py-5 pros">
                 <p class="title">Anoveyのメリット</p>
-                <div class="d-flex flex-wrap px-5 py-3 mx-5 pros-container">
+                <div class="d-flex flex-wrap py-3 mx-5 pros-container">
                     <div class="w-50 d-flex flex-wrap">
-                        <img src="{{ asset('img/price.png') }}" alt="price">
+                        <img src="{{ asset('img/price.png') }}" class="pl-5 m-2" alt="price">
                         <div class="explanation_wrapper">
                             <div class="explanation">
                                 <p class="h5">10分1200円<br>手の届きやすい価格</p>
@@ -37,11 +37,12 @@
                         </div>
                     </div>
                     <div class="w-50 d-flex flex-wrap">
-                        <img src="{{ asset('img/anonymous.png') }}" alt="anonymous">
+                        <p class="line"></p>
+                        <img src="{{ asset('img/anonymous.png') }}" class="pl-5 m-2" alt="anonymous">
                         <div class="explanation_wrapper">
                             <div class="explanation">
                                 <p class="h5">安心の匿名相談</p>
-                                <p>転職時の、周りに言えない・言いづらい不安を解消</p>
+                                <p class="m-0">転職時の、周りに言えない・言いづらい不安を解消</p>
                             </div>
                         </div>
                     </div>

@@ -100,6 +100,10 @@ p.sub-title{
   vertical-align: middle;
   display: table-cell;
 }
+.line{
+  border-left:3px solid #E5E7EB;
+  margin: 0;
+}
 p.h5{
   line-height: normal;
 }
