@@ -29,35 +29,69 @@
                 <div class="d-flex flex-wrap px-5 py-3 mx-5 pros-container">
                     <div class="w-50 d-flex flex-wrap">
                         <img src="{{ asset('img/price.png') }}" alt="price">
-                        <div class="explanation">
-                            <p class="h5">10分1200円<br>手の届きやすい価格</p>
-                            <p class="m-0">手軽に・低価格で・安心の情報を直接聞くことができます</p>
+                        <div class="explanation_wrapper">
+                            <div class="explanation">
+                                <p class="h5">10分1200円<br>手の届きやすい価格</p>
+                                <p class="m-0">手軽に・低価格で・安心の情報を直接聞くことができます</p>
+                            </div>
                         </div>
                     </div>
                     <div class="w-50 d-flex flex-wrap">
                         <img src="{{ asset('img/anonymous.png') }}" alt="anonymous">
-                        <div class="explanation">
-                            <p class="h5">安心の匿名相談</p>
-                            <p>転職時の、周りに言えない・言いづらい不安を解消</p>
+                        <div class="explanation_wrapper">
+                            <div class="explanation">
+                                <p class="h5">安心の匿名相談</p>
+                                <p>転職時の、周りに言えない・言いづらい不安を解消</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="process">
-                <p class="title">登録から相談までの流れ</p>
+            <div class="px-3 py-5">
+                <p class="py-2 title">登録から相談までの流れ</p>
                 <div class="row">
-                    <div class="col">新規登録</div>
-                    <div class="col">検索&日程調整</div>
-                    <div class="col">相談</div>
+                    <div class="px-0 py-3 mx-5 my-3 col step-box">
+                        <div class="ml-5 box"><p class="box_inner">1</p></div>
+                        <img src="{{ asset('img/step1.png') }}" alt="step1">
+                        <p class="step_title">新規登録</p>
+                        <p class="step_detail">まずは必須項目を登録しましょう</p>
+                    </div>
+                    <div class="px-0 py-3 mx-5 my-3 col step-box">
+                        <div class="ml-5 box"><p class="box_inner">2</p></div>
+                        <img src="{{ asset('img/step2.png') }}" alt="step2">
+                        <p class="step_title">検索&日程調整</p>
+                        <p class="step_detail">希望の企業・部署を検索し、日程調整を行います</p>
+                    </div>
+                    <div class="px-0 py-3 mx-5 my-3 col step-box">
+                        <div class="ml-5 box"><p class="box_inner">3</p></div>
+                        <img src="{{ asset('img/step3.png') }}" class="pl-5" alt="step3">
+                        <p class="step_title">相談</p>
+                        <p class="step_detail">匿名で</p>
+                    </div>
                 </div>
-                <p>Anoveyでは多様な会社・部署の方からお話を聞くことができます</p>
+                <p class="pt-4 h4 step_detail">Anoveyでは多様な会社・部署の方からお話を聞くことができます</p>
             </div>
-            <div class="example">
-                <p class="title">登録者紹介</p>
-                <div class="row">
-                    <div class="col">〇〇会社・人事部</div>
-                    <div class="col">〇〇会社・営業部</div>
-                    <div class="col">〇〇会社・広報部</div>
+            <div class="px-3 py-5 example">
+                <p class="py-2 title">登録者紹介</p>
+                <div class="px-5 m-3 row">
+                    <div class="px-0 py-3 my-3 col example-box">
+                        <div class="example_inner">
+                            <img src="{{ asset('img/person1.png') }}" alt="person1">
+                            <p class="py-2 m-0">〇〇会社・人事部</p>
+                        </div>
+                    </div>
+                    <div class="px-0 py-3 my-3 col example-box">
+                        <div class="example_inner">
+                            <img src="{{ asset('img/person2.png') }}" alt="person2">
+                            <p class="py-2 m-0">〇〇会社・人事部</p>
+                        </div>
+                    </div>
+                    <div class="px-0 py-3 my-3 col example-box">
+                        <div class="example_inner">
+                            <img src="{{ asset('img/person3.png') }}" alt="person3">
+                            <p class="py-2 m-0">〇〇会社・人事部</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
