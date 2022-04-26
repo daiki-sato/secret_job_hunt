@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 // 未ログイン
 Route::middleware([])->group(function () {
-    Route::namespace ('Auth')->group(function () {
+    Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
             Route::get('/', 'RegisterController@index')->name('register');
@@ -60,6 +61,14 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
+        });
+
+
+
+        //支払い(paypay)
+        Route::prefix('paypay')->group(function () {
+            Route::get('/', 'PaymentController@paypay')->name('paypay');
+            Route::get('/thanks', 'PaymentController@paypay_thanks')->name('paypay_thanks');
         });
     });
 });

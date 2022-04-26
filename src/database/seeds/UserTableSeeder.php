@@ -13,13 +13,13 @@ class UserTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
+    {
         DB::table('users')->truncate();
 
         $params = [
             [
                 'email' => 'mrp415@gmail.com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "森",
                 'last_name' => "遥",
                 'first_name_ruby' => "モリ",
@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'daiki@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "佐藤",
                 'last_name' => "大暉",
                 'first_name_ruby' => "サトウ",
@@ -47,7 +47,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'mayuna@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "石田",
                 'last_name' => "麻由奈",
                 'first_name_ruby' => "イシダ",
@@ -61,7 +61,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'hina@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "高橋",
                 'last_name' => "日奈",
                 'first_name_ruby' => "タカハシ",
