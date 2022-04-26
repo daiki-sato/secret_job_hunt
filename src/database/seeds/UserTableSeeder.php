@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        
+    {
         DB::table('users')->truncate();
 
         $params = [
@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'daiki@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "佐藤",
                 'last_name' => "大暉",
                 'first_name_ruby' => "サトウ",
@@ -47,7 +47,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'mayuna@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "石田",
                 'last_name' => "麻由奈",
                 'first_name_ruby' => "イシダ",
@@ -61,7 +61,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'hina@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "高橋",
                 'last_name' => "日奈",
                 'first_name_ruby' => "タカハシ",
@@ -75,7 +75,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'kotani@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "小谷",
                 'last_name' => "ユウイチ",
                 'first_name_ruby' => "コタニ",
@@ -89,7 +89,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'neko@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "猫",
                 'last_name' => "はっち",
                 'first_name_ruby' => "ネコ",
@@ -103,7 +103,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'nobu@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "岩永",
                 'last_name' => "信之",
                 'first_name_ruby' => "イワナガ",
@@ -117,7 +117,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'yuyama@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "湯山",
                 'last_name' => "智晴",
                 'first_name_ruby' => "ユヤマ",
@@ -131,7 +131,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'shuto@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "吉岡",
                 'last_name' => "姑",
                 'first_name_ruby' => "ヨシオカ",
@@ -145,7 +145,7 @@ class UserTableSeeder extends Seeder
             ],
             [
                 'email' => 'ryo@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "影島",
                 'last_name' => "亮太郎",
                 'first_name_ruby' => "カゲシマ",
