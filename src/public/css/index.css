@@ -243,3 +243,24 @@ input[name="tab_item"] {
 .consulter_merit {
   background-color: #d3cbc4;
 }
+
+
+
+/*--------------------------------------
+  footer
+--------------------------------------*/
+.footer_nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  border-bottom: 1px solid #6c757d;
+}
+.footer_logo{
+  display: table;
+  flex-direction: row;
+}
+.logo-text{
+  font-family: Metrophobic;
+  display: table-cell;
+  vertical-align: middle;
+}

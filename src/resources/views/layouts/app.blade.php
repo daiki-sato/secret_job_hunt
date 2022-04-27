@@ -65,10 +65,22 @@
     </div>
 
     @section('footer')
-        <footer class="container pt-5 pb-3">
-            <div class="row">
-                <div class="col-12 text-center text-muted">
-                    Copyright(C)2019 個人名or会社名,Allright Reserved.
+        <footer class="container px-3 py-4">
+            <div class="d-flex flex-column">
+                <div class="px-5 py-1 text-muted">
+                    <ul class="pb-3 navbar-nav footer_nav">
+                        <li class="nav-item">よくある質問</li>
+                        <li class="nav-item">利用規約</li>
+                        <li class="nav-item">個人情報の取り扱い</li>
+                    </ul>
+                </div>
+                <div class="px-5 py-1 text-muted">
+                    <ul class="navbar-nav footer_logo">
+                        <li class="nav-item logo-text">
+                            運営会社Anovey
+                        </li>
+                        <li class="nav-item small logo-text">Copyright(C)2019 Anovey,Allright Reserved.</li>
+                    </ul>
                 </div>
             </div>
         </footer>
