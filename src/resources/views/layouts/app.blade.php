@@ -25,6 +25,9 @@
                                     class="material-icons md-light cartColor">receipt</i>予約一覧</a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('thread') }}" class="nav-link">スレッドへ</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('search') }}" class="nav-link"><i
                                     class="material-icons md-light cartColor">shopping_cart</i>検索画面へ</a>
                         </li>
