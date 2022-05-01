@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="content-type" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Anovey</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
@@ -27,6 +28,9 @@
                                     class="material-icons md-light cartColor">receipt</i>予約一覧</a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('thread') }}" class="nav-link">スレッドへ</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('search') }}" class="nav-link"><i
                                     class="material-icons md-light cartColor">shopping_cart</i>検索画面へ</a>
                         </li>
@@ -45,7 +49,7 @@
                                     class="material-icons md-light cartColor">input</i>新規登録</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="nav-link"><i
+                            <a href="{{ route('login.top') }}" class="nav-link"><i
                                     class="material-icons md-light cartColor">input</i>ログイン</a>
                         </li>
                     @endguest
@@ -73,6 +77,7 @@
             </div>
         </footer>
     @show
+    <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>

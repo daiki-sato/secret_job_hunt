@@ -7,7 +7,7 @@
         <div>
             <ul>
                 <li class="border border-primary mb-3">
-                    <a href="{{ route('message')}}">
+                    <a href="{{ route('thread')}}">
                         <p>mrp</p>
                         <p>株式会社アンチパターン</p>
                         <p class="text-right">2022/11/11 14:11</p>
