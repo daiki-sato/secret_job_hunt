@@ -6,9 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Anovey</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}"></script>
-
     @stack('scripts')
 </head>
 
