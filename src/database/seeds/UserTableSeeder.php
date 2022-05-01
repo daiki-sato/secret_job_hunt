@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
 
         $params = [
             [
-                'email' => 'mrp415@gmail.com',
+                'email' => 'mrp@com',
                 'password' => 'password',
                 'first_name' => "森",
                 'last_name' => "遥",

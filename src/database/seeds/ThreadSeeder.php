@@ -24,6 +24,18 @@ class ThreadSeeder extends Seeder
                 'solver_id' => 4,
             ],
             [
+                'user_id' => 1,
+                'solver_id' => 5,
+            ],
+            [
+                'user_id' => 1,
+                'solver_id' => 6,
+            ],
+            [
+                'user_id' => 1,
+                'solver_id' => 7,
+            ],
+            [
                 'user_id' => 3,
                 'solver_id' => 2,
             ],
