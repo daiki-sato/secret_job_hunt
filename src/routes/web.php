@@ -52,11 +52,18 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'ReservationListController@index')->name('reservation-list');
         });
 
+        // スレッド
+        Route::prefix('thread')->group(function () {
+            Route::get('/', 'ThreadController@index')->name('thread');
+            Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
+            Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
+        });
+
         // メッセージ
         Route::prefix('message')->group(function () {
-            Route::get('/', 'MessageController@index')->name('message');
-            Route::get('/get', 'Ajax\MessageController@index'); // メッセージ一覧を取得
+            Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
             Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
+            Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
         });
 
         Route::prefix('my-page')->group(function () {
