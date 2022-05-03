@@ -28,7 +28,7 @@
 
                 </div>
                 <div class="profile_detail">
-                  <form action="{{route('title_delete',['id' => $big_question->id])}}" method="post">
+                  <form action="{{route('user_update',['id' => $user->id])}}" method="post">
                     @csrf
                     <table border="1">
                         <tbody>

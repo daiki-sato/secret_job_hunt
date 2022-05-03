@@ -7,6 +7,7 @@
     <title>Anovey</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}"></script>
     @stack('scripts')
 </head>
@@ -25,27 +26,27 @@
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item">
-                            <a href="{{ route('reservation-list') }}" class="nav-link shadow-sm bg-body rounded">予約一覧</a>
+                            <a href="{{ route('reservation-list') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">予約一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('thread') }}" class="nav-link">スレッドへ</a>
+                            <a href="{{ route('thread') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">スレッドへ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('search') }}" class="nav-link">検索画面へ</a>
+                            <a href="{{ route('search') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">検索画面へ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my-page') }}" class="nav-link shadow-sm bg-body rounded">マイページへ</a>
+                            <a href="{{ route('my-page') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">マイページへ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('logout') }}" class="nav-link shadow-sm bg-body rounded">ログアウト</a>
+                            <a href="{{ route('logout') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">ログアウト</a>
                         </li>
                     @endauth
                     @guest
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link shadow-sm bg-body rounded">新規登録</a>
+                            <a href="{{ route('register') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">新規登録</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login.top') }}" class="nav-link shadow-sm bg-body rounded"></i>ログイン</a>
+                            <a href="{{ route('login.top') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded"></i>ログイン</a>
                         </li>
                     @endguest
                 </ul>
@@ -68,17 +69,17 @@
             <div class="d-flex flex-column">
                 <div class="px-5 py-1 text-muted">
                     <ul class="pb-3 navbar-nav footer_nav">
-                        <li class="nav-item">よくある質問</li>
-                        <li class="nav-item">利用規約</li>
-                        <li class="nav-item">個人情報の取り扱い</li>
+                        <li class="nav-item px-2 ml-3">よくある質問</li>
+                        <li class="nav-item px-2 ml-3">利用規約</li>
+                        <li class="nav-item px-2 ml-3">個人情報の取り扱い</li>
                     </ul>
                 </div>
                 <div class="px-5 py-1 text-muted">
                     <ul class="navbar-nav footer_logo">
-                        <li class="nav-item logo-text">
+                        <li class="nav-item px-2 ml-3 logo-text">
                             運営会社Anovey
                         </li>
-                        <li class="nav-item small logo-text">Copyright(C)2019 Anovey,Allright Reserved.</li>
+                        <li class="nav-item px-2 ml-3 small logo-text">Copyright(C)2019 Anovey,Allright Reserved.</li>
                     </ul>
                 </div>
             </div>

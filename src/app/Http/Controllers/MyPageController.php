@@ -18,6 +18,21 @@ class MyPageController extends Controller
         return view('mypage.index',compact('user'));
     }
 
+    public function edit(Request $request)
+    {
+        // $form = $request->all();
+        // unset($form['_token']);
+        // User::create($form);
+        // return redirect()('mypage.index')->with('success', '新規登録完了しました');
+
+        $id = Auth::id();
+        $user = User::find($id);
+        $form = $request->all();
+        unset($form['_token']);
+        $user->fill($form)->save();
+        return redirect('/edit')->with('success', '新規登録完了しました');
+    }
+
     public function update(Request $request)
     {
         $user = new User();
