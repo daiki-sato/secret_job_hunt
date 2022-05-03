@@ -8,7 +8,6 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}"></script>
-
     @stack('scripts')
 </head>
 
@@ -26,20 +25,19 @@
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item">
-                            <a href="{{ route('reservation-list') }}" class="nav-link shadow-sm bg-body rounded"><i
-                                    class="material-icons md-light cartColor">receipt</i>予約一覧</a>
+                            <a href="{{ route('reservation-list') }}" class="nav-link shadow-sm bg-body rounded">予約一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('search') }}" class="nav-link shadow-sm bg-body rounded"><i
-                                    class="material-icons md-light cartColor">shopping_cart</i>検索画面へ</a>
+                            <a href="{{ route('thread') }}" class="nav-link">スレッドへ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my-page') }}" class="nav-link shadow-sm bg-body rounded"><i
-                                    class="material-icons md-light cartColor">shopping_cart</i>マイページへ</a>
+                            <a href="{{ route('search') }}" class="nav-link">検索画面へ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('logout') }}" class="nav-link shadow-sm bg-body rounded"><i
-                                    class="material-icons md-light cartColor">exit_to_app</i>ログアウト</a>
+                            <a href="{{ route('my-page') }}" class="nav-link shadow-sm bg-body rounded">マイページへ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link shadow-sm bg-body rounded">ログアウト</a>
                         </li>
                     @endauth
                     @guest
@@ -47,7 +45,7 @@
                             <a href="{{ route('register') }}" class="nav-link shadow-sm bg-body rounded">新規登録</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="nav-link shadow-sm bg-body rounded">ログイン</a>
+                            <a href="{{ route('login.top') }}" class="nav-link shadow-sm bg-body rounded"></i>ログイン</a>
                         </li>
                     @endguest
                 </ul>

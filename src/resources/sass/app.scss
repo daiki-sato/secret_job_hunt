@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+/***** Import Common Settings  *****/
+@import './commons/header';
+@import './commons/footer';
+
+/***** Import Page Settings  *****/
+@import './top/top-index';
+
+
+/***** Common Setting *****/
+body {
+  width: 100%;
+}

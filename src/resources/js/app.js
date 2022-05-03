@@ -13,5 +13,5 @@ require("./bootstrap");
  */
 
 require("./components/Example");
-require("./components/organisms/Message");
+require("./components/Thread");
 require("./components/organisms/Search");
