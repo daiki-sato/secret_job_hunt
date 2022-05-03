@@ -38,7 +38,7 @@ Route::middleware([])->group(function () {
 });
 
 // ログイン済
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     // 一般ユーザー
     Route::middleware(['role:user'])->group(function () {
         // 検索
@@ -69,5 +69,10 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
         });
+        //通話後評価画面
+        Route::prefix('evaluation')->group(function () {
+            Route::get('/', 'EvaluationController@index')->name('evaluation');
+        });
+        
     });
-});
+// });
