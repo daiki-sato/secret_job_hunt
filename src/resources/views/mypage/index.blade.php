@@ -36,10 +36,10 @@
                                 <td>メールアドレス</td>
                                 <td>{{ $user->email }}</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <td>ステータス</td>
                                 <td>{{ $user->role_id }}</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
                                 <td>性別</td>
                                 <td>{{ $user->sex }}</td>

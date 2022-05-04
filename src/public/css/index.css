@@ -376,7 +376,6 @@ p.contact-title {
     border-left: 4px solid #66b2db;
     width: 60%;
     margin-top: 5rem;
-    margin-bottom: 5rem;
 }
 
 .profile_table {
@@ -397,4 +396,11 @@ p.contact-title {
     margin: 1rem auto;
     font-size: 150%;
     font-weight: 400;
+}
+
+.submit-button {
+    background-color: #66b2db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
 }

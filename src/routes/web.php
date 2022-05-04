@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
             Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
-            Route::post('/', 'MyPageController@update')->name('user_update');
+            Route::post('/{id}', 'MyPageController@update')->name('user_update');
         });
     });
 });

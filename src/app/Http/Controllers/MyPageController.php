@@ -20,35 +20,26 @@ class MyPageController extends Controller
 
     public function edit(Request $request)
     {
-        // $form = $request->all();
-        // unset($form['_token']);
-        // User::create($form);
-        // return redirect()('mypage.index')->with('success', '新規登録完了しました');
-
         $id = Auth::id();
         $user = User::find($id);
-        $form = $request->all();
-        unset($form['_token']);
-        $user->fill($form)->save();
-        return redirect('/edit')->with('success', '新規登録完了しました');
+        return view('mypage.user_edit',compact('user'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        $user = new User();
+        $user = User::find($id);
         
-        $user->password = $request->password;
-        $user->first_name = $request->first_name; 
-        $user->last_name = $request->last_name; 
-        $user->first_name_ruby = $request->first_name_ruby;
-        $user->last_name_ruby = $request->last_name_ruby; 
-        $user->nickname = $request->nickname; 
-        $user->sex = $request->sex; 
-        $user->company = $request->company; 
-        $user->department = $request->department; 
-        $user->working_period = $request->working_period;
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->first_name_ruby = $request->input('first_name_ruby');
+        $user->last_name_ruby = $request->input('last_name_ruby');
+        $user->nickname = $request->input('nickname');
+        $user->sex = $request->input('sex');
+        $user->company = $request->input('company');
+        $user->department = $request->input('department');
+        $user->working_period = $request->input('working_period');
 
         $user->save();
-        return redirect('mypage.index');
+        return redirect('my-page');
     }
 }
