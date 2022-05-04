@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class EvaluationController extends Controller
         return view('evaluation.index');
     }
     public function add (Request $request){
-        dd($request->evaluation_comment);
+        // dd($request);
         DB::table('calls')
         ->insert([
             'evaluation' => $request->evaluation,
