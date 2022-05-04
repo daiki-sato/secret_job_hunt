@@ -1,12 +1,21 @@
 .evaluation{
   display: none;
+  border-color: black;
+}
+.radiobox{
+  border-color: black;
+  border-width: 3px;
 }
 
 label {
-  background-color: skyblue;
+  background-color: rgb(217, 217, 217);
+  border-radius: 10px;
+  border-color: black;
   padding: 10px 20px;
-}
+  margin-right: 10px;
+} 
 
 .evaluation:checked + label {
-  background-color: pink;
+  background-color: #0E69F4;
+  color: aliceblue;
 }
