@@ -1,5 +1,12 @@
-.good::before{
- content: "f164";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+.evaluation{
+  display: none;
+}
+
+label {
+  background-color: skyblue;
+  padding: 10px 20px;
+}
+
+.evaluation:checked + label {
+  background-color: pink;
 }

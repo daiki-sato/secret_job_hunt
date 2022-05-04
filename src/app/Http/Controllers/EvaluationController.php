@@ -11,6 +11,12 @@ class EvaluationController extends Controller
         return view('evaluation.index');
     }
     public function add (Request $request){
+        dd($request->evaluation_comment);
+        DB::table('calls')
+        ->insert([
+            'evaluation' => $request->evaluation,
+            'evaluation_comment' => $request->evaluation_comment,
+        ]);
         return view('evaluation.index');
     }
 }
