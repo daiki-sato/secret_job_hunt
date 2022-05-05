@@ -72,7 +72,6 @@ Route::middleware(['auth'])->group(function () {
         //通話後評価画面
         Route::prefix('evaluation')->group(function () {
             Route::get('/', 'EvaluationController@index')->name('evaluation');
-            Route::get('/add', 'EvaluationController@add')->name('evaluation_add');
             Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
         });
         
