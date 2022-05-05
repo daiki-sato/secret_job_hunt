@@ -20,7 +20,7 @@
                         <div class="radiobox">
                             <input id="radio1" class=" btn btn-outline-secondary mr-4 evaluation" name="evaluation"
                                 type="radio" value="1" />
-                            <label for="radio1" >Good</label>
+                            <label for="radio1">Good</label>
                             <input id="radio2" class="btn btn-outline-secondary evaluation" name="evaluation" type="radio"
                                 value="2" />
                             <label for="radio2">Bad</label>
