@@ -14,6 +14,7 @@ class EvaluationController extends Controller
     public function add (Request $request){
         DB::table('calls')
         ->insert([
+            'thread_id' => 1,
             'evaluation' => $request->evaluation,
             'evaluation_comment' => $request->evaluation_comment,
         ]);

@@ -15,7 +15,7 @@ class CreateCallsTable extends Migration
     {
         Schema::create('calls', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('thread_id')->nullable();
+            $table->unsignedInteger('thread_id');
             $table->date('confirmed_interview_date')->nullable();
             $table->date('call_start_time')->nullable();
             $table->date('call_end_time')->nullable();
