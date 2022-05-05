@@ -12,7 +12,6 @@ class EvaluationController extends Controller
         return view('evaluation.index');
     }
     public function add (Request $request){
-        // dd($request);
         DB::table('calls')
         ->insert([
             'evaluation' => $request->evaluation,
