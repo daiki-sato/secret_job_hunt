@@ -69,5 +69,12 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
         });
+
+        //レビュー表示画面
+        Route::prefix('review')->group(function () {
+            Route::get('/', 'ReviewController@index')->name('review');
+        });
+        
+
     });
 });
