@@ -19,7 +19,7 @@ function Confirm(props) {
     pullDown: "プルダウン",
   };
   const { currentState } = useContext(UserInputDataContext);
-  const application = currentState.userId;
+  const application = currentState.solverId;
 
   const startDate = currentState.interviewTimes.startDate;
   const endDate = currentState.interviewTimes.endDate;

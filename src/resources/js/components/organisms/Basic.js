@@ -14,8 +14,11 @@ import {
 } from "@material-ui/core/";
 
 import { UserInputDataContext } from "./Content";
+import { userIdContext } from "./Content";
 
 function Basic(props) {
+  const userId = useContext(userIdContext);
+
   const { control, handleSubmit } = useForm({
     defaultValues: {
       companyName: "",
@@ -25,9 +28,10 @@ function Basic(props) {
   const onSubmit = () => {
     props.handleNext();
     setCurrentState({
-      userId: [...selectedUserId],
+      solverId: [...selectedSolverId],
       companyName: companyKeyword,
       department: departmentKeyword,
+      userId: userId,
     });
   };
   const [companyKeyword, setCompanyKeyword] = useState("");
@@ -44,15 +48,15 @@ function Basic(props) {
   };
 
   const { currentState, setCurrentState } = useContext(UserInputDataContext);
-  const [selectedUserId, setSelectedUserId] = useState([]);
+  const [selectedSolverId, setSelectedSolverId] = useState([]);
   const handleCheck = (event) => {
-    var updatedList = [...selectedUserId];
+    var updatedList = [...selectedSolverId];
     if (event.target.checked) {
-      updatedList = [...selectedUserId, event.target.value];
+      updatedList = [...selectedSolverId, event.target.value];
     } else {
-      updatedList.splice(selectedUserId.indexOf(event.target.value), 1);
+      updatedList.splice(selectedSolverId.indexOf(event.target.value), 1);
     }
-    setSelectedUserId(updatedList);
+    setSelectedSolverId(updatedList);
   };
 
   return (
