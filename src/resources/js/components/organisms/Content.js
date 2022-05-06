@@ -11,8 +11,15 @@ import Confirm from "./Confirm";
 import Thanks from "../Thanks";
 
 export const UserInputDataContext = React.createContext();
+export const userIdContext = React.createContext();
 
 const Content = () => {
+  /***************************
+  user_id取得
+  ***************************/
+  const targetDom = document.getElementById("search");
+  const userId = targetDom.dataset.userId;
+
   const [currentState, setCurrentState] = useState({});
   const value = {
     currentState,
@@ -87,7 +94,9 @@ const Content = () => {
           <Thanks />
         ) : (
           <UserInputDataContext.Provider value={value}>
-            {getStepContent(activeStep, handleNext, handleBack)}
+            <userIdContext.Provider value={userId}>
+              {getStepContent(activeStep, handleNext, handleBack)}
+            </userIdContext.Provider>
           </UserInputDataContext.Provider>
         )}
       </Grid>
