@@ -1,16 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
-
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#evaluationModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#evaluationModal">
         通話を終了する
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="evaluationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <h4>お疲れ様でした面談はどうでしたか？</h4>
@@ -27,7 +26,8 @@
                         </div>
                         <div class="text">
                             <p class="mt-2 mb-0">ひとことでよいので理由を教えてください。</p>
-                            <input type="text" class="form-control col-xs-4" placeholder="〇〇が良かった,悪かった,困ったなど..." name="evaluation_comment">
+                            <input type="text" class="form-control col-xs-4" placeholder="〇〇が良かった,悪かった,困ったなど..."
+                                name="evaluation_comment">
                         </div>
                         <input type="submit" class="btn btn-primary mt-4" value="フィードバックを送信する">
                     </form>
@@ -35,6 +35,4 @@
             </div>
         </div>
     </div>
-
-   
 @endsection
