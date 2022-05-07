@@ -8,7 +8,6 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('/js/app.js') }}"></script>
     @stack('scripts')
-    <link rel="stylesheet" href="{{ asset('css/evaluation/index.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
