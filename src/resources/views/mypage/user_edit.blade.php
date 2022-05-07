@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- // TODO:修正してください。 --}}
     <div class="p-5 mypage-index">
         <div class="pt-5 pb-3 mypage-container">
             <div class="m-3 mypage-container_top">
@@ -12,13 +11,6 @@
                 <img src="" alt="profile_img" class="m-3 profile_img">
                 <p class="m-2 h3">{{$user->nickname}}</p>
             </div>
-            {{-- <div class="ticket_container">
-                <p class="ticket_title">所持チケット</p>
-                <div class="ticket_detail">
-                    <p>6枚</p>
-                    <button>換金する</button>
-                </div>
-            </div> --}}
             <div class="pl-4 mx-5 text-left profile_container">
               <form action="{{route('user_update',['id' => $user->id])}}" method="post">
                 @csrf

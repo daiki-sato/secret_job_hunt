@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- // TODO:修正してください。 --}}
     <div class="p-5 mypage-index">
         <div class="pt-5 pb-3 mypage-container">
             <div class="m-3 mypage-container_top">
@@ -33,13 +32,13 @@
                                 <td>{{ $user->first_name_ruby }} {{ $user->last_name_ruby }}</td>
                             </tr>
                             <tr>
+                                <td>ニックネーム</td>
+                                <td>{{ $user->nickname }}</td>
+                            </tr>
+                            <tr>
                                 <td>メールアドレス</td>
                                 <td>{{ $user->email }}</td>
                             </tr>
-                            {{-- <tr>
-                                <td>ステータス</td>
-                                <td>{{ $user->role_id }}</td>
-                            </tr> --}}
                             <tr>
                                 <td>性別</td>
                                 <td>{{ $user->sex }}</td>
