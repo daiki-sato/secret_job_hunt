@@ -6,60 +6,74 @@
 </head>
 
 @section('content')
-    <div class="profile d-flex justify-content-center mt-3">
-        <div class="img">
-            <img src="" alt="プロフィール写真">
-        </div>
-        <div class="comment">
-            <p class="name mb-0">藤森日奈</p>
-            <p class="belongs">リクルート/営業</p>
-        </div>
-    </div>
-    <div class="review-list">
-        <p class="">評価一覧</p>
-        <div class="content d-flex justify-content-center">
-            <ul class="nav nav-pills mb-3 content " id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active mr-5 text-danger" id="pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                        aria-selected="true">
-                        Good
-                        <p class="border-dark border-bottom text-dark">12</p>
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                        aria-selected="false">
-                        Bad
-                        <p class="border-dark border-bottom text-dark">0</p>
-                    </button>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="reviewer d-flex justify-content-center mt-3">
-                    <div class="img">
-                        <img src="" alt="プロフィール写真">
-                    </div>
-                    <div class="comment div flex-column">
-                        <p class="name mb-0">迷える子羊</p>
-                        <p class="review">知識がなかったので助かりました。機会があればまたよろしくお願いいたします！</p>
-                    </div>
-                </div>
-                <div class="reviewer d-flex justify-content-center mt-3">
-                    <div class="img">
-                        <img src="" alt="プロフィール写真">
-                    </div>
-                    <div class="comment div flex-column">
-                        <p class="name mb-0">迷える子羊</p>
-                        <p class="review">知識がなかったので助かりました。機会があればまたよろしくお願いいたします！</p>
-                    </div>
-                </div>
+    <div class="content d-flex justify-content-center w-100 ">
+        <div class="profile d-flex justify-content-center mt-5 w-5 mr-5">
+            <div class="img">
+                <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
             </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                
+            <div class="comment text-start">
+                <p class="name mb-0">藤森日奈</p>
+                <p class="belongs">リクルート/営業</p>
+            </div>
+        </div>
+        <div class="review-list mt-5 text-start">
+            <h4>評価一覧</h4>
+            <div class="content d-flex ">
+                <ul class="nav nav-pills mb-3 content " id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link bg-light active mr-5 text-danger" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">
+                            Good
+                            <p class="border-dark border-bottom text-dark">12</p>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link bg-light text-primary" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">
+                            Bad
+                            <p class="border-dark border-bottom text-dark">0</p>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content w-auto" id="pills-tabContent ">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="reviewer  d-flex justify-content-center mt-3">
+                        <div class="img">
+                            <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                        </div>
+                        <div class="comment div flex-column text-md-start">
+                            <p class="name mb-1">迷える子羊</p>
+                            <p class="review text-wrap">知識がなかったので助かりました。機会があればまたよろしくお願いいたします！</p>
+                            <p>2022/05/05</p>
+                        </div>
+                    </div>
+                    <div class="reviewer d-flex justify-content-center mt-3">
+                        <div class="img">
+                            <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                        </div>
+                        <div class="comment div flex-column text-md-start">
+                            <p class="name mb-0">迷える子羊</p>
+                            <p class="review w-auto">知識がなかったので助かりました。機会があればまたよろしくお願いいたします！</p>
+                            <p>2022/05/05</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="reviewer d-flex justify-content-center mt-3">
+                        <div class="img">
+                            <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                        </div>
+                        <div class="comment div flex-column text-start ">
+                            <p class="name ">迷える狼</p>
+                            <p class="review">boooooo</p>
+                            <p>2022/05/05</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
