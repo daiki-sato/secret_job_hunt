@@ -38,7 +38,7 @@ Route::middleware([])->group(function () {
 });
 
 // ログイン済
-// Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 // 一般ユーザー
 Route::middleware(['role:user'])->group(function () {
     // 検索
@@ -72,4 +72,4 @@ Route::middleware(['role:user'])->group(function () {
     //お問合せ
     Route::get('/contact', 'ContactController@index')->name('contact');
 });
-// });
+});
