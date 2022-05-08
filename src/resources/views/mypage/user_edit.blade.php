@@ -89,6 +89,7 @@
             <input type="hidden" name="id" value="{{ $user->id }}">
             <input type="submit" value="送信" class="px-5 py-2 mb-5 submit-button">
             </form>
+            <a href="{{ route('my-page') }}" class="px-5 py-2 mb-5 submit-button">戻る</a>
         </div>
     </div>
 @endsection
