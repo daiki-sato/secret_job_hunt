@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             InterviewTimeSeeder::class,
             WalletSeeder::class,
             ThreadSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }
