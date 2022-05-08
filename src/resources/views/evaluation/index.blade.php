@@ -21,7 +21,7 @@
                                 type="radio" value="1" />
                             <label for="radio1">Good</label>
                             <input id="radio2" class="btn btn-outline-secondary evaluation" name="evaluation" type="radio"
-                                value="2" />
+                                value="0" />
                             <label for="radio2">Bad</label>
                         </div>
                         <div class="text">
