@@ -38,43 +38,49 @@ Route::middleware([])->group(function () {
 });
 
 // ログイン済
-// Route::middleware(['auth'])->group(function () {
-// 一般ユーザー
-Route::middleware(['role:user'])->group(function () {
-    // 検索
-    Route::prefix('search')->group(function () {
-        Route::get('/', 'SearchController@index')->name('search');
-        Route::get('/getUser/{companyKeyword?}/{departmentKeyword?}', 'Ajax\GetUsersController@index')->name('search.getUser');
-    });
+Route::middleware(['auth'])->group(function () {
+    // 一般ユーザー
+    Route::middleware(['role:user'])->group(function () {
+        // 検索
+        Route::prefix('search')->group(function () {
+            Route::get('/', 'SearchController@index')->name('search');
+            Route::get('/getUser/{companyKeyword?}/{departmentKeyword?}', 'Ajax\GetUsersController@index')->name('search.getUser');
+        });
 
-    // 予約一覧
-    Route::prefix('reservation-list')->group(function () {
-        Route::get('/', 'ReservationListController@index')->name('reservation-list');
-    });
+        // 予約一覧
+        Route::prefix('reservation-list')->group(function () {
+            Route::get('/', 'ReservationListController@index')->name('reservation-list');
+        });
 
-    // スレッド
-    Route::prefix('thread')->group(function () {
-        Route::get('/', 'ThreadController@index')->name('thread');
-        Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
-        Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
-    });
+        // スレッド
+        Route::prefix('thread')->group(function () {
+            Route::get('/', 'ThreadController@index')->name('thread');
+            Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
+            Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
+        });
 
-    // メッセージ
-    Route::prefix('message')->group(function () {
-        Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
-        Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
-        Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
-    });
+        // メッセージ
+        Route::prefix('message')->group(function () {
+            Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
+            Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
+            Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
+        });
 
-    Route::prefix('my-page')->group(function () {
-        Route::get('/', 'MyPageController@index')->name('my-page');
-    });
+        Route::prefix('my-page')->group(function () {
+            Route::get('/', 'MyPageController@index')->name('my-page');
+        });
 
-    //絞り込み後仮画面
-    Route::prefix('review')->group(function () {
-        Route::get('/', 'ReviewController@index')->name('review');
-        //評価表示画面
-        Route::get('/show', 'ReviewController@show')->name('review-show');
+        //通話後評価画面
+        Route::prefix('evaluation')->group(function () {
+            Route::get('/', 'EvaluationController@index')->name('evaluation');
+            Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
+        });
+            
+        //絞り込み後仮画面
+        Route::prefix('review')->group(function () {
+            Route::get('/', 'ReviewController@index')->name('review');
+            //評価表示画面
+            Route::get('/show', 'ReviewController@show')->name('review-show');
+        });
     });
 });
-// });
