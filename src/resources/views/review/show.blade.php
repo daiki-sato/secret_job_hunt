@@ -12,8 +12,8 @@
                 <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
             </div>
             <div class="comment text-start">
-                <p class="name mb-0">{{ $solver->nickname}}</p>
-                <p class="belongs">{{ $solver->company}}/{{$solver->department}}</p>
+                <p class="name mb-0">{{ $solver->nickname }}</p>
+                <p class="belongs">{{ $solver->company }}/{{ $solver->department }}</p>
             </div>
         </div>
         <div class="review-list mt-5 text-start">
@@ -40,36 +40,40 @@
             </div>
             <div class="tab-content w-auto " id="pills-tabContent ">
                 <div class="tab-pane fade show active " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    @foreach ($good_reviews as $good_review)
                     @foreach ($good_users as $good_user)
-                        <div class="reviewer  d-flex  justify-content-left mt-3">
-                            <div class="img">
-                                <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
-                            </div>
-                            <div class="comment text-md-start">
-                                <p class="name mb-1">{{$good_user->nickname}}</p>
-                                <p class="review text-wrap">{{ $good_review->evaluation_comment }}</p>
-                                <p>{{ $good_review->call_end_time }}</p>
-                            </div>
-                        </div>
-                    @endforeach
+                        @foreach ($good_reviews as $good_review)
+                            @if ($loop->parent->first)
+                                <div class="reviewer  d-flex  justify-content-left mt-3">
+                                    <div class="img">
+                                        <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                                    </div>
+                                    <div class="comment text-md-start">
+                                        <p class="name mb-1">{{ $good_user->nickname }}</p>
+                                        <p class="review text-wrap">{{ $good_review->evaluation_comment }}</p>
+                                        <p>{{ $good_review->call_end_time }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
                     @endforeach
                 </div>
 
                 <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    @foreach ($bad_reviews as $bad_review)
                     @foreach ($bad_users as $bad_user)
-                        <div class="reviewer d-flex justify-content-left mt-3">
-                            <div class="img">
-                                <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
-                            </div>
-                            <div class="comment div flex-column text-start ">
-                                <p class="name ">{{$bad_user->nickname}}</p>
-                                <p class="review">{{ $bad_review->evaluation_comment }}</p>
-                                <p>{{ $bad_review->call_end_time }}</p>
-                            </div>
-                        </div>
-                    @endforeach
+                        @foreach ($bad_reviews as $bad_review)
+                            @if ($loop->parent->first)
+                                <div class="reviewer d-flex justify-content-left mt-3">
+                                    <div class="img">
+                                        <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                                    </div>
+                                    <div class="comment div flex-column text-start ">
+                                        <p class="name ">{{ $bad_user->nickname }}</p>
+                                        <p class="review">{{ $bad_review->evaluation_comment }}</p>
+                                        <p>{{ $bad_review->call_end_time }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
                     @endforeach
                 </div>
             </div>
