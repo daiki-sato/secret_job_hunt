@@ -67,8 +67,8 @@
                                         <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
                                     </div>
                                     <div class="comment div flex-column text-start ">
-                                        <p class="name ">{{ $bad_user->nickname }}</p>
-                                        <p class="review">{{ $bad_review->evaluation_comment }}</p>
+                                        <p class="name mb-1">{{ $bad_user->nickname }}</p>
+                                        <p class="review text-wrap">{{ $bad_review->evaluation_comment }}</p>
                                         <p>{{ $bad_review->call_end_time }}</p>
                                     </div>
                                 </div>
