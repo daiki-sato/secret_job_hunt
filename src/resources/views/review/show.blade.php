@@ -58,16 +58,18 @@
 
                 <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     @foreach ($bad_reviews as $bad_review)
+                    @foreach ($bad_users as $bad_user)
                         <div class="reviewer d-flex justify-content-left mt-3">
                             <div class="img">
                                 <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
                             </div>
                             <div class="comment div flex-column text-start ">
-                                <p class="name ">迷える狼</p>
+                                <p class="name ">{{$bad_user->nickname}}</p>
                                 <p class="review">{{ $bad_review->evaluation_comment }}</p>
                                 <p>{{ $bad_review->call_end_time }}</p>
                             </div>
                         </div>
+                    @endforeach
                     @endforeach
                 </div>
             </div>
