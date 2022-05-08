@@ -39,32 +39,32 @@ Route::middleware([])->group(function () {
 
 // ログイン済
 Route::middleware(['auth'])->group(function () {
-// 一般ユーザー
-Route::middleware(['role:user'])->group(function () {
-    // 検索
-    Route::prefix('search')->group(function () {
-        Route::get('/', 'SearchController@index')->name('search');
-        Route::get('/getUser/{companyKeyword?}/{departmentKeyword?}', 'Ajax\GetUsersController@index')->name('search.getUser');
-    });
+    // 一般ユーザー
+    Route::middleware(['role:user'])->group(function () {
+        // 検索
+        Route::prefix('search')->group(function () {
+            Route::get('/', 'SearchController@index')->name('search');
+            Route::get('/getUser/{companyKeyword?}/{departmentKeyword?}', 'Ajax\GetUsersController@index')->name('search.getUser');
+        });
 
-    // 予約一覧
-    Route::prefix('reservation-list')->group(function () {
-        Route::get('/', 'ReservationListController@index')->name('reservation-list');
-    });
+        // 予約一覧
+        Route::prefix('reservation-list')->group(function () {
+            Route::get('/', 'ReservationListController@index')->name('reservation-list');
+        });
 
-    // スレッド
-    Route::prefix('thread')->group(function () {
-        Route::get('/', 'ThreadController@index')->name('thread');
-        Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
-        Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
-    });
+        // スレッド
+        Route::prefix('thread')->group(function () {
+            Route::get('/', 'ThreadController@index')->name('thread');
+            Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
+            Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
+        });
 
-    // メッセージ
-    Route::prefix('message')->group(function () {
-        Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
-        Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
-        Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
-    });
+        // メッセージ
+        Route::prefix('message')->group(function () {
+            Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
+            Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
+            Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
+        });
 
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
@@ -76,15 +76,17 @@ Route::middleware(['role:user'])->group(function () {
             Route::get('/', 'EvaluationController@index')->name('evaluation');
             Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
         });
-        
+        //お問合せ
+        Route::prefix('contact')->group(function () {
+            Route::get('/', 'ContactController@index')->name('contact');
+            Route::post('/add', 'ContactController@add')->name('contact_add');
+        });
     });
 
     // 管理者
     Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('/', 'AdminController@index')->name('admin');
-        });  
+        });
     });
-    //お問合せ
-    Route::get('/contact', 'ContactController@index')->name('contact');
 });
