@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState , useContext} from "react";
 import { Grid } from '@material-ui/core'
 import { useForm, Controller } from "react-hook-form";
 import TextField from "@material-ui/core/TextField";
 import { Button } from "@material-ui/core";
 import Tooltip from '@material-ui/core/Tooltip';
 
+import { UserInputDataContext } from "./Content";
+
 function Optional(props) {
-    const { control, handleSubmit } = useForm({
+    const { control, handleSubmit, getValues } = useForm({
         defaultValues: {
-            multilineText: "",
+            startDate: "",
+            endDate: "",
         },
     });
+
+    const { currentState, setCurrentState } = useContext(UserInputDataContext);
     const onSubmit = (action) => {
         if(action === 'back') {
             props.handleBack();
         } else if (action === 'next') {
             props.handleNext();
         }
+        const data = getValues();
+        setCurrentState({...currentState, "interviewTimes": data });
     };
     return (
         <Grid item={true} container>
@@ -25,22 +32,44 @@ function Optional(props) {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Controller
                         control={control}
-                        name="multilineText"
+                        name="startDate"
                         render={({ field }) => (
                             <Tooltip
-                                title="自由に記入することができます"
+                                title="開始日"
                                 placement="top-start"
                                 arrow
                             >
                                 <TextField
                                     {...field}
-                                    label="備考欄"
+                                    label="開始日"
                                     fullWidth
                                     margin="normal"
-                                    rows={4}
+                                    minRows={1}
                                     multiline
                                     variant="outlined"
-                                    placeholder="その他ご要望等あれば、ご記入ください"
+                                    placeholder="開始日"
+                                />
+                            </Tooltip>
+                        )}
+                    />
+                    <Controller
+                        control={control}
+                        name="endDate"
+                        render={({ field }) => (
+                            <Tooltip
+                                title="終了日"
+                                placement="top-start"
+                                arrow
+                            >
+                                <TextField
+                                    {...field}
+                                    label="終了日"
+                                    fullWidth
+                                    margin="normal"
+                                    minRows={1}
+                                    multiline
+                                    variant="outlined"
+                                    placeholder="終了日"
                                 />
                             </Tooltip>
                         )}

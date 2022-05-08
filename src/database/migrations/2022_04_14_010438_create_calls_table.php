@@ -21,6 +21,7 @@ class CreateCallsTable extends Migration
             $table->date('call_end_time')->nullable();
             $table->boolean('is_complete')->nullable();
             $table->boolean('evaluation')->nullable();
+            $table->string('evaluation_comment')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

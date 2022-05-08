@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -309,
-    "scrollLeft": -776.671875,
+    "scrollTop": -411,
+    "scrollLeft": -168,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -417,9 +417,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 923.2223,
-          "top": 350.5553,
-          "zIndex": 1,
+          "left": 812.2223,
+          "top": 281.5553,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 95.24897766113281,
           "color": "#0068FF"
@@ -1432,6 +1432,29 @@
             "id": "2aa8e8fc-d55e-4161-b42d-846b5502d1cb"
           },
           {
+            "name": "evaluation_comment",
+            "comment": "評価コメント",
+            "dataType": "string",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 134.1968994140625,
+              "widthComment": 80,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "77987848-adda-4d79-bc5b-c5a1bc996733"
+          },
+          {
             "name": "created_at",
             "comment": "",
             "dataType": "timestamp",
@@ -1502,10 +1525,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 263.5554,
           "top": 687.1117,
-          "zIndex": 8,
+          "zIndex": 37,
           "widthName": 60,
           "widthComment": 93
         },
@@ -1692,8 +1715,8 @@
           "columnIds": [
             "ee0f62fd-990d-478f-93ab-2daa6b359c57"
           ],
-          "x": 1378.458155102539,
-          "y": 549.0553,
+          "x": 1267.458155102539,
+          "y": 480.0553,
           "direction": "right"
         },
         "constraintName": "fk_roles_to_users",
@@ -1735,8 +1758,8 @@
           "columnIds": [
             "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           ],
-          "x": 1150.8402275512694,
-          "y": 747.5553,
+          "x": 1039.8402275512694,
+          "y": 678.5553,
           "direction": "bottom"
         },
         "end": {
@@ -1787,8 +1810,8 @@
           "columnIds": [
             "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           ],
-          "x": 923.2223,
-          "y": 549.0553,
+          "x": 812.2223,
+          "y": 480.0553,
           "direction": "left"
         },
         "end": {
@@ -1823,7 +1846,7 @@
             "f39d44ef-65ae-4ff2-ac23-2f424dfe0a71"
           ],
           "x": 851.208003149414,
-          "y": 824.1117,
+          "y": 834.3617,
           "direction": "right"
         },
         "constraintName": "fk_threads_to_通話",
@@ -1839,8 +1862,8 @@
           "columnIds": [
             "23bbcfc9-428a-4cd2-aa46-2a18caabd381"
           ],
-          "x": 1150.8402275512694,
-          "y": 350.5553,
+          "x": 1039.8402275512694,
+          "y": 281.5553,
           "direction": "top"
         },
         "end": {

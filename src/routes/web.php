@@ -71,5 +71,11 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
             Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
         });
+        //通話後評価画面
+        Route::prefix('evaluation')->group(function () {
+            Route::get('/', 'EvaluationController@index')->name('evaluation');
+            Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
+        });
+        
     });
 });
