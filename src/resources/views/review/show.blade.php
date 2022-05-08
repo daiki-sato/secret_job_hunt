@@ -12,8 +12,8 @@
                 <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
             </div>
             <div class="comment text-start">
-                <p class="name mb-0">藤森日奈</p>
-                <p class="belongs">リクルート/営業</p>
+                <p class="name mb-0">{{ $solver->nickname}}</p>
+                <p class="belongs">{{ $solver->company}}/{{$solver->department}}</p>
             </div>
         </div>
         <div class="review-list mt-5 text-start">
@@ -25,7 +25,7 @@
                             data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                             aria-selected="true">
                             Good
-                            <p class="border-dark border-bottom text-dark">12</p>
+                            <p class="border-dark border-bottom text-dark">{{ $good_points }}</p>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -33,46 +33,42 @@
                             data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                             aria-selected="false">
                             Bad
-                            <p class="border-dark border-bottom text-dark">0</p>
+                            <p class="border-dark border-bottom text-dark">{{ $bad_points }}</p>
                         </button>
                     </li>
                 </ul>
             </div>
-            <div class="tab-content w-auto" id="pills-tabContent ">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <div class="reviewer  d-flex justify-content-center mt-3">
-                        <div class="img">
-                            <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+            <div class="tab-content w-auto " id="pills-tabContent ">
+                <div class="tab-pane fade show active " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    @foreach ($good_reviews as $good_review)
+                    @foreach ($good_users as $good_user)
+                        <div class="reviewer  d-flex  justify-content-left mt-3">
+                            <div class="img">
+                                <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                            </div>
+                            <div class="comment text-md-start">
+                                <p class="name mb-1">{{$good_user->nickname}}</p>
+                                <p class="review text-wrap">{{ $good_review->evaluation_comment }}</p>
+                                <p>{{ $good_review->call_end_time }}</p>
+                            </div>
                         </div>
-                        <div class="comment div flex-column text-md-start">
-                            <p class="name mb-1">迷える子羊</p>
-                            <p class="review text-wrap">知識がなかったので助かりました。機会があればまたよろしくお願いいたします！</p>
-                            <p>2022/05/05</p>
-                        </div>
-                    </div>
-                    <div class="reviewer d-flex justify-content-center mt-3">
-                        <div class="img">
-                            <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
-                        </div>
-                        <div class="comment div flex-column text-md-start">
-                            <p class="name mb-0">迷える子羊</p>
-                            <p class="review w-auto">知識がなかったので助かりました。機会があればまたよろしくお願いいたします！</p>
-                            <p>2022/05/05</p>
-                        </div>
-                    </div>
+                    @endforeach
+                    @endforeach
                 </div>
-                <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <div class="reviewer d-flex justify-content-center mt-3">
-                        <div class="img">
-                            <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
-                        </div>
-                        <div class="comment div flex-column text-start ">
-                            <p class="name ">迷える狼</p>
-                            <p class="review">boooooo</p>
-                            <p>2022/05/05</p>
-                        </div>
-                    </div>
 
+                <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    @foreach ($bad_reviews as $bad_review)
+                        <div class="reviewer d-flex justify-content-left mt-3">
+                            <div class="img">
+                                <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
+                            </div>
+                            <div class="comment div flex-column text-start ">
+                                <p class="name ">迷える狼</p>
+                                <p class="review">{{ $bad_review->evaluation_comment }}</p>
+                                <p>{{ $bad_review->call_end_time }}</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
