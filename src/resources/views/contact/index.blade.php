@@ -5,40 +5,8 @@
         <form class="w-50">
             <h3 class="mt-3 mb-3">お問い合わせ</h3>
             <div class="main text-left">
-                <div class="mb-3 text-left">
-                    <label class="form-label">お名前</label>
-                    <input type="text" class="form-control">
-                </div>
                 <div class="mb-3">
-                    <label class="form-label">お名前（カナ）</label>
-                    <input type="text" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">メールアドレス</label>
-                    <input type="email" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label class="mb-0">ステータス</label>
-                    <br>
-                    <div class="form-check form-check-inline ">
-                        <input class="form-check-input" type="radio" name="status" id="interviewer" checked>
-                        <label class="form-check-label" for="interviewer">
-                          相談する側
-                        </label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="interviewee">
-                        <label class="form-check-label" for="interviewee">
-                          相談される側
-                        </label>
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label class="mb-0">お問合せ項目</label>
+                    <label class="mb-0">お問合せ種別</label>
                     <br>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="contents" id="cashback" checked>
