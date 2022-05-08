@@ -82,7 +82,7 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('review')->group(function () {
             Route::get('/', 'ReviewController@index')->name('review');
             //評価表示画面
-            Route::get('/show', 'ReviewController@show')->name('review-show');
+            Route::get('/show/{id}', 'ReviewController@show')->name('review-show');
         });
     });
 
