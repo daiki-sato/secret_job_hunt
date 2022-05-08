@@ -12,7 +12,8 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        return view('review.index');
+        $solvers = User::where('role_id', 3)->get();
+        return view('review.index',['solvers'=>$solvers]);
     }
     public function show($id)
     {
