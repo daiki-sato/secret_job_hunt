@@ -11428,6 +11428,10 @@ footer
 
 /***** Import Page Settings  *****/
 
+.admin-index .sample {
+  color: red;
+}
+
 .container {
   max-width: 100%;
   width: 100%;
@@ -11656,6 +11660,105 @@ input[name=tab_item] {
 
 .consulter_merit {
   background-color: #d3cbc4;
+}
+
+.mypage-index {
+  background-color: #E4EEF7;
+  overflow: hidden;
+}
+
+.mypage-index .mypage-container {
+  background-color: #fff;
+  width: 75%;
+  margin: 5rem auto;
+}
+
+.mypage-index .mypage-container_top {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.mypage-index h2.mypage-title {
+  text-align: center;
+}
+
+.mypage-index p.contact-title {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  font-size: 120%;
+  color: #0047FF;
+}
+
+.mypage-index .profile_img {
+  width: 10rem;
+  height: 10rem;
+  border: #000 1px;
+}
+
+.mypage-index .ticket_container {
+  border-left: 4px solid #ff0202;
+  width: 60%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.mypage-index .info_title {
+  border-bottom: 5px solid #5C462B;
+}
+
+.mypage-index .ticket_detail {
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.mypage-index .exchange-button {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  background-color: #ff0202;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.mypage-index .profile_container {
+  border-left: 4px solid #66b2db;
+  width: 60%;
+  margin-top: 5rem;
+}
+
+.mypage-index .profile_table {
+  border-collapse: separate;
+  border-spacing: 2rem 0.5rem;
+}
+
+.mypage-index .edit-button {
+  background-color: #66b2db;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.mypage-index .account-button {
+  background-color: #e2e0e0;
+  border: none;
+  margin: 1rem auto;
+  font-size: 150%;
+  font-weight: 400;
+}
+
+.mypage-index .submit-button {
+  background-color: #66b2db;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
 }
 
 .evaluation {

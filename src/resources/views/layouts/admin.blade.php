@@ -16,7 +16,7 @@
 <body>
     @section('header')
         <nav class="navbar sticky-top navbar-expand-sm navbar-green shadow-sm bg-body rounded">
-            <a class="navbar-brand" href="{{ route('search') }}">
+            <a class="navbar-brand" href="{{ route('admin') }}">
                 <img src="{{ asset('img/logo.png') }}" alt="logo">
                 Anovey<span class="sub-title">匿名転職相談サービス</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4"
@@ -27,18 +27,6 @@
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item">
-                            <a href="{{ route('reservation-list') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">予約一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('thread') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">スレッドへ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('search') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">検索画面へ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('my-page') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">マイページへ</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">ログアウト</a>
                         </li>
                     @endauth
@@ -47,18 +35,13 @@
                             <a href="{{ route('register') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">新規登録</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login.top') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded"></i>ログイン</a>
+                            <a href="{{ route('login.top') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded"></i>ログイン</a>
                         </li>
                     @endguest
                 </ul>
             </div>
         </nav>
-
-        @if (session('flush.message') && session('flush.alert_type'))
-            <div class="text-center alert alert-{{ session('flush.alert_type') }}" role="alert">
-                {{ session('flush.message') }}
-            </div>
-        @endif
     @show
 
     <div class="container">
@@ -67,23 +50,6 @@
 
     @section('footer')
         <footer class="container px-3 py-4">
-            <div class="d-flex flex-column">
-                <div class="px-5 py-1 text-muted">
-                    <ul class="pb-3 navbar-nav footer_nav">
-                        <li class="nav-item px-2 ml-3">よくある質問</li>
-                        <li class="nav-item px-2 ml-3">利用規約</li>
-                        <li class="nav-item px-2 ml-3">個人情報の取り扱い</li>
-                    </ul>
-                </div>
-                <div class="px-5 py-1 text-muted">
-                    <ul class="navbar-nav footer_logo">
-                        <li class="nav-item px-2 ml-3 logo-text">
-                            運営会社Anovey
-                        </li>
-                        <li class="nav-item px-2 ml-3 small logo-text">Copyright(C)2019 Anovey,Allright Reserved.</li>
-                    </ul>
-                </div>
-            </div>
         </footer>
     @show
     <script src="{{ mix('/js/app.js') }}"></script>

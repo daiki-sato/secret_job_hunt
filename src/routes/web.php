@@ -68,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
+            Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
+            Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
         });
 
         //通話後評価画面
@@ -82,5 +84,12 @@ Route::middleware(['auth'])->group(function () {
             //評価表示画面
             Route::get('/show', 'ReviewController@show')->name('review-show');
         });
+    });
+
+    // 管理者
+    Route::middleware(['role:admin'])->group(function () {
+        Route::prefix('admin')->group(function () {
+            Route::get('/', 'AdminController@index')->name('admin');
+        });  
     });
 });
