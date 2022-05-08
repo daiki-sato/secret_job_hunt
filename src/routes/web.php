@@ -78,4 +78,11 @@ Route::middleware(['auth'])->group(function () {
         });
         
     });
+
+    // 管理者
+    Route::middleware(['role:admin'])->group(function () {
+        Route::prefix('admin')->group(function () {
+            Route::get('/', 'AdminController@index')->name('admin');
+        });  
+    });
 });

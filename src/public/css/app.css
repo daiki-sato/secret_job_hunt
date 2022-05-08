@@ -11428,6 +11428,10 @@ footer
 
 /***** Import Page Settings  *****/
 
+.admin-index .sample {
+  color: red;
+}
+
 .container {
   max-width: 100%;
   width: 100%;
