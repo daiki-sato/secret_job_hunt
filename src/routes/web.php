@@ -69,5 +69,11 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
         });
+        //通話後評価画面
+        Route::prefix('evaluation')->group(function () {
+            Route::get('/', 'EvaluationController@index')->name('evaluation');
+            Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
+        });
+        
     });
 });
