@@ -19,10 +19,10 @@
                         <div class="radiobox">
                             <input id="radio1" class=" btn btn-outline-secondary mr-4 evaluation" name="evaluation"
                                 type="radio" value="1" />
-                            <label for="radio1">Good</label>
+                            <label class="evaluation_label" for="radio1">Good</label>
                             <input id="radio2" class="btn btn-outline-secondary evaluation" name="evaluation" type="radio"
                                 value="0" />
-                            <label for="radio2">Bad</label>
+                            <label class="evaluation_label" for="radio2">Bad</label>
                         </div>
                         <div class="text">
                             <p class="mt-2 mb-0">ひとことでよいので理由を教えてください。</p>
