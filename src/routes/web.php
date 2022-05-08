@@ -68,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
+            Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
+            Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
         });
         //通話後評価画面
         Route::prefix('evaluation')->group(function () {
