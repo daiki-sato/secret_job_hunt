@@ -62,24 +62,26 @@
                                         <label for="none">選択しない</label>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>企業名</td>
-                                    <td>
-                                        <input type="text" name="company" value="{{ $user->company }}">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>部署名</td>
-                                    <td>
-                                        <input type="text" name="department" value="{{ $user->department }}">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>勤務年数</td>
-                                    <td>
-                                        <input type="text" name="working_period" value="{{ $user->working_period }}">年
-                                    </td>
-                                </tr>
+                                @if ($user->role_id == 3)
+                                    <tr>
+                                        <td>企業名</td>
+                                        <td>
+                                            <input type="text" name="company" value="{{ $user->company }}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>部署名</td>
+                                        <td>
+                                            <input type="text" name="department" value="{{ $user->department }}">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>勤務年数</td>
+                                        <td>
+                                            <input type="text" name="working_period" value="{{ $user->working_period }}">年
+                                        </td>
+                                    </tr>
+                                @endif
                             </tbody>
                         </table>
                     </div>

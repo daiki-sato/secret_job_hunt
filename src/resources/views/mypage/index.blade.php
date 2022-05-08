@@ -43,25 +43,28 @@
                                 <td>性別</td>
                                 <td>{{ $user->sex }}</td>
                             </tr>
-                            <tr>
-                                <td>勤務先</td>
-                                <td>{{ $user->company }}</td>
-                            </tr>
-                            <tr>
-                                <td>部署</td>
-                                <td>{{ $user->department }}</td>
-                            </tr>
-                            <tr>
-                                <td>勤務年数</td>
-                                <td>{{ $user->working_period }}年</td>
-                            </tr>
+                            @if ($user->role_id == 3)
+                                <tr>
+                                    <td>勤務先</td>
+                                    <td>{{ $user->company }}</td>
+                                </tr>
+                                <tr>
+                                    <td>部署</td>
+                                    <td>{{ $user->department }}</td>
+                                </tr>
+                                <tr>
+                                    <td>勤務年数</td>
+                                    <td>{{ $user->working_period }}年</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                     <a href="{{ route('user_edit', ['id' => $user->id]) }}" class="px-5 py-2 edit-button">情報を更新する</a>
                 </div>
             </div>
             <p class="px-5 py-2 account-button"><a href="" class="text-danger">アカウント削除</a></p>
-            <p class="px-5 py-2 account-button"><a href="" class="text-dark"><i class="fa-solid fa-right-from-bracket"></i>ログアウト</a></p>
+            <p class="px-5 py-2 account-button"><a href="" class="text-dark"><i
+                        class="fa-solid fa-right-from-bracket"></i>ログアウト</a></p>
         </div>
     </div>
 @endsection
