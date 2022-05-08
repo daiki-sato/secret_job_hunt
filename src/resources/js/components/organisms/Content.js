@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
@@ -7,22 +7,24 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Basic from "./Basic";
 import Optional from "./Optional";
+import Confirm from "./Confirm";
+import Thanks from "../Thanks";
 
-// import Confirm from "./Confirm";
-// export const UserInputData = React.createContext();
+export const UserInputDataContext = React.createContext();
+export const userIdContext = React.createContext();
 
 const Content = () => {
-  const { useState, useEffect } = React;
-  //   const getURL = "http://localhost/search/getUser";
-  //   const [getMessages, setGetMessages] = useState([]);
+  /***************************
+  user_id取得
+  ***************************/
+  const targetDom = document.getElementById("search");
+  const userId = targetDom.dataset.userId;
 
-  //   const getData = () => {
-  //     axios
-  //       .get(getURL)
-  //       .then((response) => setGetMessages(response.data))
-  //       .catch((error) => console.log(error));
-  //   };
-
+  const [currentState, setCurrentState] = useState({});
+  const value = {
+    currentState,
+    setCurrentState,
+  };
   const getSteps = () => {
     return ["条件入力", "面談希望日入力", "面談希望日送信"];
   };
@@ -31,10 +33,10 @@ const Content = () => {
     switch (stepIndex) {
       case 0:
         return <Basic handleNext={handleNext} />;
-        case 1:
-          return <Optional handleNext={handleNext} handleBack={handleBack} />;
-      // case 2:
-      //   return <Confirm handleBack={handleBack} />;
+      case 1:
+        return <Optional handleNext={handleNext} handleBack={handleBack} />;
+      case 2:
+        return <Confirm handleNext={handleNext} handleBack={handleBack} />;
       default:
         return "Unknown stepIndex";
     }
@@ -63,14 +65,22 @@ const Content = () => {
             </Step>
           ))}
         </Stepper>
-        {activeStep === steps.length ? (
+        {/* {activeStep === steps.length ? (
           <div>
             <Typography>全ステップの表示を完了</Typography>
             <Button onClick={handleReset}>リセット</Button>
           </div>
         ) : (
           <div>
-            <div>{getStepContent(activeStep)}</div>
+            <div>
+              {activeStep === steps.length ? (
+                <Thanks />
+              ) : (
+                <UserInputDataContext.Provider value={value}>
+                  {getStepContent(activeStep, handleNext, handleBack)}
+                </UserInputDataContext.Provider>
+              )}
+            </div>
             activeStep:{activeStep}
             <Button disabled={activeStep === 0} onClick={handleBack}>
               戻る
@@ -79,6 +89,15 @@ const Content = () => {
               {activeStep === steps.length - 1 ? "送信" : "次へ"}
             </Button>
           </div>
+        )} */}
+        {activeStep === steps.length ? (
+          <Thanks />
+        ) : (
+          <UserInputDataContext.Provider value={value}>
+            <userIdContext.Provider value={userId}>
+              {getStepContent(activeStep, handleNext, handleBack)}
+            </userIdContext.Provider>
+          </UserInputDataContext.Provider>
         )}
       </Grid>
     </Grid>

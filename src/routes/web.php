@@ -66,10 +66,25 @@ Route::middleware(['role:user'])->group(function () {
         Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
     });
 
-    Route::prefix('my-page')->group(function () {
-        Route::get('/', 'MyPageController@index')->name('my-page');
+        Route::prefix('my-page')->group(function () {
+            Route::get('/', 'MyPageController@index')->name('my-page');
+            Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
+            Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
+        });
+        //通話後評価画面
+        Route::prefix('evaluation')->group(function () {
+            Route::get('/', 'EvaluationController@index')->name('evaluation');
+            Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
+        });
+        
+    });
+
+    // 管理者
+    Route::middleware(['role:admin'])->group(function () {
+        Route::prefix('admin')->group(function () {
+            Route::get('/', 'AdminController@index')->name('admin');
+        });  
     });
     //お問合せ
     Route::get('/contact', 'ContactController@index')->name('contact');
-});
 });
