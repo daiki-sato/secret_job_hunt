@@ -55,6 +55,16 @@ class CallSeeder extends Seeder
                 'is_complete' => true,
                 'evaluation' => false,
             ],
+            [
+                'thread_id' => 4,
+                'user_id' => 5, 
+                'solver_id' => 2, 
+                'confirmed_interview_date' => '2022-04-21 12:00:00',
+                'call_start_time' => '2022-04-21 12:00:00',
+                'call_end_time' => '2022-04-21 12:10:00',
+                'is_complete' => true,
+                'evaluation' => false,
+            ],
         ];
         DB::table('calls')->insert($params);
     }
