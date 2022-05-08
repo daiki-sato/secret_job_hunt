@@ -11428,8 +11428,65 @@ footer
 
 /***** Import Page Settings  *****/
 
-.admin-index .sample {
-  color: red;
+.menu {
+  display: block;
+  background-color: #fff;
+  width: 20%;
+}
+
+.menu_item {
+  display: block;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.menu_item:hover {
+  opacity: 0.75;
+}
+
+input[name=menu_item] {
+  display: none;
+}
+
+#payment:checked ~ .menu_content #payment_content {
+  display: block;
+  background-color: #000;
+}
+
+#point-exchange:checked ~ .menu_content #point-exchange_content {
+  display: block;
+}
+
+#contact:checked ~ .menu_content #contact_content {
+  display: block;
+}
+
+.menu input:checked + .menu_item {
+  color: #007FC3;
+}
+
+.menu_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+
+.admin-wrapper {
+  background-color: #E4EEF7;
+  width: 80%;
+}
+
+.admin-inner {
+  background-color: #fff;
+}
+
+.chart-top {
+  background-color: #E4EEF7;
+  overflow: hidden;
 }
 
 .container {
