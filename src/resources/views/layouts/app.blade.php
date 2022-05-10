@@ -8,6 +8,8 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/index.css') }}" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <script src="{{ mix('/js/app.js') }}"></script>
     @stack('scripts')
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -27,7 +29,8 @@
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item">
-                            <a href="{{ route('reservation-list') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">予約一覧</a>
+                            <a href="{{ route('reservation-list') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded">予約一覧</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('thread') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">スレッドへ</a>
@@ -47,7 +50,8 @@
                             <a href="{{ route('register') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">新規登録</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login.top') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded"></i>ログイン</a>
+                            <a href="{{ route('login.top') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded"></i>ログイン</a>
                         </li>
                     @endguest
                 </ul>
