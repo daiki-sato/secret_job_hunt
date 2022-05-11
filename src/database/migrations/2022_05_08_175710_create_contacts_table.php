@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('contact_type');
             $table->string('comment')->nullable();
-            $table->date('contact_date');
+            $table->dateTime('contact_date');
             $table->boolean('is_confirmed')->default(false);
             $table->boolean('is_read')->default(false);
             $table->timestamps();
