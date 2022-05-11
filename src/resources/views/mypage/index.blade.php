@@ -15,7 +15,46 @@
                 <p class="py-3 h3 info_title">所持チケット</p>
                 <div class="pt-2 pb-4 ticket_detail">
                     <p class="pl-5 m-0 h4 ticket_number">6枚</p>
-                    <button class="px-5 mx-4 py-2 exchange-button">換金する</button>
+                    <button class="px-5 mx-4 py-2 exchange-button btn btn-danger" type="button" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                        チケットの購入
+                    </button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">購入枚数の選択</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{ route('paypay') }}" method="GET" class="flex lead">
+                                    <div>
+                                        <p>1枚1200円</p>
+                                        枚数の選択：
+                                        <select name="ticket" id="">
+                                            <option value="1" name="ticket">1</option>
+                                            <option value="2" name="ticket">2</option>
+                                            <option value="3" name="ticket">3</option>
+                                            <option value="4" name="ticket">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="mt-4">
+                                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                                        <input type="submit" class="w-100 btn btn-primary" value="PayPayで購入手続きへ">
+                                    </div>
+                                </form>
+                            </div>
+                            {{-- <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a class="btn btn-primary" href="{{ route('paypay') }}">PayPayで購入手続きへ</a>
+                            </div> --}}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="pl-4 mx-5 text-left profile_container">

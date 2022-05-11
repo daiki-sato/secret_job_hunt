@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 // paypay関係
 use PayPay\OpenPaymentAPI\Client;
 use PayPay\OpenPaymentAPI\Models\OrderItem;
@@ -11,7 +12,7 @@ use PayPay\OpenPaymentAPI\Models\CreateQrCodePayload;
 
 class PaymentController extends Controller
 {
-    public function paypay()
+    public function paypay(Request $request)
     {
         // .envファイルに書いておく
         $client = new Client([
@@ -26,13 +27,16 @@ class PaymentController extends Controller
         // ブラウザの戻るボタンで戻っても、支払いIDが決済完了になっているので３秒後にリダイレクトされ直すだけ
         $rediect_url = 'https://paypay.ne.jp/';
 
+
         //-------------------------------------
         // 商品情報を生成する
         //-------------------------------------
+        $num_tickets = $request->ticket;
+
         $items = (new OrderItem())
-            ->setName('チケット一枚')
+            ->setName('請求額')
             ->setQuantity(1)
-            ->setUnitPrice(['amount' => 1200, 'currency' => 'JPY']);
+            ->setUnitPrice(['amount' => 1200 * $num_tickets, 'currency' => 'JPY']);
 
         //-------------------------------------
         // QRコードを生成する
@@ -41,9 +45,9 @@ class PaymentController extends Controller
         $payload->setOrderItems($items);
         $payload->setMerchantPaymentId("mpid_" . rand());    // 同じidを使いまわさないこと！
         $payload->setCodeType("ORDER_QR");
-        $payload->setAmount(["amount" => 1200, "currency" => "JPY"]);
+        $payload->setAmount(["amount" => 1200 * $num_tickets, "currency" => "JPY"]);
         $payload->setRedirectType('WEB_LINK');
-        $payload->setIsAuthorization(false));
+        $payload->setIsAuthorization(false);
         $payload->setRedirectUrl($rediect_url);
         $payload->setUserAgent($_SERVER['HTTP_USER_AGENT']);
         $QRCodeResponse = $client->code->createQRCode($payload);
