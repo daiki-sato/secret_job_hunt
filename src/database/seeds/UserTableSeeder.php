@@ -19,7 +19,7 @@ class UserTableSeeder extends Seeder
         $params = [
             [
                 'email' => 'mrp@com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
                 'first_name' => "森",
                 'last_name' => "遥",
                 'first_name_ruby' => "モリ",
