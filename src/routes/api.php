@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::post('/interviewsData', 'Api\InterviewController@post');
 Route::get('/userBalance/{userId}', 'Api\GetUserBalanceController@index');
+
+Route::get('/sample', 'Api\InterviewController@sample');
+Route::post('/sample', 'Api\InterviewController@sample')->name("sampleApi");

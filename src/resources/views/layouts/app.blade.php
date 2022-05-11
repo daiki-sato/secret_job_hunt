@@ -44,6 +44,9 @@
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">ログアウト</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('sampleApi') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">検索サンプル</a>
+                        </li>
                     @endauth
                     @guest
                         <li class="nav-item">
