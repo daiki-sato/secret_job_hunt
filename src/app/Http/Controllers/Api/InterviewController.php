@@ -51,6 +51,7 @@ class InterviewController extends Controller
             );
         }
 
-        return "OK";
+        // return "OK";
+        return redirect('my-page');
     }
 }
