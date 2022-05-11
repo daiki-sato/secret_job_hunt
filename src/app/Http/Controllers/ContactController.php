@@ -18,7 +18,7 @@ class ContactController extends Controller
         Contact::create(
             [
                 'user_id' =>1,
-                'contact_type' => $request->contents,
+                'contact_type' => $request->contact_type,
                 'comment' => $request->comment,
                 'contact_date' => $date,
             ]
