@@ -77,6 +77,10 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'EvaluationController@index')->name('evaluation');
             Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
         });
+        //お問合せ
+        Route::prefix('contact')->group(function () {
+            Route::get('/', 'ContactController@index')->name('contact');
+            Route::post('/add', 'ContactController@add')->name('contact_add');
             
         //絞り込み後仮画面
         Route::prefix('review')->group(function () {
@@ -90,6 +94,6 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('/', 'AdminController@index')->name('admin');
-        });  
+        });
     });
 });
