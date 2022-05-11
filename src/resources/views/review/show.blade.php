@@ -6,32 +6,28 @@
             <div class="img">
                 <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
             </div>
-            <div class="comment text-start">
+            <div class="comment text-left">
                 <p class="name mb-0">{{ $solver->nickname }}</p>
                 <p class="belongs">{{ $solver->company }}/{{ $solver->department }}</p>
             </div>
         </div>
         <div class="review-list mt-5 text-start">
-            <h4>評価一覧</h4>
+            <h4 class="text-left">評価一覧</h4>
             <div class="content d-flex ">
-                <ul class="nav nav-pills mb-3 content " id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link bg-light active mr-5 text-danger" id="pills-home-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                            aria-selected="true">
-                            Good
-                            <p class="border-dark border-bottom text-dark">{{ $good_points }}</p>
-                        </button>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active text-danger bg-white mr-5" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                        Good
+                        <p class="border-dark border-bottom text-dark">{{ $good_points }}</p>
+                      </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link bg-light text-primary" id="pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">
-                            Bad
-                            <p class="border-dark border-bottom text-dark">{{ $bad_points }}</p>
-                        </button>
+                    <li class="nav-item">
+                      <a class="nav-link text-primary bg-white" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                        Bad
+                        <p class="border-dark border-bottom text-dark">{{ $bad_points }}</p>
+                      </a>
                     </li>
-                </ul>
+                  </ul>
             </div>
             <div class="tab-content w-auto " id="pills-tabContent ">
                 <div class="tab-pane fade show active " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -42,7 +38,7 @@
                                     <div class="img">
                                         <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
                                     </div>
-                                    <div class="comment text-md-start">
+                                    <div class="comment text-md-left">
                                         <p class="name mb-1">{{ $good_user->nickname }}</p>
                                         <p class="review text-wrap">{{ $good_review->evaluation_comment }}</p>
                                         <p>{{ $good_review->call_end_time }}</p>
@@ -61,7 +57,7 @@
                                     <div class="img">
                                         <img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真">
                                     </div>
-                                    <div class="comment div flex-column text-start ">
+                                    <div class="comment div flex-column text-left ">
                                         <p class="name mb-1">{{ $bad_user->nickname }}</p>
                                         <p class="review text-wrap">{{ $bad_review->evaluation_comment }}</p>
                                         <p>{{ $bad_review->call_end_time }}</p>
