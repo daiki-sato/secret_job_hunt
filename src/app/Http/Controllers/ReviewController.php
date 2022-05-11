@@ -15,12 +15,12 @@ class ReviewController extends Controller
         $solvers = User::where('role_id', 3)->get();
         return view('review.index',['solvers'=>$solvers]);
     }
-    public function show($id)
+    public function show($solver_id)
     {
 
-        $solver = User::where('id', $id)->first();
+        $solver = User::where('id', $solver_id)->first();
         //グッドコメントシュトク
-        $users_id = Call::where('solver_id', $id)
+        $users_id = Call::where('solver_id', $solver_id)
             ->where('evaluation', true)
             ->get('user_id');
 
@@ -34,7 +34,7 @@ class ReviewController extends Controller
             array_push($good_users, User::where('id', $good_user_id)->first());
         };
         //バッドコメントシュトク
-        $bad_users_id = Call::where('solver_id', $id)
+        $bad_users_id = Call::where('solver_id', $solver_id)
             ->where('evaluation', false)
             ->pluck('user_id');
 
@@ -45,18 +45,18 @@ class ReviewController extends Controller
 
 
 
-        $good_reviews = Call::where('solver_id', $id)
+        $good_reviews = Call::where('solver_id', $solver_id)
             ->where('evaluation', true)
             ->get();
-        $good_points = Call::where('solver_id', $id)
+        $good_points = Call::where('solver_id', $solver_id)
             ->where('evaluation', true)
             ->count();
 
-        $bad_reviews = Call::where('solver_id', $id)
+        $bad_reviews = Call::where('solver_id', $solver_id)
             ->where('evaluation', false)
             ->get();
 
-        $bad_points = Call::where('solver_id', $id)
+        $bad_points = Call::where('solver_id', $solver_id)
             ->where('evaluation', false)
             ->count();
         return view('review.show', ['solver' => $solver, 'good_reviews' => $good_reviews, 'bad_reviews' => $bad_reviews, 'good_points' => $good_points, 'bad_points' => $bad_points, 'good_users' => $good_users,'bad_users' => $bad_users]);
