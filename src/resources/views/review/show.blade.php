@@ -70,4 +70,5 @@
             </div>
         </div>
     </div>
+    <a href="{{ route('review') }}" type="button" class="btn btn-primary mt-5" act>戻る</a>
 @endsection
