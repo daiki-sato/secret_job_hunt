@@ -89,6 +89,12 @@ Route::middleware(['auth'])->group(function () {
                 Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
             });
         });
+        //承諾画面（仮）
+        Route::prefix('consent')->group(function () {
+            Route::get('/', 'ConsentController@index')->name('consent');
+            Route::post('/add', 'ConsentController@add')->name('consent_add');
+        });
+
     });
 
     // 管理者
