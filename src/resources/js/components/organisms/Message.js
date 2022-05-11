@@ -1,64 +1,39 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import MessageBox from "../molecules/MessageBox";
-const getURL = "http://localhost/message/get";
-const postURL = "http://localhost/message/post";
+import TextInput from "../molecules/TextInput";
 
-const Message = () => {
-  const { useState, useEffect } = React;
-  const [getMessages, setGetMessages] = useState([]);
-  const [inputMessage, setInputMessage] = useState("");
+const Message = ({ currentThreadId }) => {
+  const threadId = currentThreadId;
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const handleChange = (e) => {
-    setInputMessage(e.target.value);
-  };
-
-  const getData = () => {
+  const [messages, setMessages] = useState([]);
+  const getURL = `http://localhost/message/get/${threadId}`;
+  const getMessages = () => {
     axios
       .get(getURL)
-      .then((response) => setGetMessages(response.data))
+      .then((response) => {
+        setMessages(response.data);
+      })
       .catch((error) => console.log(error));
   };
 
-  const createPost = () => {
-    axios
-      .post(postURL, {
-        message: inputMessage,
-        thread_id: 1,
-        sender_id: 2,
-      })
-      .then((response) => {
-        response.data;
-        setInputMessage("");
-        getData();
-      });
-  };
+  useEffect(() => {
+    getMessages();
+  }, [currentThreadId]);
 
   return (
-    <div className="container">
-      <div id="chat" className="message">
-        <div className="wrapper">
-          <div className="message_area">
-            {getMessages.map((message, index) => (
-              <MessageBox message={message} key={index} />
-            ))}
-          </div>
-          <textarea value={inputMessage} onChange={handleChange}></textarea>
-          <p>{inputMessage}</p>
-          <button onClick={createPost}>Create Post</button>
-        </div>
-      </div>
-    </div>
+    <>
+      {messages.map((message) => {
+        return (
+          <MessageBox
+            key={message.id}
+            message={message}
+            getMessages={getMessages}
+          />
+        );
+      })}
+      <TextInput messages={messages} getMessages={getMessages} />
+    </>
   );
 };
 
 export default Message;
-
-if (document.getElementById("message")) {
-  ReactDOM.render(<Message />, document.getElementById("message"));
-}

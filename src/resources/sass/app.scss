@@ -6,3 +6,19 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+/***** Import Common Settings  *****/
+@import './commons/header';
+@import './commons/footer';
+
+/***** Import Page Settings  *****/
+@import './admin/admin-index';
+@import './top/top-index';
+@import './mypage/mypage-index';
+@import './evaluation/evaluation';
+
+
+/***** Common Setting *****/
+body {
+  width: 100%;
+}

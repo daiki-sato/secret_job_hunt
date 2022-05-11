@@ -1,0 +1,94 @@
+.mypage-index {
+  background-color: #E4EEF7;
+  overflow: hidden;
+
+  .mypage-container {
+    background-color: #fff;
+    width: 75%;
+    margin: 5rem auto;
+  }
+
+  .mypage-container_top {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  h2.mypage-title {
+    text-align: center;
+  }
+
+  p.contact-title {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    font-size: 120%;
+    color: #0047FF;
+  }
+
+  .profile_img {
+    width: 10rem;
+    height: 10rem;
+    border: #000 1px;
+  }
+
+  .ticket_container {
+    border-left: 4px solid #ff0202;
+    width: 60%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .info_title {
+    border-bottom: 5px solid #5C462B;
+  }
+
+  .ticket_detail {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  .exchange-button {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    background-color: #ff0202;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+  }
+
+  .profile_container {
+    border-left: 4px solid #66b2db;
+    width: 60%;
+    margin-top: 5rem;
+  }
+
+  .profile_table {
+    border-collapse: separate;
+    border-spacing: 2rem 0.5rem;
+  }
+
+  .edit-button {
+    background-color: #66b2db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+  }
+
+  .account-button {
+    background-color: #e2e0e0;
+    border: none;
+    margin: 1rem auto;
+    font-size: 150%;
+    font-weight: 400;
+  }
+
+  .submit-button {
+    background-color: #66b2db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+  }
+}

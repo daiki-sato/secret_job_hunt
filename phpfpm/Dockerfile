@@ -19,6 +19,8 @@ RUN apt-get update \
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
        && apt-get install -y nodejs
 
+RUN apt-get install -y nodejs npm && npm install n -g && n 16.15.0
+
 # install composer
 RUN cd '/' \
        && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \

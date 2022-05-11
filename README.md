@@ -66,13 +66,13 @@ https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvy
 
 9. `npm install`
 
-10. `npm run dev`
+10. `npm run watch`
 
 11. Please try to access `http://localhost:80`
 
 ```
 ※CSSについて
  src/resources/sassにSASSファイルが入っています
- 修正した場合は`npm run dev`を再実行することで
+ `npm run watch`を実行することでscssの内容が
  src/public/css/app.css に出力され、画面に反映されます
 ``` 
