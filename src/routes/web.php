@@ -81,12 +81,13 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('contact')->group(function () {
             Route::get('/', 'ContactController@index')->name('contact');
             Route::post('/add', 'ContactController@add')->name('contact_add');
-            
-        //絞り込み後仮画面
-        Route::prefix('review')->group(function () {
-            Route::get('/', 'ReviewController@index')->name('review');
-            //評価表示画面
-            Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
+
+            //絞り込み後仮画面
+            Route::prefix('review')->group(function () {
+                Route::get('/', 'ReviewController@index')->name('review');
+                //評価表示画面
+                Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
+            });
         });
     });
 
