@@ -25,9 +25,5 @@
             </div>
             <button type="submit" class="btn btn-primary">送信する</button>
         </form>
-
-
-
-
     </div>
 @endsection
