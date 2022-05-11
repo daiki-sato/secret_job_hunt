@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Call extends Model
 {
-    protected $fillable = ['thread_id', 'evaluation', 'evaluation_comment'];
+    protected $fillable = ['user_id', 'solver_id', 'thread_id', 'evaluation', 'evaluation_comment'];
 }
