@@ -10,11 +10,11 @@
                     <label class="mb-0">お問合せ種別</label>
                     <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="contents" id="cashback" value="1" checked>
+                        <input class="form-check-input" type="radio" name="contents" id="cashback" value="返金について" checked>
                         <label class="form-check-label" for="cashback">返金について</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="contents" id="others" value="0">
+                        <input class="form-check-input" type="radio" name="contents" id="others" value="その他">
                         <label class="form-check-label" for="others">その他</label>
                     </div>
                 </div>
