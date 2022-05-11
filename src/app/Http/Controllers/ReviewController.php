@@ -19,7 +19,7 @@ class ReviewController extends Controller
     {
 
         $solver = User::where('id', $solver_id)->first();
-        //グッドコメントシュトク
+
         $users_id = Call::where('solver_id', $solver_id)
             ->where('evaluation', true)
             ->get('user_id');
@@ -33,7 +33,7 @@ class ReviewController extends Controller
         foreach ($good_users_id as $good_user_id) {
             array_push($good_users, User::where('id', $good_user_id)->first());
         };
-        //バッドコメントシュトク
+
         $bad_users_id = Call::where('solver_id', $solver_id)
             ->where('evaluation', false)
             ->pluck('user_id');
