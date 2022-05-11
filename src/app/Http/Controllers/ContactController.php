@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Carbon\Carbon;
 
 class ContactController extends Controller
 {
@@ -13,12 +14,13 @@ class ContactController extends Controller
     }
     public function add(Request $request)
     {
+        $date = Carbon::parse();
         Contact::create(
             [
                 'user_id' =>1,
                 'contact_type' => $request->contents,
                 'comment' => $request->comment,
-                'contact_date' => "2022-05-21",
+                'contact_date' => $date,
             ]
         );
         return view('contact.index');
