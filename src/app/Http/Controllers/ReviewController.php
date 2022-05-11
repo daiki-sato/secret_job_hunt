@@ -17,7 +17,6 @@ class ReviewController extends Controller
     }
     public function show($solver_id)
     {
-
         $solver = User::where('id', $solver_id)->first();
 
         $users_id = Call::where('solver_id', $solver_id)
@@ -43,11 +42,10 @@ class ReviewController extends Controller
             array_push($bad_users, User::where('id', $bad_user_id)->first());
         };
 
-
-
         $good_reviews = Call::where('solver_id', $solver_id)
             ->where('evaluation', true)
             ->get();
+
         $good_points = Call::where('solver_id', $solver_id)
             ->where('evaluation', true)
             ->count();
