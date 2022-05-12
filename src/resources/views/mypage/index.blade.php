@@ -14,7 +14,7 @@
             <div class="pl-4 mx-5 text-left ticket_container">
                 <p class="py-3 h3 info_title">所持チケット</p>
                 <div class="pt-2 pb-4 ticket_detail">
-                    <p class="pl-5 m-0 h4 ticket_number">6枚</p>
+                    <p class="pl-5 m-0 h4 ticket_number">{{ $balance / 1200 }}枚</p>
                     <button class="px-5 mx-4 py-2 exchange-button btn btn-danger" type="button" data-toggle="modal"
                         data-target="#exampleModalCenter">
                         チケットの購入
@@ -33,7 +33,7 @@
                             </div>
                             <div class="modal-body">
                                 <form action="{{ route('paypay') }}" method="GET" class="flex lead">
-                                    <div>
+                                    <div class="ticketbypaypay pt-4 pl-5">
                                         <p>1枚1200円</p>
                                         枚数の選択：
                                         <select name="ticket" id="">
@@ -45,6 +45,7 @@
                                     </div>
                                     <div class="mt-4">
                                         {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                                        <img class="img-fluid h-25" src="{{ asset('img/paypay_1.jpg') }}" alt="">
                                         <input type="submit" class="w-100 btn btn-primary" value="PayPayで購入手続きへ">
                                     </div>
                                 </form>

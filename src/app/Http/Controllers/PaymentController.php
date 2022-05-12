@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Wallet;
 
 // paypay関係
 use PayPay\OpenPaymentAPI\Client;
 use PayPay\OpenPaymentAPI\Models\OrderItem;
 use PayPay\OpenPaymentAPI\Models\CreateQrCodePayload;
-
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -25,7 +26,8 @@ class PaymentController extends Controller
 
         // paypayの支払いサイトが完了したら、リダイレクトされるURL
         // ブラウザの戻るボタンで戻っても、支払いIDが決済完了になっているので３秒後にリダイレクトされ直すだけ
-        $rediect_url = 'https://paypay.ne.jp/';
+        $rediect_url = 'http://localhost/my-page';
+
 
 
         //-------------------------------------
@@ -55,11 +57,11 @@ class PaymentController extends Controller
             echo ("QRコード生成エラー");
             return;
         }
+
         // paypayの支払いページに行く。支払いが終わったら$payload->setRedirectUrlにリダイレクトされる
         return redirect($QRCodeResponse['data']['url']);
         // 支払いIDはデータベースに保存しておく
         $merchantPaymentId = $QRCodeResponse['data']['merchantPaymentId'];
-        Log::info('paypay決済ID', $merchantPaymentId);
 
         //var_dump($QRCodeResponse);
 
@@ -71,7 +73,16 @@ class PaymentController extends Controller
             echo ("決済情報取得エラー");
             return;
         }
-        Log::info('paypay決済情報', $QRCodeDetails);
+
+        $wallet = Wallet::where('user_id', Auth::id());
+        $wallet_sum = $wallet->value('balance');
+
+
+        if ($QRCodeDetails['data']['status'] == 'COMPLETED') {
+            $wallet->update([
+                'balance' =>  $wallet_sum + 1200 * $num_tickets,
+            ]);
+        }
     }
     public function paypay_thanks()
     {
