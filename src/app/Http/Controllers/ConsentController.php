@@ -15,7 +15,7 @@ class ConsentController extends Controller
     {
         InterviewTime::create(
             [
-                'interview_id' =>1,
+                'interview_id' =>4,
                 'is_agreement' => $request->consent_type,
                 'from_what_time' => '2022-05-11',
                 'to_what_time' => '2022-05-11',

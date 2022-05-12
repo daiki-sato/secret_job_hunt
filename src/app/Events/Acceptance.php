@@ -3,6 +3,7 @@
 namespace App\Events;
 
 use App\Mail\Acceptance as MailAcceptance;
+use App\Models\Interview;
 use App\Models\InterviewTime;
 use App\Models\User;
 use Illuminate\Broadcasting\Channel;
@@ -26,9 +27,15 @@ class Acceptance
      */
     public function __construct(InterviewTime $interview_time)
     {
-        $user_id = $interview_time->interview_id;
+        $interview_id = $interview_time->interview_id;
+        $user_id = Interview::where('id', $interview_id)->value('user_id');
+        $solver_id = Interview::where('id', $interview_id)->value('solver_id');
+        $solver_name = User::where('id', $solver_id)->value('nickname');
         $user_mail = User::where('id', $user_id)->value('email');
-        Mail::to($user_mail)->send(new MailAcceptance());
+        $from_what_time = $interview_time->from_what_time;
+        $to_what_time = $interview_time->to_what_time;
+
+        Mail::to($user_mail)->send(new MailAcceptance($solver_name, $from_what_time, $to_what_time));
     }
 
     /**
