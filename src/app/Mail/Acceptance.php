@@ -28,6 +28,9 @@ class Acceptance extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject('面談依頼が承諾されました！')
+            ->from('mailhog@sample.com')
+            ->text('acceptance');
+            // ->with('item', $this->item);
     }
 }
