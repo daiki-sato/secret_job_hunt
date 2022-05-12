@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // 未ログイン
 Route::middleware([])->group(function () {
-    Route::namespace ('Auth')->group(function () {
+    Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
             Route::get('/', 'RegisterController@index')->name('register');
@@ -71,18 +71,30 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
             Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
         });
+
         //通話後評価画面
         Route::prefix('evaluation')->group(function () {
             Route::get('/', 'EvaluationController@index')->name('evaluation');
             Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
         });
-        
+        //お問合せ
+        Route::prefix('contact')->group(function () {
+            Route::get('/', 'ContactController@index')->name('contact');
+            Route::post('/add', 'ContactController@add')->name('contact_add');
+
+            //絞り込み後仮画面
+            Route::prefix('review')->group(function () {
+                Route::get('/', 'ReviewController@index')->name('review');
+                //評価表示画面
+                Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
+            });
+        });
     });
 
     // 管理者
     Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('/', 'AdminController@index')->name('admin');
-        });  
+        });
     });
 });

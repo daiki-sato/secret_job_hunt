@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::post('/interviewsData', 'Api\InterviewController@post');
+Route::get('/userBalance/{userId}', 'Api\GetUserBalanceController@index');

@@ -20,6 +20,8 @@ class EvaluationController extends Controller
         Call::create(
             [
                 'thread_id' => 1,
+                'user_id' => 1,
+                'solver_id' => 2,
                 'evaluation' => $request->evaluation,
                 'evaluation_comment' => $request->evaluation_comment,
             ]
