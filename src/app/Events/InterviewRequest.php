@@ -12,6 +12,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\InterviewRequestMail;
+use App\Models\InterviewTime;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -30,7 +31,8 @@ class InterviewRequest
     {
         $solver_id = $interview->solver_id;
         $solver_email = User::where('id', $solver_id)->value('email');
-        Mail::to($solver_email)->send(new InterviewRequestMail);
+        $user = User::where('id', $interview->user_id)->value('nickname');
+        Mail::to($solver_email)->send(new InterviewRequestMail($interview, $user));
     }
 
     /**
