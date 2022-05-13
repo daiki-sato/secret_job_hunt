@@ -27,7 +27,7 @@ class InterviewController extends Controller
                 ]
             );
         }
-        
+
         return "OK";
     }
 }
