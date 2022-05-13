@@ -41,7 +41,6 @@ class InterviewRequestMail extends Mailable
             ->from('mailhog@sample.com')
             ->text('emails.interview_request')
             ->with([
-                'interview' => $this->interview,
                 'user' => $this->user,
             ]);
     }
