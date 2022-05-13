@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\InterviewTime;
-
+use Illuminate\Http\Request;
 
 class ConsentController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('consent.index');
     }
     public function add(Request $request)
@@ -16,7 +16,7 @@ class ConsentController extends Controller
         // TODO::後でinterview_id、from_what_time、to_what_timeを可変にします
         InterviewTime::create(
             [
-                'interview_id' =>4,
+                'interview_id' => 4,
                 'is_agreement' => $request->consent_type,
                 'from_what_time' => '2022-05-11',
                 'to_what_time' => '2022-05-11',
