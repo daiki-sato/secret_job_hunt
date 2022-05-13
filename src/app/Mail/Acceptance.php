@@ -3,10 +3,8 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-
 
 class Acceptance extends Mailable
 {
@@ -34,7 +32,6 @@ class Acceptance extends Mailable
      * @return $this
      */
     public function build()
-
     {
         return $this->subject('面談依頼が承諾されました！')
             ->from('mailhog@sample.com')
