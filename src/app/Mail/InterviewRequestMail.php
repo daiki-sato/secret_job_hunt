@@ -3,12 +3,10 @@
 namespace App\Mail;
 
 use App\Models\Interview;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
-use Symfony\Component\HttpKernel\Fragment\HIncludeFragmentRenderer;
 
 class InterviewRequestMail extends Mailable
 {
