@@ -1,21 +1,8 @@
 import { useForm, Controller } from "react-hook-form";
 import React, { useState, useContext, useEffect } from "react";
-import {
-  TextField,
-  Grid,
-  Checkbox,
-  MenuItem,
-  FormControlLabel,
-  Hidden,
-  FormControl,
-} from "@material-ui/core/";
-import {
-  Box,
-  Card,
-  CardContent,
-  Button,
-  Typography,
-} from "@mui/material";
+import { TextField, Grid } from "@material-ui/core/";
+import { Box, Card, CardContent, Button, Typography } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
 
 import { UserInputDataContext } from "./Content";
 import { userIdContext } from "./Content";
@@ -54,16 +41,6 @@ function Basic(props) {
 
   const { currentState, setCurrentState } = useContext(UserInputDataContext);
   const [selectedSolverId, setSelectedSolverId] = useState([]);
-  const handleCheck = (event) => {
-    var updatedList = [...selectedSolverId];
-    if (event.target.checked) {
-      updatedList = [...selectedSolverId, event.target.value];
-    } else {
-      updatedList.splice(selectedSolverId.indexOf(event.target.value), 1);
-    }
-    setSelectedSolverId(updatedList);
-  };
-
   useEffect(() => {
     const getUserBalance = () => {
       axios
@@ -73,8 +50,46 @@ function Basic(props) {
     };
     getUserBalance();
   }, []);
-  console.log(balance, "balance");
 
+  const columns = [
+    { field: "id", headerName: "ID", hide: true },
+    { field: "icon", headerName: "icon", width: 10 },
+    {
+      field: "company",
+      headerName: "会社",
+      width: 110,
+      editable: true,
+    },
+    {
+      field: "department",
+      headerName: "部署",
+      width: 180,
+      editable: true,
+    },
+    {
+      field: "sex",
+      headerName: "性別",
+      width: 180,
+      editable: true,
+    },
+    {
+      field: "workingPeriod",
+      headerName: "勤務年数",
+      type: "number",
+      width: 110,
+      editable: true,
+    },
+  ];
+  const rows = [
+    users.map((user) => ({
+      id: user.id,
+      icon: 1,
+      company: user.company,
+      department: user.department,
+      sex: user.sex,
+      workingPeriod: user.working_period,
+    })),
+  ];
   return (
     <>
       <Grid item={true} container>
@@ -95,23 +110,22 @@ function Basic(props) {
             name="departmentName"
           />
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="checkList">
-              <div className="list-container">
-                {users.map((user, index) => (
-                  <Box key={index} sx={{ display: "flex" }}>
-                    <input
-                      value={user.id}
-                      type="checkbox"
-                      onChange={handleCheck}
-                    />
-                    <Typography>{user.sex}/</Typography>
-                    <Typography>{user.company}/</Typography>
-                    <Typography>{user.department}/</Typography>
-                    <Typography>{user.working_period}年/</Typography>
-                  </Box>
-                ))}
+            {users.length > 0 && (
+              <div style={{ height: 400, width: "100%" }}>
+                <DataGrid
+                  rows={rows[0]}
+                  columns={columns}
+                  pageSize={25}
+                  // rowsPerPageOptions={[5, 10, 20]}
+                  checkboxSelection
+                  disableSelectionOnClick
+                  onSelectionModelChange={(newSelectionModel) => {
+                    setSelectedSolverId(newSelectionModel);
+                  }}
+                  selectionModel={selectedSolverId}
+                />
               </div>
-            </div>
+            )}
             <Box
               sx={{
                 display: "flex",
@@ -145,7 +159,6 @@ function Basic(props) {
                 <Typography variant="h5" component="h4" sx={{ mb: 3.0 }}>
                   チケット数：0
                 </Typography>
-
                 <Typography sx={{ fontSize: 14, mb: 1.5 }}>
                   ⚠チケットが足りません。10分通話で1枚必要です。
                 </Typography>
