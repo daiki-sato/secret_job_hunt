@@ -35,7 +35,7 @@ class Acceptance extends Mailable
     {
         return $this->subject('面談依頼が承諾されました！')
             ->from('mailhog@sample.com')
-            ->text('acceptance')
+            ->text('emails.acceptance')
             ->with([
                 'solver_name' => $this->solver_name,
                 'from_what_time' => $this->from_what_time,
