@@ -11,5 +11,6 @@ class InterviewTime extends Model
 
     protected $dispatchesEvents = [
         'saved' => Acceptance::class,
+        'saved' => ScheduleChange::class,
     ];
 }
