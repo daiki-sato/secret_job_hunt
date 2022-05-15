@@ -16,9 +16,10 @@ class RemindMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($from_what_time,$to_what_time)
     {
-        //
+        $this->from_what_time = $from_what_time;
+        $this->to_what_time = $to_what_time;
     }
 
     /**
@@ -30,7 +31,10 @@ class RemindMail extends Mailable
     {
         return $this->subject('リマインドメールです。')
         ->from('mailhog@sample.com')
-        ->text('emails.remind');
-        // ->with('');
+        ->text('emails.remind')
+        ->with([
+            'from_what_time' => $this->from_what_time,
+            'to_what_time' => $this->to_what_time,
+        ]);
     }
 }

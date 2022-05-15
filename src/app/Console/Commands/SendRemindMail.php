@@ -51,11 +51,13 @@ class SendRemindMail extends Command
         // dd($remind_dates);
 
         foreach ($remind_dates as $remind_date) {
+            $from_what_time = $remind_date->from_what_time;
+            $to_what_time = $remind_date->to_what_time;
             $user_id = Interview::where('id',$remind_date->interview_id)->value('user_id');
             $user_mail = User::where('id', $user_id)->value('email');
             $solver_id = Interview::where('id',$remind_date->interview_id)->value('solver_id');
             $solver_mail = User::where('id', $solver_id)->value('email');
-            return Mail::to($user_mail, $solver_mail)->send(new RemindMail());
+            return Mail::to($user_mail, $solver_mail)->send(new RemindMail($from_what_time,$to_what_time));
         }
     }
 }
