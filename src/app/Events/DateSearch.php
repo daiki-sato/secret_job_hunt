@@ -7,13 +7,10 @@ use App\Models\Interview;
 use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
-
 
 class DateSearch
 {
@@ -26,9 +23,9 @@ class DateSearch
      */
     public function __construct(Interview $interview)
     {
-        $user_mail = User::where('id',$interview->user_id)->value('email');
-        $solver_mail = User::where('id',$interview->solver_id)->value('email');
-        Mail::to($user_mail,$solver_mail)->send(new RemindMail());
+        $user_mail = User::where('id', $interview->user_id)->value('email');
+        $solver_mail = User::where('id', $interview->solver_id)->value('email');
+        Mail::to($user_mail, $solver_mail)->send(new RemindMail());
 
     }
 
