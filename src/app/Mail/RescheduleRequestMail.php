@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -29,7 +28,7 @@ class RescheduleRequestMail extends Mailable
     public function build()
     {
         return $this->subject('面談日変更依頼が届きました。')
-        ->from('mailhog@sample.com')
-        ->text('emails.reschedule_mail');
+            ->from('mailhog@sample.com')
+            ->text('emails.reschedule_mail');
     }
 }
