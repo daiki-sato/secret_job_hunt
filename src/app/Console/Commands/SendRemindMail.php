@@ -2,13 +2,12 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\RemindMail;
+use App\Models\Call;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\RemindMail;
-use App\Models\Interview;
-use App\Models\User;
-use App\Models\InterviewTime;
-use Carbon\Carbon;
 
 class SendRemindMail extends Command
 {
@@ -44,20 +43,18 @@ class SendRemindMail extends Command
     public function handle()
     {
         $tomorrow = Carbon::tomorrow();
-        $remind_dates = InterviewTime::wheredate('from_what_time', $tomorrow)
-            ->where('is_agreement', 1)
-            ->get();
-
-        // dd($remind_dates);
+        $day_after_tomorrow = Carbon::today()->addMonths(2);
+        $remind_dates = Call::whereBetween('confirmed_interview_date', [$tomorrow, $day_after_tomorrow])->get();
 
         foreach ($remind_dates as $remind_date) {
-            $from_what_time = $remind_date->from_what_time;
-            $to_what_time = $remind_date->to_what_time;
-            $user_id = Interview::where('id',$remind_date->interview_id)->value('user_id');
+            $from_what_time = $remind_date->confirmed_interview_date;
+            // TODO:↓開始時間＋10分になるように修正
+            $to_what_time = "$from_what_time + 10";
+            $user_id = Call::where('id', $remind_date->id)->value('user_id');
             $user_mail = User::where('id', $user_id)->value('email');
-            $solver_id = Interview::where('id',$remind_date->interview_id)->value('solver_id');
+            $solver_id = Call::where('id', $remind_date->id)->value('solver_id');
             $solver_mail = User::where('id', $solver_id)->value('email');
-            return Mail::to($user_mail, $solver_mail)->send(new RemindMail($from_what_time,$to_what_time));
+            return Mail::to($user_mail, $solver_mail)->send(new RemindMail($from_what_time, $to_what_time));
         }
     }
 }
