@@ -59,16 +59,15 @@ class PaymentController extends Controller
         }
 
         // paypayの支払いページに行く。支払いが終わったら$payload->setRedirectUrlにリダイレクトされる
-        return redirect($QRCodeResponse['data']['url']);
+
         // 支払いIDはデータベースに保存しておく
         $merchantPaymentId = $QRCodeResponse['data']['merchantPaymentId'];
 
-        //var_dump($QRCodeResponse);
 
         //-------------------------------------
         // 決済情報を取得する
         //-------------------------------------
-        $QRCodeDetails = $client->payment->getPaymentDetails($merchantPaymentId);
+        $QRCodeDetails = $client->code->getPaymentDetails($merchantPaymentId);
         if ($QRCodeDetails['resultInfo']['code'] !== 'SUCCESS') {
             echo ("決済情報取得エラー");
             return;
@@ -76,16 +75,11 @@ class PaymentController extends Controller
 
         $wallet = Wallet::where('user_id', Auth::id());
         $wallet_sum = $wallet->value('balance');
+        $wallet->update([
+            'balance' =>  $wallet_sum + 1200 * $num_tickets,
+        ]);
 
 
-        if ($QRCodeDetails['data']['status'] == 'COMPLETED') {
-            $wallet->update([
-                'balance' =>  $wallet_sum + 1200 * $num_tickets,
-            ]);
-        }
-    }
-    public function paypay_thanks()
-    {
-        return 'paypay支払い完了！<br><a href="home">戻る</a>';
+        return redirect($QRCodeResponse['data']['url']);
     }
 }
