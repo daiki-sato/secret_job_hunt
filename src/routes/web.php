@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // 未ログイン
 Route::middleware([])->group(function () {
-    Route::namespace('Auth')->group(function () {
+    Route::namespace ('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
             Route::get('/', 'RegisterController@index')->name('register');
