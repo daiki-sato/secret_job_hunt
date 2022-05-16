@@ -50,10 +50,8 @@ class SendRemindMail extends Command
 
         foreach ($remind_dates as $remind_date) {
             $from_what_time = $remind_date->confirmed_interview_date;
-            // TODO:↓開始時間＋10分になるように修正
             $date = new DateTime($from_what_time);
             $to_what_time =date_format($date->modify('+10 minutes'), 'Y-m-d H:i:s');
-            // dd($to_what_time);
             $user_id = Call::where('id', $remind_date->id)->value('user_id');
             $user_mail = User::where('id', $user_id)->value('email');
             $solver_id = Call::where('id', $remind_date->id)->value('solver_id');
