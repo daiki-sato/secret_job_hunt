@@ -32,8 +32,9 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('paypay') }}" method="GET" class="flex lead">
-                                    <div class="ticketbypaypay pt-4 pl-5">
+                                <form action="{{ route('paypay') }}" method="GET" class="flex">
+                                    <img class="img-fluid h-50 w-50 " src="{{ asset('img/paypay_1.jpg') }}" alt="">
+                                    <div class="ticketbypaypay pt-4 pl-4">
                                         <p>1枚1200円</p>
                                         枚数の選択：
                                         <select name="ticket" id="">
@@ -44,7 +45,6 @@
                                         </select>
                                     </div>
                                     <div class="mt-4">
-                                        <img class="img-fluid h-25" src="{{ asset('img/paypay_1.jpg') }}" alt="">
                                         <input type="submit" class="w-100 btn btn-primary" value="PayPayで購入手続きへ">
                                     </div>
                                 </form>
