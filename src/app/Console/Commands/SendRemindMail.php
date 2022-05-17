@@ -55,7 +55,15 @@ class SendRemindMail extends Command
             $user_mail = User::where('id', $user_id)->value('email');
             $solver_id = Call::where('id', $remind_date->id)->value('solver_id');
             $solver_mail = User::where('id', $solver_id)->value('email');
-            return Mail::to($user_mail, $solver_mail)->send(new RemindMail($from_what_time, $to_what_time));
+
+            $emails = [
+                $user_mail,
+                $solver_mail,
+            ];
+
+            foreach ($emails as $email){
+                Mail::to($email)->send(new RemindMail($from_what_time, $to_what_time));
+            }
         }
     }
 }
