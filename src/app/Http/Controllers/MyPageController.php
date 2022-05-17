@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,8 @@ class MyPageController extends Controller
     {
         $id = Auth::id();
         $user = User::find($id);
-        return view('mypage.index', compact('user'));
+        $balance = Wallet::where('user_id', $id)->pluck('balance')->first();
+        return view('mypage.index', compact('user', 'balance'));
     }
 
     public function edit(Request $request)
