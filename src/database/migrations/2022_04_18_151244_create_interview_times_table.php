@@ -17,8 +17,8 @@ class CreateInterviewTimesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('interview_id');
             $table->boolean('is_agreement')->nullable();
-            $table->date('from_what_time');
-            $table->date('to_what_time');
+            $table->dateTime('from_what_time');
+            $table->dateTime('to_what_time');
 
             $table->timestamps();
             $table->softDeletes();
