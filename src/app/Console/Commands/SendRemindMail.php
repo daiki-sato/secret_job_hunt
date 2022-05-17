@@ -44,7 +44,7 @@ class SendRemindMail extends Command
     public function handle()
     {
         $tomorrow = Carbon::tomorrow();
-        $day_after_tomorrow = Carbon::today()->AddDays(2);
+        $day_after_tomorrow = Carbon::today()->addDays(2);
         $remind_dates = Call::whereBetween('confirmed_interview_date', [$tomorrow, $day_after_tomorrow])->get();
 
         foreach ($remind_dates as $remind_date) {
