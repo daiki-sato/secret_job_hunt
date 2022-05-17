@@ -44,16 +44,11 @@
                                         </select>
                                     </div>
                                     <div class="mt-4">
-                                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
                                         <img class="img-fluid h-25" src="{{ asset('img/paypay_1.jpg') }}" alt="">
                                         <input type="submit" class="w-100 btn btn-primary" value="PayPayで購入手続きへ">
                                     </div>
                                 </form>
                             </div>
-                            {{-- <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <a class="btn btn-primary" href="{{ route('paypay') }}">PayPayで購入手続きへ</a>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
