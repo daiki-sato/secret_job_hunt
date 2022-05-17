@@ -6718,6 +6718,24 @@ a.close.disabled {
   padding: 1rem;
 }
 
+.modal-footer {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+  border-bottom-right-radius: calc(0.3rem - 1px);
+  border-bottom-left-radius: calc(0.3rem - 1px);
+}
+
+.modal-footer > * {
+  margin: 0.25rem;
+}
+
 .modal-scrollbar-measure {
   position: absolute;
   top: -9999px;
@@ -11840,10 +11858,6 @@ input[name="tab_item"] {
 .evaluation:checked + label {
   background-color: #0e69f4;
   color: aliceblue;
-}
-
-.ticketbypaypay {
-  font-size: 30px;
 }
 
 /***** Common Setting *****/

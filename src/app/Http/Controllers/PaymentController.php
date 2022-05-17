@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Wallet;
+use Illuminate\Http\Request;
 
 // paypay関係
-use PayPay\OpenPaymentAPI\Client;
-use PayPay\OpenPaymentAPI\Models\OrderItem;
-use PayPay\OpenPaymentAPI\Models\CreateQrCodePayload;
 use Illuminate\Support\Facades\Auth;
+use PayPay\OpenPaymentAPI\Client;
+use PayPay\OpenPaymentAPI\Models\CreateQrCodePayload;
+use PayPay\OpenPaymentAPI\Models\OrderItem;
 
 class PaymentController extends Controller
 {
@@ -22,13 +22,9 @@ class PaymentController extends Controller
             'MERCHANT_ID' => env('PAYPAY_MERCHANT_ID'),
         ], false);
 
-
-
         // paypayの支払いサイトが完了したら、リダイレクトされるURL
         // ブラウザの戻るボタンで戻っても、支払いIDが決済完了になっているので３秒後にリダイレクトされ直すだけ
         $rediect_url = 'http://localhost/my-page';
-
-
 
         //-------------------------------------
         // 商品情報を生成する
@@ -45,7 +41,7 @@ class PaymentController extends Controller
         //-------------------------------------
         $payload = new CreateQrCodePayload();
         $payload->setOrderItems($items);
-        $payload->setMerchantPaymentId("mpid_" . rand());    // 同じidを使いまわさないこと！
+        $payload->setMerchantPaymentId("mpid_" . rand()); // 同じidを使いまわさないこと！
         $payload->setCodeType("ORDER_QR");
         $payload->setAmount(["amount" => 1200 * $num_tickets, "currency" => "JPY"]);
         $payload->setRedirectType('WEB_LINK');
@@ -77,10 +73,9 @@ class PaymentController extends Controller
         $wallet = Wallet::where('user_id', Auth::id());
         $wallet_sum = $wallet->value('balance');
 
-
         if ($QRCodeDetails['data']['status'] == 'COMPLETED') {
             $wallet->update([
-                'balance' =>  $wallet_sum + 1200 * $num_tickets,
+                'balance' => $wallet_sum + 1200 * $num_tickets,
             ]);
         }
     }
