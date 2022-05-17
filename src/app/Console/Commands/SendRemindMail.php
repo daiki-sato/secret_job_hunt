@@ -6,10 +6,9 @@ use App\Mail\RemindMail;
 use App\Models\Call;
 use App\Models\User;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
-use DateTime;
-
 
 class SendRemindMail extends Command
 {
@@ -45,13 +44,13 @@ class SendRemindMail extends Command
     public function handle()
     {
         $tomorrow = Carbon::tomorrow();
-        $day_after_tomorrow = Carbon::today()->addMonths(2);
+        $day_after_tomorrow = Carbon::today()->AddDays(2);
         $remind_dates = Call::whereBetween('confirmed_interview_date', [$tomorrow, $day_after_tomorrow])->get();
 
         foreach ($remind_dates as $remind_date) {
             $from_what_time = $remind_date->confirmed_interview_date;
             $date = new DateTime($from_what_time);
-            $to_what_time =date_format($date->modify('+10 minutes'), 'Y-m-d H:i:s');
+            $to_what_time = date_format($date->modify('+10 minutes'), 'Y-m-d H:i:s');
             $user_id = Call::where('id', $remind_date->id)->value('user_id');
             $user_mail = User::where('id', $user_id)->value('email');
             $solver_id = Call::where('id', $remind_date->id)->value('solver_id');
