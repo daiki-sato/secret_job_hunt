@@ -14,7 +14,6 @@ class GetCompany extends Controller
         $api_url = 'https://api.houjin-bangou.nta.go.jp/4/name' .
         '?id=' . $app_id . // アプリケーションID
         '&name=' . $company_name . // URLエンコードした会社名（検索）
-        // '&name=?'  . // URLエンコードした会社名（検索）
         '&change=1' . // 過去の情報も含める
         '&type=02'; // Unicode
         '&mode=2'; // 部分一致検索
