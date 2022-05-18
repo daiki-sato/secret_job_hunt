@@ -77,18 +77,27 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'EvaluationController@index')->name('evaluation');
             Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
         });
+
+        //支払い(paypay)
+        Route::prefix('paypay')->group(function () {
+            //ルーティングで支払いができないように適当な文字列を追加
+            Route::get('/afjgn', 'PaymentController@paypay')->name('paypay');
+            Route::get('/thanks', 'PaymentController@paypay_thanks')->name('paypay_thanks');
+        });
+
         //お問合せ
         Route::prefix('contact')->group(function () {
             Route::get('/', 'ContactController@index')->name('contact');
             Route::post('/add', 'ContactController@add')->name('contact_add');
-
-            //絞り込み後仮画面
-            Route::prefix('review')->group(function () {
-                Route::get('/', 'ReviewController@index')->name('review');
-                //評価表示画面
-                Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
-            });
         });
+
+        //絞り込み後仮画面
+        Route::prefix('review')->group(function () {
+            Route::get('/', 'ReviewController@index')->name('review');
+            //評価表示画面
+            Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
+        });
+        
         //承諾画面（仮）
         Route::prefix('consent')->group(function () {
             Route::get('/', 'ConsentController@index')->name('consent');
