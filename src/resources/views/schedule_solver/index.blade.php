@@ -14,11 +14,11 @@
         <div id="contents1" class="tab-pane active">
             <table class="table table-striped">
                 <tbody>
-                    @foreach ($confirmed_interviews as $confirmed_interview )
+                    @foreach ($confirmed_interviews as $confirmed_interview)
                         <tr>
                             <th scope="row"></th>
                             <td><img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真"></td>
-                            <td>{{$confirmed_interview->nickname}}</td>
+                            <td>{{ $confirmed_interview->nickname }}</td>
                             <td>{{ $confirmed_interview->confirmed_interview_date }}</td>
                             <td><a href="">チャット画面へ</a></td>
                         </tr>
@@ -31,13 +31,15 @@
         <div id="contents2" class="tab-pane">
             <table class="table table-striped">
                 <tbody>
-                    <tr>
-                        <th scope="row"></th>
-                        <td><img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真"></td>
-                        <td>はよ回答</td>
-                        <td>2022/05/18 14:00-14:10</td>
-                        <td><a href="">チャット画面へ</a></td>
-                    </tr>
+                    @foreach ($unanswered_interviews as $unanswered_interview)
+                        <tr>
+                            <th scope="row"></th>
+                            <td><img src="{{ asset('img/review/reviewer.png') }}" alt="プロフィール写真"></td>
+                            <td>{{ $unanswered_interview->nickname }}</td>
+                            <td>{{ $unanswered_interview->from_what_time }}</td>
+                            <td><a href="">チャット画面へ</a></td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
