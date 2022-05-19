@@ -18,7 +18,7 @@ class CreateWalletsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->integer('balance');
 
-            $table->timestamps();
+            $table->timestamps('timestamp');
             $table->softDeletes();
 
             // $table->foreign('user_id')->references('id')->on('users');
