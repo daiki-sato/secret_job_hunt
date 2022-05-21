@@ -7,8 +7,7 @@
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -35,4 +34,48 @@
             </div>
         </div>
     </div>
+    @if(Session::has('message'))
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script>
+        $(window).load(function() {
+        $('#modal_box').modal('show');
+        });
+    </script>
+
+    <!-- モーダルウィンドウの中身 -->
+    <div class="modal fade" id="modal_box" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <span class="py-2 h5">当サービスはいかがでしたか？<br>よろしければSNSシェアをお願いします</span>
+            <div class="d-flex justify-content-center sns-icons text-center">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <!-- Twitter -->
+                <a class="js-sns-link" href="//twitter.com/intent/tweet?text=&url=" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="{{ asset('img/logo-twitter.webp') }}" class="p-3 sns-icon img-fluid" alt="twitter">
+                </a>
+                
+                <!-- LINE -->
+                <a class="js-sns-link" href="//timeline.line.me/social-plugin/share?url=&text=" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="{{ asset('img/logo-line.webp') }}" class="p-3 sns-icon img-fluid" alt="line">
+                </a>
+                <script>
+                let url = location.href
+                let snsLinks=$(".js-sns-link")
+                for(let i=0; i<snsLinks.length; i++){
+                    let href=snsLinks.eq(i).attr('href');
+	            //シェアページのURL上書き
+                    href=href.replace("url=","url="+url) //twitter,LINE,はてなブログ
+                    snsLinks.eq(i).attr('href',href);
+                }
+                </script>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    @endif
 @endsection
