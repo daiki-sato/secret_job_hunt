@@ -15,7 +15,9 @@ class ScheduleController extends Controller
     public function solver()
     {
         $id = Auth::id();
+
         $confirmed_interviews = Call::where('solver_id', $id)
+            ->whereNotNull('confirmed_interview_date')
             ->join('users', 'users.id', '=', 'calls.user_id')
             ->select('users.nickname', 'calls.confirmed_interview_date')
             ->get();
