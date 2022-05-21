@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\Call;
 use App\Models\InterviewTime;
+use Illuminate\Support\Facades\Auth;
 
 class ScheduleController extends Controller
 {
