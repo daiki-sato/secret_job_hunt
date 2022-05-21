@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -70,
-    "scrollLeft": -1263,
+    "scrollTop": -353,
+    "scrollLeft": -290,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -419,7 +419,7 @@
           "active": false,
           "left": 812.2223,
           "top": 281.5553,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 95.24897766113281,
           "color": "#0068FF"
@@ -905,7 +905,7 @@
           "active": false,
           "left": 1594.7421264648438,
           "top": 472.778,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 93
         },
@@ -1105,7 +1105,7 @@
           "active": false,
           "left": 260.3333,
           "top": 128.4441,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 100.70890808105469,
           "widthComment": 120
         },
@@ -1317,6 +1317,29 @@
             "id": "f39d44ef-65ae-4ff2-ac23-2f424dfe0a71"
           },
           {
+            "name": "call_room_id",
+            "comment": "通話の部屋のid",
+            "dataType": "stging",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 81.48191833496094,
+              "widthComment": 91.49198913574219,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e0b1e772-8037-4a42-9e5e-1870a76f1539"
+          },
+          {
             "name": "confirmed_interview_date",
             "comment": "確定面談日時",
             "dataType": "date",
@@ -1525,10 +1548,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 263.5554,
           "top": 687.1117,
-          "zIndex": 4,
+          "zIndex": 11,
           "widthName": 60,
           "widthComment": 93
         },
@@ -1682,7 +1705,7 @@
           "active": false,
           "left": 902.4446,
           "top": 5.2224,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1928,7 +1951,7 @@
           "active": false,
           "left": 1455.9061,
           "top": 68.8888,
-          "zIndex": 9,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 80
         },
@@ -2092,7 +2115,7 @@
             "f39d44ef-65ae-4ff2-ac23-2f424dfe0a71"
           ],
           "x": 851.208003149414,
-          "y": 834.3617,
+          "y": 844.6117,
           "direction": "right"
         },
         "constraintName": "fk_threads_to_通話",
