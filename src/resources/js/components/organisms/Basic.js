@@ -1,15 +1,22 @@
 import { useForm, Controller } from "react-hook-form";
 import React, { useState, useContext, useEffect } from "react";
-import { TextField, Grid } from "@material-ui/core/";
-import { Box, Card, CardContent, Button, Typography } from "@mui/material";
+import { Grid } from "@material-ui/core/";
+import {
+  Box,
+  Card,
+  CardContent,
+  Button,
+  Typography,
+  TextField,
+} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-
+import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
 import { UserInputDataContext } from "./Content";
 import { userIdContext } from "./Content";
 
+const filter = createFilterOptions();
 function Basic(props) {
   const userId = useContext(userIdContext);
-
   const { control, handleSubmit } = useForm({
     defaultValues: {
       companyName: "",
@@ -41,6 +48,17 @@ function Basic(props) {
 
   const { currentState, setCurrentState } = useContext(UserInputDataContext);
   const [selectedSolverId, setSelectedSolverId] = useState([]);
+
+  const [companyApiData, setCompanyApiData] = useState([]);
+
+  const getCompanyApiData = (keyword) => {
+    setCompanyApiData([]);
+    axios
+      .get(`http://localhost/api/getCompany/${keyword}`)
+      .then((response) => setCompanyApiData(response.data))
+      .catch((error) => console.log(error));
+  };
+
   useEffect(() => {
     const getUserBalance = () => {
       axios
@@ -51,6 +69,7 @@ function Basic(props) {
     getUserBalance();
   }, []);
 
+  const [value, setValue] = useState(null);
   const columns = [
     { field: "id", headerName: "ID", hide: true },
     { field: "icon", headerName: "icon", width: 10 },
@@ -90,25 +109,104 @@ function Basic(props) {
       workingPeriod: user.working_period,
     })),
   ];
+  const top100Films = [
+    companyApiData.map((companyInfo) => ({
+      title: companyInfo.name,
+      year: 1994,
+    })),
+  ];
+
   return (
     <>
       <Grid item={true} container>
         <Grid item={true} sm={2} />
         <Grid item={true} lg={8} sm={8}>
-          <TextField
-            id="outlined-basic"
-            label="会社"
-            variant="outlined"
-            onChange={(e) => setCompanyKeyword(e.target.value)}
-            name="companyName"
-          />
-          <TextField
-            id="outlined-basic"
-            label="部署"
-            variant="outlined"
-            onChange={(e) => setDepartmentKeyword(e.target.value)}
-            name="departmentName"
-          />
+          <Box
+            sx={{
+              display: "flex",
+              // flexDirection: "column",
+              // justifyContent: "space-between",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Autocomplete
+              value={value}
+              onChange={(event, newValue) => {
+                if (typeof newValue === "string") {
+                  setValue({
+                    title: newValue,
+                  });
+                } else if (newValue && newValue.inputValue) {
+                  // Create a new value from the user input
+                  setValue({
+                    title: newValue.inputValue,
+                  });
+                } else {
+                  setValue(newValue);
+                }
+              }}
+              filterOptions={(options, params) => {
+                const filtered = filter(options, params);
+                const { inputValue } = params;
+                // Suggest the creation of a new value
+                const isExisting = options.some(
+                  (option) => inputValue === option.title
+                );
+                if (inputValue !== "" && !isExisting) {
+                  filtered.push({
+                    inputValue,
+                    title: `Add "${inputValue}"`,
+                  });
+                }
+                return filtered;
+              }}
+              selectOnFocus
+              clearOnBlur
+              handleHomeEndKeys
+              id="free-solo-with-text-demo"
+              options={top100Films[0]}
+              getOptionLabel={(option) => {
+                // Value selected with enter, right from the input
+                if (typeof option === "string") {
+                  return option;
+                }
+                // Add "xxx" option created dynamically
+                if (option.inputValue) {
+                  return option.inputValue;
+                }
+                // Regular option
+                return option.title;
+              }}
+              renderOption={(props, option) => (
+                <>
+                  <li {...props}>{option.title}</li>
+                </>
+              )}
+              sx={{ width: 400 }}
+              freeSolo
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  id="outlined-basic"
+                  sx={{ width: 400, mr: 2 }}
+                  label="会社"
+                  variant="outlined"
+                  onChange={(e) => setCompanyKeyword(e.target.value)}
+                  name="companyName"
+                  onKeyDown={(e) => getCompanyApiData(e.target.value)}
+                />
+              )}
+            />
+            <TextField
+              sx={{ width: 400, ml: 2 }}
+              id="outlined-basic"
+              label="部署"
+              variant="outlined"
+              onChange={(e) => setDepartmentKeyword(e.target.value)}
+              name="departmentName"
+            />
+          </Box>
           <form onSubmit={handleSubmit(onSubmit)}>
             {users.length > 0 && (
               <div style={{ height: 400, width: "100%" }}>
