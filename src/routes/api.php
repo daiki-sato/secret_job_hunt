@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::post('/interviewsData', 'Api\InterviewController@post');
 Route::get('/userBalance/{userId}', 'Api\GetUserBalanceController@index');
+Route::get('/callRoomId/{threadId}', 'Api\GetCallController@index');
