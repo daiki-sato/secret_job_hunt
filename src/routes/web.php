@@ -104,6 +104,13 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/add', 'ConsentController@add')->name('consent_add');
         });
 
+        //面談予約
+        Route::prefix('schedule_interview')->group(function () {
+            Route::get('/', 'ScheduleController@index')->name('schedule');
+            Route::get('/solver', 'ScheduleController@solver')->name('schedule_solver');
+        });
+
+
     });
 
     // 管理者
