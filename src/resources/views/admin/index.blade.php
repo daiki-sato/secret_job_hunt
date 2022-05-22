@@ -61,7 +61,7 @@
                   @foreach($user -> contacts as $contact)
                   <tr class="p-3 mx-3 my-5 chart-top">
                       {{-- <td class="px-4 py-3">{{ date('Y/m/d', $contact -> contact_date) }}</td> --}}
-                      <td class="px-4 py-3">{{ $contact -> contact_date}}</td>
+                      <td class="px-4 py-3">{{ $contact -> contact_date -> format('Y-m-d H:i') }}</td>
                       <td class="px-4 py-3">{{$user -> first_name}}{{$user -> last_name}}</td>
                       <td class="px-4 py-3">{{$contact -> contact_type}}</td>
                       <td class="px-4 py-3">{{$contact -> comment}}</td>

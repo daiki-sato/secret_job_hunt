@@ -17,5 +17,5 @@ class AdminController extends Controller
         $users = User::with(['contacts','wallet'])->get();
         
         return view('admin.index', compact('contacts','wallets','users'));
-    }
+    }    
 }
