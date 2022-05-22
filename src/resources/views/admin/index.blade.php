@@ -23,14 +23,6 @@
                       <td class="px-4 py-3">金額</td>
                       <td class="px-4 py-3">日時</td>
                   </tr>
-                  @foreach($contacts as $contact)
-                  <tr class="p-3 mx-3 my-5 chart-top">
-                    <td class="px-4 py-3">名前</td>
-                    <td class="px-4 py-3">チケット枚数</td>
-                    <td class="px-4 py-3">金額</td>
-                    <td class="px-4 py-3">日時</td>
-                </tr>
-                    @endforeach
               </tbody>
             </table>
           </div>
@@ -47,15 +39,6 @@
                       <td class="px-4 py-3">換金ポイント</td>
                       <td class="px-4 py-3">日時</td>
                   </tr>
-                  @foreach($users as $user)
-                  @foreach($wallets as $wallet)
-                  <tr class="p-3 mx-3 my-5 chart-top">
-                    <td class="px-4 py-3">{{$user -> first_name}}{{$user -> last_name}}</td>
-                    <td class="px-4 py-3">{{$wallet -> balance}}</td>
-                    <td class="px-4 py-3">{{ date('Y/m/d', $wallet -> timestamp) }}</td>
-                </tr>
-                  @endforeach
-                  @endforeach
               </tbody>
             </table>
           </div>
@@ -77,7 +60,8 @@
                   @foreach($users as $user)
                   @foreach($user -> contacts as $contact)
                   <tr class="p-3 mx-3 my-5 chart-top">
-                      <td class="px-4 py-3">{{$contact -> contact_date}}</td>
+                      {{-- <td class="px-4 py-3">{{ date('Y/m/d', $contact -> contact_date) }}</td> --}}
+                      <td class="px-4 py-3">{{ $contact -> contact_date}}</td>
                       <td class="px-4 py-3">{{$user -> first_name}}{{$user -> last_name}}</td>
                       <td class="px-4 py-3">{{$contact -> contact_type}}</td>
                       <td class="px-4 py-3">{{$contact -> comment}}</td>

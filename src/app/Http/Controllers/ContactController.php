@@ -23,6 +23,9 @@ class ContactController extends Controller
                 'contact_date' => $date,
             ]
         );
+        Contact::orderBy('contact_date', 'asc')->get();
+        
         return view('contact.index');
     }
+
 }
