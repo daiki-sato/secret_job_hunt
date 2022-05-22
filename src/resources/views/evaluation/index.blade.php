@@ -58,15 +58,15 @@
                         <div class="d-flex justify-content-center sns-icons text-center">
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                             <!-- Twitter -->
-                            <a class="js-sns-link" href="//twitter.com/intent/tweet?text=&url=" target="_blank"
+                            <a href="//twitter.com/intent/tweet?url=http://localhost:80&text=" target="_blank"
                                 rel="nofollow noopener noreferrer">
                                 <img src="{{ asset('img/logo-twitter.webp') }}" class="p-3 sns-icon img-fluid"
                                     alt="twitter">
                             </a>
 
                             <!-- LINE -->
-                            <a class="js-sns-link" href="//timeline.line.me/social-plugin/share?url=&text="
-                                target="_blank" rel="nofollow noopener noreferrer">
+                            <a href="//timeline.line.me/social-plugin/share?url=http://localhost:80L&text=" target="_blank"
+                                rel="nofollow noopener noreferrer">
                                 <img src="{{ asset('img/logo-line.webp') }}" class="p-3 sns-icon img-fluid" alt="line">
                             </a>
                             <script>
