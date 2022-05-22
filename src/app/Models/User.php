@@ -58,6 +58,11 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Contact');
     }
+    
+    public function calls()
+    {
+        return $this->hasMany('App\Models\Call');
+    }
 
     // public function hasRole(string $role)
     // {

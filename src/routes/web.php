@@ -70,6 +70,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
             Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
             Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
+            Route::get('/evaluation', 'MyPageController@show')->name('evaluation-comment');
         });
 
         //通話後評価画面

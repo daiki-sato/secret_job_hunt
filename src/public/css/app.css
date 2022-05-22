@@ -11752,6 +11752,11 @@ input[name=tab_item] {
   border-radius: 0.5rem;
 }
 
+.mypage-index .evaluation-comment {
+  color: #495057;
+  text-decoration: underline;
+}
+
 .evaluation {
   display: none;
   border-color: black;

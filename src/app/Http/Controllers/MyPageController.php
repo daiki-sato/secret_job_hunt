@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Wallet;
+use App\Models\Call;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,9 +13,10 @@ class MyPageController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $user = User::find($id);
+        $user = User::where('id', $id)->with(['calls'])->first();
+        
         $balance = Wallet::where('user_id', $id)->pluck('balance')->first();
-        return view('mypage.index', compact('user', 'balance'));
+        return view('mypage.index', compact('user','balance'));
     }
 
     public function edit(Request $request)
@@ -41,4 +43,11 @@ class MyPageController extends Controller
         $user->save();
         return redirect('my-page');
     }
+    public function show()
+    {
+        $id = Auth::id();
+        $user = User::where('id', $id)->with(['calls'])->first();
+        return view('mypage.evaluation', compact('user'));
+    }
+
 }
