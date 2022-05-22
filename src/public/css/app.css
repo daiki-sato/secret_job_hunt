@@ -11784,6 +11784,11 @@ input[name=tab_item] {
   color: aliceblue;
 }
 
+.sns-icon {
+  width: 7rem;
+  height: 7rem;
+}
+
 /***** Common Setting *****/
 
 body {
