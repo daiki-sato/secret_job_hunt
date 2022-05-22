@@ -54,24 +54,14 @@
             <div class="d-flex justify-content-center sns-icons text-center">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                 <!-- Twitter -->
-                <a class="js-sns-link" href="//twitter.com/intent/tweet?text=&url=" target="_blank" rel="nofollow noopener noreferrer">
+                <a href="//twitter.com/intent/tweet?url=localhost:80&text=" target="_blank" rel="nofollow noopener noreferrer">
                     <img src="{{ asset('img/logo-twitter.webp') }}" class="p-3 sns-icon img-fluid" alt="twitter">
                 </a>
                 
                 <!-- LINE -->
-                <a class="js-sns-link" href="//timeline.line.me/social-plugin/share?url=&text=" target="_blank" rel="nofollow noopener noreferrer">
+                <a href="//timeline.line.me/social-plugin/share?url=localhost:80L&text=" target="_blank" rel="nofollow noopener noreferrer">
                     <img src="{{ asset('img/logo-line.webp') }}" class="p-3 sns-icon img-fluid" alt="line">
                 </a>
-                <script>
-                let url = location.href
-                let snsLinks=$(".js-sns-link")
-                for(let i=0; i<snsLinks.length; i++){
-                    let href=snsLinks.eq(i).attr('href');
-	            //シェアページのURL上書き
-                    href=href.replace("url=","url="+url) //twitter,LINE,はてなブログ
-                    snsLinks.eq(i).attr('href',href);
-                }
-                </script>
             </div>
         </div>
         </div>
