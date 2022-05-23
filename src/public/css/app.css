@@ -11678,6 +11678,8 @@ input[name=tab_item] {
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -11753,7 +11755,7 @@ input[name=tab_item] {
 }
 
 .mypage-index .evaluation-comment {
-  color: #495057;
+  color: #007FC3;
   text-decoration: underline;
 }
 

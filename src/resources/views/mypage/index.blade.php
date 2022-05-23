@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="p-5 mypage-index">
-        <div class="pt-5 pb-3 mypage-container">
+    <div class="px-5 py-3 mypage-index">
+        <div class="p-3 mypage-container">
             <div class="m-3 mypage-container_top">
                 <h2 class="mypage-title">マイページ</h2>
                 <p class="mr-5 contact-title">お問い合せ</p>
             </div>
-            <div class="mx-2 my-5 d-flex justify-content-center mypage-wrapper">
-                <div class="mx-3 mt-5 text-center profile_top">
-                    <img src="" alt="profile_img" class="my-5 profile_img">
+            <div class="py-4 m-2 d-flex mypage-wrapper">
+                <div class="mx-5 text-center profile_top">
+                    <img src="" alt="profile_img" class="profile_img">
                 </div>
-                <div class="m-5 mypage-right">
+                <div class="px-5 mx-5 mypage-right">
                     <p class="h3 text-left">{{ $user->nickname }}</p>
                     <div class="text-left mypage_evaluation">
                         <div class="my-4 d-flex justify-content-left align-items-end evaluation">
