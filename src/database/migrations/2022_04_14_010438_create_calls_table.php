@@ -19,9 +19,9 @@ class CreateCallsTable extends Migration
             $table->string('call_room_id');
             $table->integer('user_id');
             $table->integer('solver_id');
-            $table->date('confirmed_interview_date')->nullable();
-            $table->date('call_start_time')->nullable();
-            $table->date('call_end_time')->nullable();
+            $table->dateTime('confirmed_interview_date')->nullable();
+            $table->dateTime('call_start_time')->nullable();
+            $table->dateTime('call_end_time')->nullable();
             $table->boolean('is_complete')->nullable();
             $table->boolean('evaluation')->nullable();
             $table->string('evaluation_comment')->nullable();
