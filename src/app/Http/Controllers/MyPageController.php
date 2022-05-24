@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ToMoney;
 use App\Models\User;
 use App\Models\Wallet;
-use App\Models\ToMoney;
-use App\Models\Call;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Expr\New_;
 
 class MyPageController extends Controller
 {
@@ -57,8 +55,6 @@ class MyPageController extends Controller
     public function tomoney(Request $request)
     {
         $id = Auth::id();
-        $user = User::where('id', $id)->with(['calls'])->first();
-        $balance = Wallet::where('user_id', $id)->pluck('balance')->first();
 
         if ($request->money_value >= 5000) {
             $commission = 0;
