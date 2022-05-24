@@ -12,7 +12,7 @@
                 </div>
                 <div class="px-5 mx-5 mypage-right">
                     <p class="h4 text-left">{{ $user->nickname }}</p>
-                    @if ($user ?? ('')->role_id == 3)
+                    @if ($user->role_id == 3)
                         <div class="text-left mypage_evaluation">
                             <div class="my-4 pt-4 d-flex justify-content-left align-items-end evaluation">
                                 <i class="px-1 fa-regular fa-thumbs-up fa-3x thumbs-up"></i>
