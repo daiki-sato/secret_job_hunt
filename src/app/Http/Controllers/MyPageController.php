@@ -52,7 +52,7 @@ class MyPageController extends Controller
         return view('mypage.evaluation', compact('user'));
     }
 
-    public function tomoney(Request $request)
+    public function toMoney(Request $request)
     {
         $id = Auth::id();
 
@@ -61,13 +61,13 @@ class MyPageController extends Controller
         } else {
             $commission = 220;
         }
-        $tomoney = new ToMoney();
-        $tomoney->user_id = $id;
-        $tomoney->value = $request->money_value;
-        $tomoney->status = $request->status;
-        $tomoney->commission = $commission;
+        $toMoney = new ToMoney();
+        $toMoney->user_id = $id;
+        $toMoney->value = $request->money_value;
+        $toMoney->status = $request->status;
+        $toMoney->commission = $commission;
 
-        $tomoney->save();
+        $toMoney->save();
         return redirect('my-page')->with('flash_message', '申請完了！');
     }
 }

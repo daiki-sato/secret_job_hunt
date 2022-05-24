@@ -117,7 +117,7 @@
                                                     alt="">
                                                 <p>月末に毎月15日までに換金申請されたものをご登録された電話番号宛にpaypayでお支払いします。</p>
                                                 <p>5000円以上、手数料無料（通常：220円）</p>
-                                                <form action="{{ route('tomoney') }}" method="post">
+                                                <form action="{{ route('toMoney') }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="money_value" value="{{ $balance / 1.2 }}">
                                                     <input type="hidden" name="status" value="apply">

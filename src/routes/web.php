@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
             Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
             Route::get('/evaluation', 'MyPageController@show')->name('evaluation-comment');
-            Route::post('/add', 'MyPageController@tomoney')->name('tomoney');
+            Route::post('/add', 'MyPageController@toMoney')->name('toMoney');
         });
 
         //通話後評価画面
