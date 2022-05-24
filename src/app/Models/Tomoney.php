@@ -5,7 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tomoney extends Model
+class ToMoney extends Model
 {
     protected $fillable = [
         'status'

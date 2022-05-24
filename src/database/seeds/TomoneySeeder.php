@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TomoneySeeder extends Seeder
+class ToMoneySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +12,8 @@ class TomoneySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tomoneys')->truncate();
+        DB::table('to_money')->truncate();
         $params = [];
-        DB::table('tomoneys')->insert($params);
+        DB::table('to_money')->insert($params);
     }
 }
