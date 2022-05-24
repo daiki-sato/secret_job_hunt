@@ -11362,6 +11362,10 @@ a.text-dark:focus {
 header
 --------------------------------------*/
 
+.logo {
+  width: 50px;
+}
+
 .navbar-brand {
   font-size: 2rem;
 }
@@ -11376,20 +11380,19 @@ header
 }
 
 a.nav-link {
-  background-color: #ffeb38;
-  color: #007fc3;
+  color: #ffff;
   font-weight: bold;
   letter-spacing: 0.15rem;
 }
 
 .navbar-green {
-  background: #ffffff;
+  background: #2b4261;
   color: #000;
 }
 
 .navbar-green a {
   font-family: Metrophobic;
-  color: #000;
+  color: #ffff;
 }
 
 span.sub-title {
@@ -11692,7 +11695,7 @@ input[name=tab_item] {
   position: absolute;
   right: 0;
   font-size: 120%;
-  color: #0047FF;
+  color: #0047ff;
 }
 
 .mypage-index .profile_img {
@@ -11708,7 +11711,7 @@ input[name=tab_item] {
 }
 
 .mypage-index .info_title {
-  border-bottom: 5px solid #5C462B;
+  border-bottom: 5px solid #5c462b;
 }
 
 .mypage-index .ticket_detail {
@@ -11755,8 +11758,20 @@ input[name=tab_item] {
 }
 
 .mypage-index .evaluation-comment {
-  color: #007FC3;
+  color: #007fc3;
   text-decoration: underline;
+}
+
+.mypage-index .thumbs-up::before {
+  color: #ff0202;
+}
+
+.mypage-index .thumbs-down::before {
+  color: #2b509e;
+}
+
+.mypage-index .nav-pills .nav-link.active {
+  background-color: red;
 }
 
 .evaluation {
