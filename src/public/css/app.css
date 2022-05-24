@@ -11431,8 +11431,36 @@ footer
 
 /***** Import Page Settings  *****/
 
-.admin-index .sample {
-  color: red;
+.menu_item {
+  display: block;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+a.nav-link .menu_item {
+  background-color: #fff;
+  color: #000;
+}
+
+.menu_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+.admin-wrapper {
+  background-color: #E4EEF7;
+}
+
+.admin-inner {
+  background-color: #fff;
+}
+
+.chart-top {
+  background-color: #E4EEF7;
+  overflow: hidden;
 }
 
 .container {
@@ -11666,7 +11694,7 @@ input[name=tab_item] {
 }
 
 .mypage-index {
-  background-color: #E4EEF7;
+  background-color: #fff;
   overflow: hidden;
 }
 
@@ -11695,7 +11723,7 @@ input[name=tab_item] {
   position: absolute;
   right: 0;
   font-size: 120%;
-  color: #0047FF;
+  color: #0047ff;
 }
 
 .mypage-index .profile_img {
@@ -11711,15 +11739,12 @@ input[name=tab_item] {
 }
 
 .mypage-index .info_title {
-  border-bottom: 5px solid #5C462B;
+  border-bottom: 5px solid #5c462b;
 }
 
 .mypage-index .ticket_detail {
   display: -webkit-box;
   display: flex;
-  position: relative;
-  -webkit-box-align: center;
-          align-items: center;
 }
 
 .mypage-index .exchange-button {

@@ -7,10 +7,12 @@ header
 .navbar-brand {
   font-size: 2rem;
 }
+
 .navbar-expand-sm .navbar-nav .nav-link {
   padding-right: 4rem;
   padding-left: 4rem;
 }
+
 .nav-link {
   padding: 0.8rem 1rem;
 }
@@ -19,14 +21,17 @@ a.nav-link {
   font-weight: bold;
   letter-spacing: 0.15rem;
 }
+
 .navbar-green {
   background: #2b4261;
   color: #000;
 }
+
 .navbar-green a {
   font-family: Metrophobic;
   color: #ffff;
 }
+
 span.sub-title {
   color: #98a2b0;
   font-size: 50%;
