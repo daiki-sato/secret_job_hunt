@@ -45,6 +45,13 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Wallet');
     }
 
+
+    public function tomoney()
+    {
+        return $this->hasOne('App\Models\ToMoney');
+    }
+
+
     public function interviews()
     {
         return $this->hasMany('App\Models\Interview');
@@ -58,6 +65,11 @@ class User extends Authenticatable
     public function contacts()
     {
         return $this->hasMany('App\Models\Contact');
+    }
+
+    public function calls()
+    {
+        return $this->hasMany('App\Models\Call');
     }
 
     // public function hasRole(string $role)
