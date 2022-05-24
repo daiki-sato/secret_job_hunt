@@ -26,6 +26,6 @@ class EvaluationController extends Controller
                 'evaluation_comment' => $request->evaluation_comment,
             ]
         );
-        return view('evaluation.index');
+        return redirect('evaluation')->with('message','送信が完了しました');
     }
 }

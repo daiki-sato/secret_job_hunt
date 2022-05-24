@@ -30,13 +30,14 @@ class CreateUsersTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('first_name_ruby')->nullable();
             $table->string('last_name_ruby')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('nickname')->nullable();
             $table->string('sex')->nullable();
             $table->unsignedInteger('role_id')->nullable();
             $table->string('company')->nullable();
             $table->string('department')->nullable();
             $table->integer('working_period')->nullable();
-            
+
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
