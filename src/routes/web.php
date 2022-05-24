@@ -107,7 +107,6 @@ Route::middleware(['auth'])->group(function () {
         //面談予約
         Route::prefix('schedule_interview')->group(function () {
             Route::get('/', 'ScheduleController@index')->name('schedule');
-            Route::get('/solver', 'ScheduleController@solver')->name('schedule_solver');
         });
 
 
