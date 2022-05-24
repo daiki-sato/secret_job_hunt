@@ -4,7 +4,7 @@
     <div class="px-5 py-3 mypage-index">
         <div class="p-4 mypage-container">
             <div class="m-5 mypage-container_top">
-                <p class="mr-5 contact-title">お問い合せ</p>
+                <a href="{{ route('contact') }}" class="mr-5 contact-title">お問い合せ</a>
             </div>
             <div class="py-4 m-2 d-flex mypage-wrapper">
                 <div class="mx-5 text-center profile_top">

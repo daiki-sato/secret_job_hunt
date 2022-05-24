@@ -29,30 +29,35 @@
                 <ul class="navbar-nav">
                     @auth
                         <li class="nav-item">
-                            <a href="{{ route('reservation-list') }}"
+                            <a href="{{ route('schedule') }}"
                                 class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">予約一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('thread') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
+                            <a href="{{ route('thread') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('search') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">検索画面へ</a>
+                            <a href="{{ route('search') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">検索画面へ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('my-page') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
+                            <a href="{{ route('my-page') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('logout') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
+                            <a href="{{ route('logout') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
                         </li>
                     @endauth
                     @guest
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">新規登録</a>
+                            <a href="{{ route('register') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">新規登録</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('login.top') }}"
                                 class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item"></i>ログイン</a>
-                            </li>
+                        </li>
                     @endguest
                 </ul>
             </div>
