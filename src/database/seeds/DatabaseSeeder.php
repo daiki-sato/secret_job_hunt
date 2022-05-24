@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             WalletSeeder::class,
             ThreadSeeder::class,
             ContactSeeder::class,
-            TomoneySeeder::class,
+            ToMoneySeeder::class,
         ]);
     }
 }
