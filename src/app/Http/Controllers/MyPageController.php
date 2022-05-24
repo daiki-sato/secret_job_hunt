@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ToMoney;
+use App\Models\Cash;
 use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class MyPageController extends Controller
     {
         $id = Auth::id();
         $user = User::where('id', $id)->with(['calls'])->first();
-        $apply = ToMoney::where('user_id', $id)->where('status', 'apply')->pluck('status')->first();
+        $apply = Cash::where('user_id', $id)->where('status', 'apply')->pluck('status')->first();
 
         $balance = Wallet::where('user_id', $id)->pluck('balance')->first();
 
@@ -61,7 +61,7 @@ class MyPageController extends Controller
         } else {
             $commission = 220;
         }
-        $toMoney = new ToMoney();
+        $toMoney = new Cash();
         $toMoney->user_id = $id;
         $toMoney->value = $request->money_value;
         $toMoney->status = $request->status;

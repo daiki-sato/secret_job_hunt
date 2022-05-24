@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateToMoneysTable extends Migration
+class CreateCashesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateToMoneysTable extends Migration
      */
     public function up()
     {
-        Schema::create('to_money', function (Blueprint $table) {
+        Schema::create('cashes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('value');
@@ -30,6 +30,6 @@ class CreateToMoneysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('to_money');
+        Schema::dropIfExists('cashes');
     }
 }
