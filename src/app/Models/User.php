@@ -20,6 +20,7 @@ class User extends Authenticatable
         'last_name',
         'first_name_ruby',
         'last_name_ruby',
+        'phone_number',
         'nickname',
         'sex',
         'role_id',
@@ -38,22 +39,22 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Role');
     }
-    
+
     public function wallet()
     {
         return $this->hasOne('App\Models\Wallet');
     }
-    
+
     public function interviews()
     {
         return $this->hasMany('App\Models\Interview');
     }
-    
+
     public function threads()
     {
         return $this->hasMany('App\Models\Thread');
     }
-    
+
     public function contacts()
     {
         return $this->hasMany('App\Models\Contact');
