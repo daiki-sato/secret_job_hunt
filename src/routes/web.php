@@ -55,8 +55,6 @@ Route::middleware(['auth'])->group(function () {
         // スレッド
         Route::prefix('thread')->group(function () {
             Route::get('/', 'ThreadController@index')->name('thread');
-            Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
-            Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
         });
 
         // メッセージ

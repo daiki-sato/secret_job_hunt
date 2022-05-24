@@ -37,6 +37,11 @@ class MessageSeeder extends Seeder
                 'message' => '転職について悩んでいます！よろしくお願いします！',
             ],
             [
+                'thread_id' => 2,
+                'sender_id' => Role::getSolverId(),
+                'message' => 'よろしくお願いします！',
+            ],
+            [
                 'thread_id' => 3,
                 'sender_id' => Role::getIntervieweeId(),
                 'message' => '転職について悩んでいます！よろしくお願いします！',
@@ -53,6 +58,26 @@ class MessageSeeder extends Seeder
             ],
             [
                 'thread_id' => 4,
+                'sender_id' => Role::getSolverId(),
+                'message' => 'お願いいたします',
+            ],
+            [
+                'thread_id' => 5,
+                'sender_id' => Role::getIntervieweeId(),
+                'message' => '転職について悩んでいます！よろしくお願いします！',
+            ],
+            [
+                'thread_id' => 5,
+                'sender_id' => Role::getSolverId(),
+                'message' => 'お願いいたします',
+            ],
+            [
+                'thread_id' => 6,
+                'sender_id' => Role::getIntervieweeId(),
+                'message' => '転職について悩んでいます！よろしくお願いします！',
+            ],
+            [
+                'thread_id' => 6,
                 'sender_id' => Role::getSolverId(),
                 'message' => 'お願いいたします',
             ],
