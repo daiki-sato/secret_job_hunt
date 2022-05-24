@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // 未ログイン
 Route::middleware([])->group(function () {
-    Route::namespace ('Auth')->group(function () {
+    Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
             Route::get('/', 'RegisterController@index')->name('register');
@@ -55,8 +55,6 @@ Route::middleware(['auth'])->group(function () {
         // スレッド
         Route::prefix('thread')->group(function () {
             Route::get('/', 'ThreadController@index')->name('thread');
-            Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
-            Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
         });
 
         // メッセージ
@@ -66,10 +64,13 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
         });
 
+        //マイページ
         Route::prefix('my-page')->group(function () {
             Route::get('/', 'MyPageController@index')->name('my-page');
             Route::get('/edit/{id}', 'MyPageController@edit')->name('user_edit');
             Route::post('/update/{id}', 'MyPageController@update')->name('user_update');
+            Route::get('/evaluation', 'MyPageController@show')->name('evaluation-comment');
+            Route::post('/add', 'MyPageController@toMoney')->name('toMoney');
         });
 
         //通話後評価画面
@@ -97,7 +98,7 @@ Route::middleware(['auth'])->group(function () {
             //評価表示画面
             Route::get('/show/{solver_id}', 'ReviewController@show')->name('review-show');
         });
-        
+
         //承諾画面（仮）
         Route::prefix('consent')->group(function () {
             Route::get('/', 'ConsentController@index')->name('consent');
@@ -109,8 +110,6 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'ScheduleController@index')->name('schedule');
             Route::get('/solver', 'ScheduleController@solver')->name('schedule_solver');
         });
-
-
     });
 
     // 管理者

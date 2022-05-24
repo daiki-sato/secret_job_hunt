@@ -8,8 +8,9 @@ use Carbon\Carbon;
 
 class ContactController extends Controller
 {
-    public function index(){
-       
+    public function index()
+    {
+
         return view('contact.index');
     }
     public function add(Request $request)
@@ -17,7 +18,7 @@ class ContactController extends Controller
         $date = Carbon::parse();
         Contact::create(
             [
-                'user_id' =>1,
+                'user_id' => 1,
                 'contact_type' => $request->contact_type,
                 'comment' => $request->comment,
                 'contact_date' => $date,

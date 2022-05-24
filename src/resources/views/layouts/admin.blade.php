@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link href={{ asset('/img/logo.png') }} rel="shortcut icon" >
     <meta http-equiv="content-type" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,7 +18,7 @@
     @section('header')
         <nav class="navbar sticky-top navbar-expand-sm navbar-green shadow-sm bg-body rounded">
             <a class="navbar-brand" href="{{ route('admin') }}">
-                <img src="{{ asset('img/logo.png') }}" alt="logo">
+                <img class="logo" src="{{ asset('img/logo.png') }}" alt="logo">
                 Anovey<span class="sub-title">匿名転職相談サービス</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4"
                 aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">

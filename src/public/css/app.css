@@ -11362,6 +11362,10 @@ a.text-dark:focus {
 header
 --------------------------------------*/
 
+.logo {
+  width: 50px;
+}
+
 .navbar-brand {
   font-size: 2rem;
 }
@@ -11376,20 +11380,19 @@ header
 }
 
 a.nav-link {
-  background-color: #ffeb38;
-  color: #007fc3;
+  color: #ffff;
   font-weight: bold;
   letter-spacing: 0.15rem;
 }
 
 .navbar-green {
-  background: #ffffff;
+  background: #2b4261;
   color: #000;
 }
 
 .navbar-green a {
   font-family: Metrophobic;
-  color: #000;
+  color: #ffff;
 }
 
 span.sub-title {
@@ -11428,8 +11431,36 @@ footer
 
 /***** Import Page Settings  *****/
 
-.admin-index .sample {
-  color: red;
+.menu_item {
+  display: block;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+a.nav-link .menu_item {
+  background-color: #fff;
+  color: #000;
+}
+
+.menu_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+.admin-wrapper {
+  background-color: #E4EEF7;
+}
+
+.admin-inner {
+  background-color: #fff;
+}
+
+.chart-top {
+  background-color: #E4EEF7;
+  overflow: hidden;
 }
 
 .container {
@@ -11665,14 +11696,14 @@ input[name=tab_item] {
 }
 
 .mypage-index {
-  background-color: #E4EEF7;
+  background-color: #fff;
   overflow: hidden;
 }
 
 .mypage-index .mypage-container {
   background-color: #fff;
   width: 75%;
-  margin: 5rem auto;
+  margin: 0 auto;
 }
 
 .mypage-index .mypage-container_top {
@@ -11680,6 +11711,8 @@ input[name=tab_item] {
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -11692,7 +11725,7 @@ input[name=tab_item] {
   position: absolute;
   right: 0;
   font-size: 120%;
-  color: #0047FF;
+  color: #0047ff;
 }
 
 .mypage-index .profile_img {
@@ -11702,28 +11735,21 @@ input[name=tab_item] {
 }
 
 .mypage-index .ticket_container {
-  border-left: 4px solid #ff0202;
   width: 60%;
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
 .mypage-index .info_title {
-  border-bottom: 5px solid #5C462B;
+  border-bottom: 5px solid #5c462b;
 }
 
 .mypage-index .ticket_detail {
   display: -webkit-box;
   display: flex;
-  position: relative;
-  -webkit-box-align: center;
-          align-items: center;
 }
 
 .mypage-index .exchange-button {
-  text-align: right;
-  position: absolute;
-  right: 0;
   background-color: #ff0202;
   color: #fff;
   border: none;
@@ -11731,9 +11757,7 @@ input[name=tab_item] {
 }
 
 .mypage-index .profile_container {
-  border-left: 4px solid #66b2db;
   width: 60%;
-  margin-top: 5rem;
 }
 
 .mypage-index .profile_table {
@@ -11761,6 +11785,23 @@ input[name=tab_item] {
   color: #fff;
   border: none;
   border-radius: 0.5rem;
+}
+
+.mypage-index .evaluation-comment {
+  color: #007fc3;
+  text-decoration: underline;
+}
+
+.mypage-index .thumbs-up::before {
+  color: #ff0202;
+}
+
+.mypage-index .thumbs-down::before {
+  color: #2b509e;
+}
+
+.mypage-index .nav-pills .nav-link.active {
+  background-color: red;
 }
 
 .evaluation {
