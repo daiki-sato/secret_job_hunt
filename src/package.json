@@ -43,7 +43,6 @@
         "popper.js": "^1.16.0",
         "pusher-js": "^7.0.6",
         "react-hook-form": "^7.30.0",
-        "skyway-js": "^4.4.4",
         "styled-components": "^5.3.5"
     }
 }
