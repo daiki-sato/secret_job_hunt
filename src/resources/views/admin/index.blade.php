@@ -2,15 +2,15 @@
 
 @section('content')
     <div class="row admin-index">
-        <div class="col-3 px-0 menu">
+        <div class="col-3 px-0 menu bg-secondary">
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link py-2 my-0 h2 active menu_item" id="v-pills-payment-tab" data-toggle="pill"
+                <a class="nav-link py-2 my-0 h4 active menu_item" id="v-pills-payment-tab" data-toggle="pill"
                     href="#v-pills-payment" role="tab" aria-controls="v-pills-payment" aria-selected="true"><i
                         class="pr-2 fa-brands fa-paypal"></i>支払い状況</a>
-                <a class="nav-link py-2 my-0 h2 menu_item" id="v-pills-exchange-tab" data-toggle="pill"
+                <a class="nav-link py-2 my-0 h4 menu_item" id="v-pills-exchange-tab" data-toggle="pill"
                     href="#v-pills-exchange" role="tab" aria-controls="v-pills-exchange" aria-selected="false"><i
                         class="pr-2 fa-solid fa-money-bill-1"></i>換金状況</a>
-                <a class="nav-link py-2 my-0 h2 menu_item" id="v-pills-contact-tab" data-toggle="pill"
+                <a class="nav-link py-2 my-0 h4 menu_item" id="v-pills-contact-tab" data-toggle="pill"
                     href="#v-pills-contact" role="tab" aria-controls="v-pills-contact" aria-selected="false"><i
                         class="pr-2 fa-solid fa-comment-dots"></i>お問合せ</a>
             </div>
@@ -42,11 +42,31 @@
                             <h2 class="pt-2 pb-5">換金管理</h2>
                             <table class="w-100 profile_table">
                                 <tbody class="text-center">
-                                    <tr class="p-3 mx-3 my-5 chart-top">
+                                    <tr class="p-3 mx-3 my-3 chart-top small">
+                                        <td class="px-4 py-3">申し込み日時</td>
                                         <td class="px-4 py-3">名前</td>
-                                        <td class="px-4 py-3">換金ポイント</td>
-                                        <td class="px-4 py-3">日時</td>
+                                        <td class="px-4 py-3">電話番号</td>
+                                        <td class="px-4 py-3">換金額</td>
+                                        <td class="px-4 py-3">手数料</td>
+                                        <td class="px-4 py-3">送金金額</td>
+                                        <td class="px-4 py-3">ステータス</td>
                                     </tr>
+                                    @foreach ($users as $user)
+                                        @foreach ($user->cashes as $each_cash)
+                                            <tr class="p-3 mx-3 my-5 chart-top small">
+                                                <td class="px-4 py-3">
+                                                    {{ $each_cash->created_at->format('Y-m-d H:i') }}</td>
+                                                <td class="px-4 py-3">{{ $user->first_name }}{{ $user->last_name }}
+                                                </td>
+                                                <td class="px-4 py-3">{{ $user->phone_number }}</td>
+                                                <td class="px-4 py-3">{{ $each_cash->value }}</td>
+                                                <td class="px-4 py-3">{{ $each_cash->commission }}</td>
+                                                <td class="px-4 py-3">
+                                                    {{ $each_cash->value - $each_cash->commission }}</td>
+                                                <td class="px-4 py-3">{{ $each_cash->status }}</td>
+                                            </tr>
+                                        @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -59,7 +79,7 @@
                             <h2 class="pt-2 pb-5">お問合せ</h2>
                             <table class="w-100 profile_table">
                                 <tbody class="text-center">
-                                    <tr class="p-3 mx-3 my-5 chart-top">
+                                    <tr class="p-3 mx-3 my-5 chart-top small">
                                         <td class="px-4 py-3">お問合せ日時</td>
                                         <td class="px-4 py-3">名前</td>
                                         <td class="px-4 py-3">項目</td>
@@ -68,10 +88,11 @@
                                     </tr>
                                     @foreach ($users as $user)
                                         @foreach ($user->contacts as $contact)
-                                            <tr class="p-3 mx-3 my-5 chart-top">
+                                            <tr class="p-3 mx-3 my-5 chart-top small">
                                                 <td class="px-4 py-3">
                                                     {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
-                                                <td class="px-4 py-3">{{ $user->first_name }}{{ $user->last_name }}
+                                                <td class="px-4 py-3">
+                                                    {{ $user->first_name }}{{ $user->last_name }}
                                                 </td>
                                                 <td class="px-4 py-3">{{ $contact->contact_type }}</td>
                                                 <td class="px-4 py-3">{{ $contact->comment }}</td>
