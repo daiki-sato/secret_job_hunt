@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function tomoney()
     {
-        return $this->hasOne('App\Models\Tomoney');
+        return $this->hasOne('App\Models\ToMoney');
     }
 
     public function interviews()
