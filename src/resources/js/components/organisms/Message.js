@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MessageBox from "../molecules/MessageBox";
 import TextInput from "../molecules/TextInput";
-import Call from "./Call";
 
 const Message = ({ currentThreadId }) => {
   const threadId = currentThreadId;
@@ -17,19 +16,8 @@ const Message = ({ currentThreadId }) => {
       .catch((error) => console.log(error));
   };
 
-  const [callRoomId, setCallRoomId] = useState("");
-  const getCallRoomId = () => {
-    axios
-      .get(`http://localhost/api/callRoomId/${threadId}`)
-      .then((response) => {
-        setCallRoomId(response.data);
-      })
-      .catch((error) => console.log(error));
-  };
-
   useEffect(() => {
     getMessages();
-    getCallRoomId();
   }, [currentThreadId]);
 
   return (
@@ -43,7 +31,6 @@ const Message = ({ currentThreadId }) => {
           />
         );
       })}
-      <Call callRoomId={callRoomId} />
       <TextInput messages={messages} getMessages={getMessages} />
     </>
   );

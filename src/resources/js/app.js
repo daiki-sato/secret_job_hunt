@@ -14,5 +14,4 @@ require("./bootstrap");
 
 require("./components/Example");
 require("./components/Thread");
-require("./components/organisms/Call");
 require("./components/organisms/Search");
