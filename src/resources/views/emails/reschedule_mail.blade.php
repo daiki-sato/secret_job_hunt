@@ -2,7 +2,7 @@
 お手数ですが下記URLから再度日程調整をお願い致します。
 
 ■該当URL
-<a href="http://localhost/"></a>
+http://localhost
 
 
 Anovey

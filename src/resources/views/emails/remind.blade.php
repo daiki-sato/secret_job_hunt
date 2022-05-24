@@ -2,9 +2,9 @@
 日程変更・キャンセルの場合は、お手数ですが下記URLからお手続きをお願い致します。
 
 ■該当URL
-<a href="http://localhost/"></a>
+http://localhost
 
 ■日時
-{{$from_what_time}}-{{$to_what_time }}
+{{$from_what_time}}-{{$to_what_time }} 
 
 Anovey
