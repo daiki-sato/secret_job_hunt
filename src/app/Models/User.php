@@ -38,25 +38,35 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Role');
     }
-    
+
     public function wallet()
     {
         return $this->hasOne('App\Models\Wallet');
     }
-    
+
+    public function tomoney()
+    {
+        return $this->hasOne('App\Models\ToMoney');
+    }
+
     public function interviews()
     {
         return $this->hasMany('App\Models\Interview');
     }
-    
+
     public function threads()
     {
         return $this->hasMany('App\Models\Thread');
     }
-    
+
     public function contacts()
     {
         return $this->hasMany('App\Models\Contact');
+    }
+
+    public function calls()
+    {
+        return $this->hasMany('App\Models\Call');
     }
 
     // public function hasRole(string $role)
