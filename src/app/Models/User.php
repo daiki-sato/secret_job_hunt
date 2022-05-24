@@ -20,6 +20,7 @@ class User extends Authenticatable
         'last_name',
         'first_name_ruby',
         'last_name_ruby',
+        'phone_number',
         'nickname',
         'sex',
         'role_id',
@@ -44,10 +45,12 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Wallet');
     }
 
+
     public function tomoney()
     {
         return $this->hasOne('App\Models\ToMoney');
     }
+
 
     public function interviews()
     {
