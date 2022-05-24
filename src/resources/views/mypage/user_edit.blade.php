@@ -2,15 +2,7 @@
 
 @section('content')
     <div class="p-5 mypage-index">
-        <div class="pt-5 pb-3 mypage-container">
-            <div class="m-3 mypage-container_top">
-                <h2 class="mypage-title">マイページ</h2>
-                <p class="mr-5 contact-title">お問合せ</p>
-            </div>
-            <div class="text-center profile_top">
-                <img src="" alt="profile_img" class="m-3 profile_img">
-                <p class="m-2 h3">{{ $user->nickname }}</p>
-            </div>
+        <div class="p-3 mypage-container">
             <div class="pl-4 mx-5 text-left profile_container">
                 <form action="{{ route('user_update', ['id' => $user->id]) }}" method="post">
                     @csrf

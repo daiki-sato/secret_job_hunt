@@ -21,7 +21,7 @@ class WalletSeeder extends Seeder
             ],
             [
                 'user_id' => 2,
-                'balance' => 4000,
+                'balance' => 4800,
             ],
             [
                 'user_id' => 3,
@@ -29,7 +29,7 @@ class WalletSeeder extends Seeder
             ],
             [
                 'user_id' => 4,
-                'balance' => 10000,
+                'balance' => 12000,
             ],
         ];
         DB::table('wallets')->insert($params);

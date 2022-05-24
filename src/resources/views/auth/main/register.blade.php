@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="email_register">
-        <form method="POST" action="{{ route('register.main.registered') }}">
+        <form method="POST" action="{{ route('register.main.registered') }}" class="p-5">
             @csrf
             <h2>会員登録</h2>
             <div class="form-row">
@@ -10,7 +10,6 @@
                     <label for="inputFirstName">性（全角）</label>
                     <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="inputFirstName"
                         name="first_name" value="{{ old('first_name') }}" placeholder="例）山田" required>
-                    <span>※この情報はお客様の体験を向上させるために使用されます。公開されることはありません</span>
                     @error('first_name')
                         <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
@@ -21,7 +20,6 @@
                     <label for="inputLastName">名（全角）</label>
                     <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="inputLastName"
                         name="last_name" value="{{ old('last_name') }}" placeholder="例）彩" required>
-                    <span>※この情報はお客様の体験を向上させるために使用されます。公開されることはありません</span>
                     @error('last_name')
                         <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
@@ -33,7 +31,6 @@
                     <input type="text" class="form-control @error('first_name_ruby') is-invalid @enderror"
                         id="inputFirstNameRuby" name="first_name_ruby" value="{{ old('first_name_ruby') }}"
                         placeholder="例）ヤマダ" required>
-                    <span>※この情報はお客様の体験を向上させるために使用されます。公開されることはありません</span>
                     @error('first_name_ruby')
                         <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
@@ -45,8 +42,18 @@
                     <input type="text" class="form-control @error('last_name_ruby') is-invalid @enderror"
                         id="inputLastNameRuby" name="last_name_ruby" value="{{ old('last_name_ruby') }}" placeholder="例）彩"
                         required>
-                    <span>※この情報はお客様の体験を向上させるために使用されます。公開されることはありません</span>
                     @error('last_name_ruby')
+                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="inputLastNameRuby">電話番号（換金のため利用されます）</label>
+                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror"
+                        id="inputLastNameRuby" name="phone_number" value="{{ old('phone_number') }}" placeholder="例）彩"
+                        required>
+                    @error('phone_number')
                         <div class="invalid-feedback d-block">{{ $message }}</div>
                     @enderror
                 </div>
