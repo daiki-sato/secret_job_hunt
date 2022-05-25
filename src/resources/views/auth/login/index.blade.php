@@ -8,15 +8,6 @@
                 <div class="d-flex justify-content-center align-items-center py-2 mb-4 button-mail">
                     <i class="mr-3 fa-solid fa-envelope"></i><a href="{{ route('login.email') }}" class="d-block text-light">メールアドレスでログイン</a>
                 </div>
-                <div class="d-flex justify-content-center align-items-center py-2 mb-4 button-google">
-                    <i class="mr-3 fa-brands fa-google"></i><a href="" class="d-block text-dark">Goggleでログイン</a>
-                </div>
-                <div class="d-flex justify-content-center align-items-center py-2 mb-4 button-facebook">
-                    <i class="mr-3 fa-brands fa-facebook-f"></i><a href="" class="d-block text-light">Facebookでログイン</a>
-                </div>
-                <div class="d-flex justify-content-center align-items-center py-2 mb-4 button-line">
-                    <img src="{{ asset('img/logo-line.webp') }}" class="mr-3 line-icon" alt="line"><a href="" class="d-block text-light">LINEでログイン</a>
-                </div>
             </div>
         </div>
         <hr>
