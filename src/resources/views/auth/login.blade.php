@@ -20,7 +20,7 @@
             </div>
             <div class="form-check m-1 text-left">
                 <input type="checkbox" class="form-check-input" id="rememberToken" name="remember">
-                <label class="form-check-label" for="rememberToken">ログイン状態を保存する</label>
+                <label class="login-save form-check-label" for="rememberToken">ログイン状態を保存する</label>
             </div>
             <div class="mt-4 mb-2 px-2 text-center login-button">
                 <button type="submit" class="fw-bold text-light btn btn-lg btn-green btn-block">ログイン</button>
