@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row py-5 justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">仮会員登録完了</div>
