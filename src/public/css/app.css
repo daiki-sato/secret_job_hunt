@@ -11837,7 +11837,7 @@ input[name=tab_item] {
 
 .button-mail {
   color: #fff;
-  background-color: #EE5E5F;
+  background-color: #e3342f;
   height: 2.5rem;
   font-weight: 800;
 }
@@ -11864,6 +11864,35 @@ input[name=tab_item] {
 
 .button-register {
   font-weight: 800;
+}
+
+.form-control {
+  background-color: #fff;
+}
+
+.input-area,
+.form-check-label {
+  font-weight: bold;
+}
+
+.login-button {
+  background-color: #1E82F6;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-area {
+  background-color: #fff;
+}
+
+.register-button {
+  border: solid 2px #1E82F6;
+  width: 25%;
+}
+
+.register-button_text {
+  color: #1E82F6;
+  font-weight: bold;
 }
 
 /***** Common Setting *****/
