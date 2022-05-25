@@ -67,7 +67,7 @@
                                         <td class="px-4 py-3">対応状況</td>
                                     </tr>
                                     @foreach ($users as $user)
-                                        @foreach ($user->contacts as $contact)
+                                        @foreach ($user->contacts()->orderBy('contact_date', 'desc')->get() as $contact)
                                             <tr class="p-3 mx-3 my-5 chart-top">
                                                 <td class="px-4 py-3">
                                                     {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
