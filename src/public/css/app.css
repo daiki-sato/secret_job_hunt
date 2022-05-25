@@ -11830,6 +11830,42 @@ input[name=tab_item] {
   height: 7rem;
 }
 
+.line-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button-mail {
+  color: #fff;
+  background-color: #EE5E5F;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-google {
+  border: solid 1px #000;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-line {
+  color: #fff;
+  background-color: #5CC857;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-facebook {
+  color: #fff;
+  background-color: #0D6CE4;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-register {
+  font-weight: 800;
+}
+
 /***** Common Setting *****/
 
 body {
