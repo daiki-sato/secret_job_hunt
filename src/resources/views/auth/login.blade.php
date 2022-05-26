@@ -20,7 +20,7 @@
             </div>
             <div class="form-check m-1 text-left">
                 <input type="checkbox" class="form-check-input" id="rememberToken" name="remember">
-                <label class="form-check-label" for="rememberToken">ログイン状態を保存する</label>
+                <label class="login-save form-check-label" for="rememberToken">ログイン状態を保存する</label>
             </div>
             <div class="mt-4 mb-2 px-2 text-center login-button">
                 <button type="submit" class="fw-bold text-light btn btn-lg btn-green btn-block">ログイン</button>
@@ -37,7 +37,7 @@
     <div class="py-3 text-center register-area">
         <p class="pt-3 m-0">アカウントをお持ちでない方</p>
         <div class="mx-auto my-4 px-2 text-center register-button">
-            <a class="fw-bold btn btn-lg btn-green btn-block text-green register-button_text" href="{{ route('register') }}">新規会員登録</a>
+            <a class="fw-bold btn btn-lg btn-green btn-block text-green register-button_text" href="{{ route('register.email') }}">新規会員登録</a>
         </div>
     </div>
 @endsection

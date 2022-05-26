@@ -33,7 +33,7 @@
                     @endauth
                     @guest
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">新規登録</a>
+                            <a href="{{ route('register.email') }}" class="nav-link px-5 ml-3 shadow-sm bg-body rounded">新規登録</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('login.top') }}"
