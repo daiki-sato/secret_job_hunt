@@ -73,6 +73,7 @@ class CallSeeder extends Seeder
             ],
             [
                 'thread_id' => 4,
+                'call_room_id' => Str::random(32),
                 'user_id' => 5, 
                 'solver_id' => 2, 
                 'confirmed_interview_date' => '2022-05-15 12:00:00',
@@ -83,6 +84,7 @@ class CallSeeder extends Seeder
             ],
             [
                 'thread_id' => 4,
+                'call_room_id' => Str::random(32),
                 'user_id' => 5, 
                 'solver_id' => 2, 
                 'confirmed_interview_date' => '2022-05-16 12:00:00',
@@ -93,6 +95,7 @@ class CallSeeder extends Seeder
             ],
             [
                 'thread_id' => 4,
+                'call_room_id' => Str::random(32),
                 'user_id' => 5, 
                 'solver_id' => 2, 
                 'confirmed_interview_date' => '2022-05-16 23:00:00',
@@ -103,6 +106,7 @@ class CallSeeder extends Seeder
             ],
             [
                 'thread_id' => 4,
+                'call_room_id' => Str::random(32),
                 'user_id' => 5, 
                 'solver_id' => 2, 
                 'confirmed_interview_date' => '2022-05-17 01:00:00',
@@ -113,6 +117,7 @@ class CallSeeder extends Seeder
             ],
             [
                 'thread_id' => 4,
+                'call_room_id' => Str::random(32),
                 'user_id' => 5, 
                 'solver_id' => 2, 
                 'confirmed_interview_date' => '2022-05-15 23:00:00',

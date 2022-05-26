@@ -10878,6 +10878,10 @@ a.text-dark:focus {
 header
 --------------------------------------*/
 
+.logo {
+  width: 50px;
+}
+
 .navbar-brand {
   font-size: 2rem;
 }
@@ -10892,20 +10896,19 @@ header
 }
 
 a.nav-link {
-  background-color: #ffeb38;
-  color: #007fc3;
+  color: #ffff;
   font-weight: bold;
   letter-spacing: 0.15rem;
 }
 
 .navbar-green {
-  background: #ffffff;
+  background: #2b4261;
   color: #000;
 }
 
 .navbar-green a {
   font-family: Metrophobic;
-  color: #000;
+  color: #ffff;
 }
 
 span.sub-title {
@@ -10938,8 +10941,35 @@ footer
 
 /***** Import Page Settings  *****/
 
-.admin-index .sample {
-  color: red;
+.menu_item {
+  display: block;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+a.nav-link .menu_item {
+  background-color: #fff;
+  color: #000;
+}
+
+.menu_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+.admin-wrapper {
+  background-color: #E4EEF7;
+}
+
+.admin-inner {
+  background-color: #fff;
+}
+
+.chart-top {
+  background-color: #E4EEF7;
+  overflow: hidden;
 }
 
 .container {
@@ -11029,12 +11059,12 @@ p.h5 {
 
 .pros-container {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .box {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   background: #66b2db;
   position: relative;
   border-radius: 10%;
@@ -11053,7 +11083,7 @@ p.h5 {
 }
 
 p.step_title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
   font-family: sans-serif;
   color: #2f4656;
@@ -11076,8 +11106,6 @@ div.example {
 }
 
 div.example-box {
-  margin-left: 5rem;
-  margin-right: 5rem;
   box-shadow: 2px 5px 5px #a7a7a7;
   border-radius: 2rem;
   background-color: #fff;
@@ -11170,20 +11198,25 @@ input[name=tab_item] {
   background-color: #d3cbc4;
 }
 
+.flow {
+  background-color: #fff;
+}
+
 .mypage-index {
-  background-color: #E4EEF7;
+  background-color: #fff;
   overflow: hidden;
 }
 
 .mypage-index .mypage-container {
   background-color: #fff;
   width: 75%;
-  margin: 5rem auto;
+  margin: 0 auto;
 }
 
 .mypage-index .mypage-container_top {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 
@@ -11196,7 +11229,7 @@ input[name=tab_item] {
   position: absolute;
   right: 0;
   font-size: 120%;
-  color: #0047FF;
+  color: #0047ff;
 }
 
 .mypage-index .profile_img {
@@ -11206,26 +11239,20 @@ input[name=tab_item] {
 }
 
 .mypage-index .ticket_container {
-  border-left: 4px solid #ff0202;
   width: 60%;
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
 .mypage-index .info_title {
-  border-bottom: 5px solid #5C462B;
+  border-bottom: 5px solid #5c462b;
 }
 
 .mypage-index .ticket_detail {
   display: flex;
-  position: relative;
-  align-items: center;
 }
 
 .mypage-index .exchange-button {
-  text-align: right;
-  position: absolute;
-  right: 0;
   background-color: #ff0202;
   color: #fff;
   border: none;
@@ -11233,9 +11260,7 @@ input[name=tab_item] {
 }
 
 .mypage-index .profile_container {
-  border-left: 4px solid #66b2db;
   width: 60%;
-  margin-top: 5rem;
 }
 
 .mypage-index .profile_table {
@@ -11265,6 +11290,23 @@ input[name=tab_item] {
   border-radius: 0.5rem;
 }
 
+.mypage-index .evaluation-comment {
+  color: #007fc3;
+  text-decoration: underline;
+}
+
+.mypage-index .thumbs-up::before {
+  color: #ff0202;
+}
+
+.mypage-index .thumbs-down::before {
+  color: #2b509e;
+}
+
+.mypage-index .nav-pills .nav-link.active {
+  background-color: red;
+}
+
 .evaluation {
   display: none;
   border-color: black;
@@ -11291,6 +11333,71 @@ input[name=tab_item] {
 .sns-icon {
   width: 7rem;
   height: 7rem;
+}
+
+.line-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button-mail {
+  color: #fff;
+  background-color: #e3342f;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-google {
+  border: solid 1px #000;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-line {
+  color: #fff;
+  background-color: #5CC857;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-facebook {
+  color: #fff;
+  background-color: #0D6CE4;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-register {
+  font-weight: 800;
+}
+
+.form-control {
+  background-color: #fff;
+}
+
+.input-area,
+.login-save {
+  font-weight: bold;
+}
+
+.login-button {
+  background-color: #1E82F6;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-area {
+  background-color: #fff;
+}
+
+.register-button {
+  border: solid 2px #1E82F6;
+  width: 25%;
+}
+
+.register-button_text {
+  color: #1E82F6;
+  font-weight: bold;
 }
 
 /***** Common Setting *****/

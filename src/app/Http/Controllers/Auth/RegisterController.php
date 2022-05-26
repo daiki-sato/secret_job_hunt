@@ -31,7 +31,7 @@ class RegisterController extends Controller
     {
         return view('auth.index');
     }
-    
+
     /**
      * Where to redirect users after registration.
      *
@@ -96,22 +96,21 @@ class RegisterController extends Controller
     public function showForm($email_token)
     {
         // 使用可能なトークンか
-        if ( !User::where('email_verify_token',$email_token)->exists() )
-        {
+        if (!User::where('email_verify_token', $email_token)->exists()) {
             return view('auth.main.register')->with('message', '無効なトークンです。');
         } else {
             $user = User::where('email_verify_token', $email_token)->first();
             // 本登録済みユーザーか
             if ($user->status == config('const.USER_STATUS.REGISTER')) //REGISTER=1
             {
-                logger("status". $user->status );
+                logger("status" . $user->status);
                 return view('auth.main.register')->with('message', 'すでに本登録されています。ログインして利用してください。');
             }
             // ユーザーステータス更新
             $user->status = config('const.USER_STATUS.MAIL_AUTHED');
-            if($user->save()) {
+            if ($user->save()) {
                 return view('auth.main.register', compact('email_token'));
-            } else{
+            } else {
                 return view('auth.main.register')->with('message', 'メール認証に失敗しました。再度、メールからリンクをクリックしてください。');
             }
         }
@@ -119,12 +118,13 @@ class RegisterController extends Controller
 
     public function mainRegister(Request $request)
     {
-        $user = User::where('email_verify_token',$request->email_token)->first();
+        $user = User::where('email_verify_token', $request->email_token)->first();
         $user->status = config('const.USER_STATUS.REGISTER');
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->first_name_ruby = $request->first_name_ruby;
         $user->last_name_ruby = $request->last_name_ruby;
+        $user->phone_number = $request->phone_number;
         $user->nickname = $request->nickname;
         $user->sex = $request->sex;
         $user->role_id = $request->role_id;
