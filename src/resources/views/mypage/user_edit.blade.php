@@ -42,7 +42,7 @@
                                 </tr>
                                 <tr>
                                 <tr>
-                                    <td>ニックネーム</td>
+                                    <td>電話番号</td>
                                     <td>
                                         <input type="text" name="phone_number" value="{{ $user->phone_number }}">
                                     </td>
