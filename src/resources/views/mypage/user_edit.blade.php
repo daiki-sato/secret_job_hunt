@@ -41,6 +41,13 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                <tr>
+                                    <td>ニックネーム</td>
+                                    <td>
+                                        <input type="text" name="phone_number" value="{{ $user->phone_number }}">
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>性別</td>
                                     <td>
                                         <input type="radio" name="sex" id="male" value="男"

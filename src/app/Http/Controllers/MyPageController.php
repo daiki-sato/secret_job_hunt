@@ -37,6 +37,7 @@ class MyPageController extends Controller
         $user->first_name_ruby = $request->input('first_name_ruby');
         $user->last_name_ruby = $request->input('last_name_ruby');
         $user->nickname = $request->input('nickname');
+        $user->phone_number = $request->input('phone_number');
         $user->sex = $request->input('sex');
         $user->company = $request->input('company');
         $user->department = $request->input('department');

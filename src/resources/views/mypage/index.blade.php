@@ -157,6 +157,10 @@
                                                 <td class="pl-4 py-3">{{ $user->email }}</td>
                                             </tr>
                                             <tr>
+                                                <td class="py-3">電話番号</td>
+                                                <td class="pl-4 py-3">{{ $user->phone_number }}</td>
+                                            </tr>
+                                            <tr>
                                                 <td class="py-3">性別</td>
                                                 <td class="pl-4 py-3">{{ $user->sex }}</td>
                                             </tr>
