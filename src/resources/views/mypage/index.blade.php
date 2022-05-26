@@ -58,7 +58,8 @@
                                             </div>
                                         @endif
                                         <p class="m-0 h4 ticket_number">{{ $balance / 1.2 }}円</p>
-                                        <button class="px-5 mx-4 mt-3 py-2 exchange-button btn btn-danger" type="button"
+                                        <button $balance < 1 ? disabled
+                                            class="px-5 mx-4 mt-3 py-2 exchange-button btn btn-danger" type="button"
                                             data-toggle="modal" data-target="#pointtomoney">
                                             換金申請
                                         </button>
@@ -154,6 +155,10 @@
                                             <tr>
                                                 <td class="py-3">メールアドレス</td>
                                                 <td class="pl-4 py-3">{{ $user->email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3">電話番号</td>
+                                                <td class="pl-4 py-3">{{ $user->phone_number }}</td>
                                             </tr>
                                             <tr>
                                                 <td class="py-3">性別</td>

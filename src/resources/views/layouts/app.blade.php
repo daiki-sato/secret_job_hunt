@@ -18,7 +18,7 @@
 
 <body>
     @section('header')
-        <nav class="navbar sticky-top navbar-expand-sm navbar-green shadow-sm bg-body rounded">
+        <nav class="navbar sticky-top navbar-expand-sm navbar-green shadow-sm bg-body">
             <a class="navbar-brand" href="{{ route('search') }}">
                 <img src="{{ asset('img/logo.png') }}" alt="logo">
                 Anovey<span class="sub-title">匿名転職相談サービス</span></a>
