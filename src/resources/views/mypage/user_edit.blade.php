@@ -44,7 +44,7 @@
                                 <tr>
                                     <td>電話番号</td>
                                     <td>
-                                        <input type="text" name="phone_number" value="{{ $user->phone_number }}">
+                                        <input type="text" name="phone_number" placeholder="000-000-000" value="{{ $user->phone_number }}">
                                     </td>
                                 </tr>
                                 <tr>
