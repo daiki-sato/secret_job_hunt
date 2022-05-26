@@ -12,6 +12,6 @@
         </div>
         <hr>
         <p class="text-center">アカウントをお持ちでない方</p>
-        <a href="{{ route('register') }}" class="d-block py-2 m-4 btn btn-outline-danger button-register">新規登録</a>
+        <a href="{{ route('register.email') }}" class="d-block py-2 m-4 btn btn-outline-danger button-register">新規登録</a>
     </div>
 @endsection

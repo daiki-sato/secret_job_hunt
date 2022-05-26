@@ -3,7 +3,7 @@
 @section('content')
     <div class="pt-5 w-50 mx-auto email_register">
         <h2 class="email_register_title">会員登録</h2>
-        <form method="POST" action="{{ route('register') }}" class="mt-4 mb-2">
+        <form method="POST" action="{{ route('register.email') }}" class="mt-4 mb-2">
             @csrf
             <div class="form-row">
                 <div class="py-2 mb-2 text-left form-group col-12">

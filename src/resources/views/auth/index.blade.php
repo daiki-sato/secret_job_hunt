@@ -14,6 +14,6 @@
         </div>
         <hr>
         <p>アカウントをお持ちの方</p>
-        <a href="{{ route('login.top') }}" class="d-block btn btn-outline-danger">ログイン</a>
+        <a href="{{ route('login.email') }}" class="d-block btn btn-outline-danger">ログイン</a>
     </div>
 @endsection
