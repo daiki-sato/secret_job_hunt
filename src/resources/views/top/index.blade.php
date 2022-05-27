@@ -7,7 +7,7 @@
         </div>
         <div class="top-main">
             <div class="px-5">
-                <a class="btn_register btn py-3 my-5 w-50 mx-auto shadow" href="{{ route('register') }}">新規会員登録<div
+                <a class="btn_register btn py-3 my-5 w-50 mx-auto shadow" href="{{ route('register.email') }}">新規会員登録<div
                         class="letter-strong">
                         <p class="m-0">無料</p>
                     </div>

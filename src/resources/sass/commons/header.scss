@@ -1,39 +1,46 @@
 /*--------------------------------------
 header
 --------------------------------------*/
+
 .logo {
-  width: 50px;
+    width: 50px;
 }
+
 .navbar-brand {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
-  padding-right: 4rem;
-  padding-left: 4rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
 }
 
 .nav-link {
-  padding: 0.8rem 1rem;
+    padding: 0.8rem 1rem;
 }
+
 a.nav-link {
-  color: #ffff;
-  font-weight: bold;
-  letter-spacing: 0.15rem;
+    color: #ffff;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
 }
 
 .navbar-green {
-  background: #2b4261;
-  color: #000;
+    background: #2b4261;
+    color: #000;
 }
 
 .navbar-green a {
-  font-family: Metrophobic;
-  color: #ffff;
+    font-family: Metrophobic;
+    color: #ffff;
 }
 
 span.sub-title {
-  color: #98a2b0;
-  font-size: 50%;
-  padding-left: 10px;
+    color: #98a2b0;
+    font-size: 50%;
+    padding-left: 10px;
+}
+
+.menu_item {
+    border-radius: 0 !important;
 }
