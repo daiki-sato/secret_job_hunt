@@ -58,8 +58,7 @@
                                             </div>
                                         @endif
                                         <p class="m-0 h4 ticket_number">{{ $balance / 1.2 }}円</p>
-                                        <button $balance < 1 ? disabled
-                                            class="px-5 mx-4 mt-3 py-2 exchange-button btn btn-danger" type="button"
+                                        <button class="px-5 mx-4 mt-3 py-2 exchange-button btn btn-danger" type="button"
                                             data-toggle="modal" data-target="#pointtomoney">
                                             換金申請
                                         </button>
@@ -134,6 +133,25 @@
                                 </div>
                                 {{-- MOdal --}}
                             </div>
+                            <table class="w-100 cash_table">
+                                <tbody class="text-center">
+                                    <tr class="p-3 mx-3 my-5 chart-top">
+                                        <td class="px-4 py-3">申請日時</td>
+                                        <td class="px-4 py-3">換金額</td>
+                                        <td class="px-4 py-3">手数料</td>
+                                        <td class="px-4 py-3">対応状況</td>
+                                    </tr>
+                                    @foreach ($apply_hostories as $apply_hostory)
+                                        <tr class="p-3 mx-3 my-5 chart-top">
+                                            <td class="px-4 py-3">
+                                                {{ $apply_hostory->created_at->format('Y-m-d H:i') }}</td>
+                                            <td class="px-4 py-3">{{ $apply_hostory->value }}</td>
+                                            <td class="px-4 py-3">{{ $apply_hostory->commission }}</td>
+                                            <td class="px-4 py-3">{{ $apply_hostory->status }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="p-5 text-center profile_detail">
                                     <table class="mb-5 profile_table">
