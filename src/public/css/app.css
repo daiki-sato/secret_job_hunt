@@ -10917,6 +10917,10 @@ span.sub-title {
   padding-left: 10px;
 }
 
+.menu_item {
+  border-radius: 0 !important;
+}
+
 /*--------------------------------------
 footer
 --------------------------------------*/

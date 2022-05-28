@@ -18,4 +18,21 @@ class AdminController extends Controller
 
         return view('admin.index', compact('users'));
     }
+
+    public function save(Request $request)
+    {
+
+        // dd($request->status);
+        $ids = $request->status;
+
+        foreach ($ids as $id) {
+            Contact::where('id', $id)
+                ->update([
+                    'is_read' => true,
+                ]);
+        }
+
+
+        return redirect('admin');
+    }
 }
