@@ -118,6 +118,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('/', 'AdminController@index')->name('admin');
+            Route::post('/update', 'AdminController@UpdatePaymentStatus')->name('updatepaymentstatus');
         });
     });
 });

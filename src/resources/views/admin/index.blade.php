@@ -50,23 +50,37 @@
                                         <td class="px-4 py-3">手数料</td>
                                         <td class="px-4 py-3">送金金額</td>
                                         <td class="px-4 py-3">ステータス</td>
+                                        <td class="px-4 py-3">対応</td>
                                     </tr>
-                                    @foreach ($users as $user)
-                                        @foreach ($user->cashes as $each_cash)
-                                            <tr class="p-3 mx-3 my-5 chart-top small">
-                                                <td class="px-4 py-3">
-                                                    {{ $each_cash->created_at->format('Y-m-d H:i') }}</td>
-                                                <td class="px-4 py-3">{{ $user->first_name }}{{ $user->last_name }}
-                                                </td>
-                                                <td class="px-4 py-3">{{ $user->phone_number }}</td>
-                                                <td class="px-4 py-3">{{ $each_cash->value }}</td>
-                                                <td class="px-4 py-3">{{ $each_cash->commission }}</td>
-                                                <td class="px-4 py-3">
-                                                    {{ $each_cash->value - $each_cash->commission }}</td>
-                                                <td class="px-4 py-3">{{ $each_cash->status }}</td>
-                                            </tr>
+                                    <form action="{{ route('updatepaymentstatus']) }}" method="POST">
+                                        @csrf
+                                        @foreach ($users as $user)
+                                            @foreach ($user->cashes as $each_cash)
+                                                <tr class="p-3 mx-3 my-5 chart-top small">
+                                                    <td class="px-4 py-3">
+                                                        {{ $each_cash->created_at->format('Y-m-d H:i') }}</td>
+                                                    <td class="px-4 py-3">
+                                                        {{ $user->first_name }}{{ $user->last_name }}
+                                                    </td>
+                                                    <td class="px-4 py-3">{{ $user->phone_number }}</td>
+                                                    <td class="px-4 py-3">{{ $each_cash->value }}</td>
+                                                    <td class="px-4 py-3">{{ $each_cash->commission }}</td>
+                                                    <td class="px-4 py-3">
+                                                        {{ $each_cash->value - $each_cash->commission }}</td>
+                                                    <td class="px-4 py-3">{{ $each_cash->status }}</td>
+                                                    <td class="px-4 py-3">
+                                                        @if ($each_cash->status == 'apply')
+                                                            <input type="checkbox" id="status" name="status" value="OOOWW">
+                                                            <label for="status"></label>
+                                                        @else
+                                                            対応済
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @endforeach
-                                    @endforeach
+                                        <button type="submit" class="mb-3 btn-warning">更新</button>
+                                    </form>
                                 </tbody>
                             </table>
                         </div>
