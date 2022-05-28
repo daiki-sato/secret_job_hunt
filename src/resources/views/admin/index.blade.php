@@ -62,41 +62,28 @@
                                     <tr class="p-3 mx-3 my-5 chart-top">
                                         <td class="px-4 py-3">お問合せ日時</td>
                                         <td class="px-4 py-3">名前</td>
-                                        <td class="px-4 py-3">メアド</td>
-                                        <td class="px-4 py-3">電話番号</td>
                                         <td class="px-4 py-3">項目</td>
                                         <td class="px-4 py-3">メッセージ内容</td>
                                         <td class="px-4 py-3">対応状況</td>
                                     </tr>
-                                    <form action="{{ route('save') }}" method="POST">
-                                        @csrf
-                                        @foreach ($users as $user)
-                                            @foreach ($user->contacts()->orderBy('contact_date', 'desc')->get()
-        as $contact)
-                                                <tr class="p-3 mx-3 my-5 chart-top">
-                                                    <td class="px-4 py-3">
-                                                        {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
-                                                    <td class="px-4 py-3">
-                                                        {{ $user->first_name }}{{ $user->last_name }}
-                                                    </td>
-                                                    <td class="px-4 py-3">{{ $user->email }}</td>
-                                                    <td class="px-4 py-3">{{ $user->phone_number }}</td>
-                                                    <td class="px-4 py-3">{{ $contact->contact_type }}</td>
-                                                    <td class="px-4 py-3">{{ $contact->comment }}</td>
-                                                    <td class="px-4 py-3">
-                                                        <input {{ $contact->is_read == 1 ? 'checked' : '' }}
-                                                            type="checkbox" id="" name="status[]"
-                                                            value={{ $contact->id }}>
-                                                        <label for="status"></label>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                    @foreach ($users as $user)
+                                        @foreach ($user->contacts()->orderBy('contact_date', 'desc')->get() as $contact)
+                                            <tr class="p-3 mx-3 my-5 chart-top">
+                                                <td class="px-4 py-3">
+                                                    {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
+                                                <td class="px-4 py-3">{{ $user->first_name }}{{ $user->last_name }}
+                                                </td>
+                                                <td class="px-4 py-3">{{ $contact->contact_type }}</td>
+                                                <td class="px-4 py-3">{{ $contact->comment }}</td>
+                                                <td class="px-4 py-3">
+                                                    <input type="checkbox" id="status" name="status">
+                                                    <label for="status"></label>
+                                                </td>
+                                            </tr>
                                         @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
-                            <button class="btn-dark" type="submit">送信する</button>
-                            </form>
-
                         </div>
                     </div>
                 </div>
