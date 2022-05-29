@@ -15,9 +15,8 @@ class ContactController extends Controller
 
         return view('contact.index');
     }
-    public function add(Request $request, $id)
+    public function add(Request $request)
     {
-        // $user = User::find($id);
         $id = Auth::id();
         $user = User::find($id);
         $date = Carbon::parse();
@@ -29,6 +28,6 @@ class ContactController extends Controller
                 'contact_date' => $date,
             ]
         );
-        return view('contact.index');
+        return redirect('my-page');
     }
 }
