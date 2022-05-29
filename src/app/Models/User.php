@@ -40,15 +40,15 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Role');
     }
 
-    public function wallet()
+    public function wallets()
     {
         return $this->hasOne('App\Models\Wallet');
     }
 
 
-    public function tomoney()
+    public function cashes()
     {
-        return $this->hasOne('App\Models\ToMoney');
+        return $this->hasMany('App\Models\Cash');
     }
 
 

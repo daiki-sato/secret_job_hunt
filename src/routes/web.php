@@ -124,6 +124,8 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('/', 'AdminController@index')->name('admin');
+            Route::post('/move', 'AdminController@MovePaymentStatusDone')->name('MovePaymentStatusDone');
+            Route::post('/move2', 'AdminController@MovePaymentStatusBacklog')->name('MovePaymentStatusBacklog');
             Route::post('/save/mv_done', 'AdminController@mv_done')->name('mv_done');
             Route::post('/save/mv_backlog', 'AdminController@mv_backlog')->name('mv_backlog');
         });
