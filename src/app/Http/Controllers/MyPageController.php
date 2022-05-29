@@ -15,10 +15,11 @@ class MyPageController extends Controller
         $id = Auth::id();
         $user = User::where('id', $id)->with(['calls'])->first();
         $apply = Cash::where('user_id', $id)->where('status', 'apply')->pluck('status')->first();
+        $apply_hostories = Cash::where('user_id', $id)->get();
 
         $balance = Wallet::where('user_id', $id)->pluck('balance')->first();
 
-        return view('mypage.index', compact('user', 'balance', 'apply'));
+        return view('mypage.index', compact('user', 'balance', 'apply', 'apply_hostories'));
     }
 
     public function edit(Request $request)
