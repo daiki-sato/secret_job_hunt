@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // 未ログイン
 Route::middleware([])->group(function () {
-    Route::namespace('Auth')->group(function () {
+    Route::namespace ('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
             Route::get('/email', 'RegisterController@showRegistrationForm')->name('register.email');
@@ -48,11 +48,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', 'ThreadController@index')->name('thread');
     });
 
-    // メッセージ
-    Route::prefix('message')->group(function () {
-        Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
-        Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
-        Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
+    // スレッド
+    Route::prefix('thread')->group(function () {
+        Route::get('/', 'ThreadController@index')->name('thread');
+    });
+
+    // 通話
+    Route::prefix('call')->group(function () {
+        Route::get('/{callRoomId}', 'CallController@index')->name('call');
     });
 
     //マイページ

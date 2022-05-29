@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::post('/interviewsData', 'Api\InterviewController@post');
 Route::get('/userBalance/{userId}', 'Api\GetUserBalanceController@index');
+Route::get('/callRoomId/{threadId}', 'Api\GetCallController@index');
 Route::get('getCompany/{keyword}', "Api\GetCompany@search");
 Route::get('/getThreadUser/{userId}/{roleId}', 'Ajax\GetThreadController@index');
 Route::get('/getMessages/{threadId}/', 'Ajax\GetThreadController@messages');
