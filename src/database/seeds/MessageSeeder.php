@@ -19,12 +19,12 @@ class MessageSeeder extends Seeder
             [
                 'thread_id' => 1,
                 'sender_id' => Role::getIntervieweeId(),
-                'message' => '転職について悩んでいます！よろしくお願いします！',
+                'message' => '転職について悩んでいます。よろしくお願いします！',
             ],
             [
                 'thread_id' => 1,
                 'sender_id' => Role::getSolverId(),
-                'message' => 'よろしくお願いします！解決できるようにがんばります！',
+                'message' => 'よろしくお願いします。お役にてるようがんばります！',
             ],
             [
                 'thread_id' => 1,
@@ -34,47 +34,47 @@ class MessageSeeder extends Seeder
             [
                 'thread_id' => 2,
                 'sender_id' => Role::getIntervieweeId(),
-                'message' => '転職について悩んでいます！よろしくお願いします！',
+                'message' => '転職について悩んでいます。お世話になります。',
             ],
             [
                 'thread_id' => 2,
                 'sender_id' => Role::getSolverId(),
-                'message' => 'よろしくお願いします！',
+                'message' => 'よろしくお願いします。',
             ],
             [
                 'thread_id' => 3,
                 'sender_id' => Role::getIntervieweeId(),
-                'message' => '転職について悩んでいます！よろしくお願いします！',
+                'message' => '転職について悩んでいます。よろしくお願いします！',
             ],
             [
                 'thread_id' => 3,
                 'sender_id' => Role::getSolverId(),
-                'message' => 'よろしくお願いします！解決できるようにがんばります！',
+                'message' => 'よろしくお願いします。解決できるようにがんばります！',
             ],
             [
                 'thread_id' => 4,
                 'sender_id' => Role::getIntervieweeId(),
-                'message' => '転職について悩んでいます！よろしくお願いします！',
+                'message' => '転職先について相談したいです。よろしくお願いします。',
             ],
             [
                 'thread_id' => 4,
                 'sender_id' => Role::getSolverId(),
-                'message' => 'お願いいたします',
+                'message' => 'よろしくお願いします。',
             ],
             [
                 'thread_id' => 5,
                 'sender_id' => Role::getIntervieweeId(),
-                'message' => '転職について悩んでいます！よろしくお願いします！',
+                'message' => '転職について相談したいです。よろしくお願いします！',
             ],
             [
                 'thread_id' => 5,
                 'sender_id' => Role::getSolverId(),
-                'message' => 'お願いいたします',
+                'message' => 'お願いいたします。',
             ],
             [
                 'thread_id' => 6,
                 'sender_id' => Role::getIntervieweeId(),
-                'message' => '転職について悩んでいます！よろしくお願いします！',
+                'message' => '転職について悩んでいます。よろしくお願いします！',
             ],
             [
                 'thread_id' => 6,
