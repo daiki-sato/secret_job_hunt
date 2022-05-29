@@ -117,7 +117,7 @@
                                                 <img class="img-fluid h-50 w-50 " src="{{ asset('img/paypay_1.jpg') }}"
                                                     alt="">
                                                 <p>月末に毎月15日までに換金申請されたものをご登録された電話番号宛にpaypayでお支払いします。</p>
-                                                <p>5000円以上、手数料無料（通常：220円）</p>
+                                                <p>5000円以上の換金で、手数料無料（通常：220円）</p>
                                                 <form action="{{ route('toMoney') }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="money_value" value="{{ $balance / 1.2 }}">
