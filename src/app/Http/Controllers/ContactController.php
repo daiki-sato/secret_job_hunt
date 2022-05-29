@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -15,15 +17,17 @@ class ContactController extends Controller
     }
     public function add(Request $request)
     {
+        $id = Auth::id();
+        $user = User::find($id);
         $date = Carbon::parse();
         Contact::create(
             [
-                'user_id' => 1,
+                'user_id' => $user->id,
                 'contact_type' => $request->contact_type,
                 'comment' => $request->comment,
                 'contact_date' => $date,
             ]
         );
-        return view('contact.index');
+        return redirect('my-page');
     }
 }
