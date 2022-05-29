@@ -1,199 +1,229 @@
-// .top-index {
-    .container {
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    div.top-index.mx-5 {
-        margin-right: 0;
-        margin-left: 0;
-    }
-    img.first-view_img {
-        width: 100%;
-    }
-    /* 「無料」の文字に円枠 */
-    .letter-strong {
-        padding: 0 0.5em;
-        margin: 0.5em;
-        color: #007fc3;
-        background: #ffeb3b;
-        border: solid 1px #007fc3;
-        border-radius: 10px;
-        display: inline-block;
-        font-size: 70%;
-        vertical-align: middle;
-    }
-    p.letter-strong {
-        margin: 0;
-        padding: 0;
-    }
-    .before {
-        background-color: #223a50;
-        color: #fff;
-        border-radius: 20px;
-        font-weight: normal;
-    }
-    .after {
-        background-color: #007fc3;
-        color: #fff;
-        border-radius: 20px;
-        font-weight: normal;
-    }
-    p.sub-title {
-        font-size: 1em;
-        color: #565656;
-    }
-    .title {
-        color: #007fc3;
-        font-size: 2em;
-        font-weight: 100;
-    }
-    .explanation_wrapper {
-        display: table;
-    }
-    .explanation {
-        text-align: left;
-        padding-left: 2rem;
-        vertical-align: middle;
-        display: table-cell;
-    }
-    .line {
-        border-left: 3px solid #e5e7eb;
-        margin: 0;
-    }
-    p.h5 {
-        line-height: normal;
-    }
-    .pros {
-        background-color: #e4eef7;
-    }
-    .pros-container {
-        background-color: #fff;
-        border-radius: 20px;
-    }
-    
-    .box {
-        width: 3rem;
-        height: 3rem;
-        background: #66b2db;
-        position: relative;
-        border-radius: 10%;
-    }
-    .box_inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        font-size: 150%;
-        font-weight: 300;
-    }
-    
-    p.step_title {
-        font-size: 1.5rem;
-        font-weight: 300;
-        font-family: sans-serif;
-        color: #2f4656;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin: 0;
-    }
-    .step_detail {
-        color: #2f4656;
-    }
-    .step-box {
-        border: solid #2f4656 1px;
-        border-radius: 2rem;
-    }
-    
-    div.example {
-        background-color: #f5f8fa;
-    }
-    div.example-box {
-        margin-left: 5rem;
-        margin-right: 5rem;
-        box-shadow: 2px 5px 5px #a7a7a7;
-        border-radius: 2rem;
-        background-color: #fff;
-        display: table;
-    }
-    div.example_inner {
-        vertical-align: middle;
-        display: table-cell;
-    }
-    
-    /*タブ切り替え全体のスタイル*/
-    .tabs {
-        margin-top: 50px;
-        padding-bottom: 40px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        width: 100%;
-        margin: 0 auto;
-    }
-    
-    /*タブのスタイル*/
-    .tab_item {
-        width: calc(100% / 2);
-        height: 50px;
-        border-bottom: 3px solid #5ab4bd;
-        background-color: #d9d9d9;
-        line-height: 50px;
-        font-size: 16px;
-        text-align: center;
-        color: #565656;
-        display: block;
-        float: left;
-        text-align: center;
-        font-weight: bold;
-        transition: all 0.2s ease;
-    }
-    .tab_item:hover {
-        opacity: 0.75;
-    }
-    
-    /*ラジオボタンを全て消す*/
-    input[name="tab_item"] {
-        display: none;
-    }
-    
-    /*タブ切り替えの中身のスタイル*/
-    .tab_content {
-        display: none;
-        padding: 40px 40px 0;
-        clear: both;
-        overflow: hidden;
-    }
-    
-    /*選択されているタブのコンテンツのみを表示*/
-    #consulter:checked ~ #consulter_content,
-    #consultant:checked ~ #consultant_content {
-        display: block;
-    }
-    
-    /*選択されているタブのスタイルを変える*/
-    .tabs input:checked + .tab_item {
-        background-color: #ffeb3b;
-        color: #007fc3;
-        font-weight: normal;
-    }
-    .btn_register {
-        background-color: #ffeb3b;
-        color: #007fc3;
-        display: block;
-        font-size: 180%;
-    }
-    .underbar_brown {
-        background-color: #5c472b;
-        height: 3px;
-        width: 26%;
-        margin: 46px auto;
-    }
-    .consulter_merit {
-        background-color: #d3cbc4;
-    }
-// }
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+div.top-index.mx-5 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+img.first-view_img {
+  width: 100%;
+}
+
+/* 「無料」の文字に円枠 */
+
+.letter-strong {
+  padding: 0 0.5em;
+  margin: 0.5em;
+  color: #007fc3;
+  background: #ffeb3b;
+  border: solid 1px #007fc3;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 70%;
+  vertical-align: middle;
+}
+
+p.letter-strong {
+  margin: 0;
+  padding: 0;
+}
+
+.before {
+  background-color: #223a50;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: normal;
+}
+
+.after {
+  background-color: #007fc3;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: normal;
+}
+
+p.sub-title {
+  font-size: 1em;
+  color: #565656;
+}
+
+.title {
+  color: #007fc3;
+  font-size: 2em;
+  font-weight: 100;
+}
+
+.explanation_wrapper {
+  display: table;
+}
+
+.explanation {
+  text-align: left;
+  padding-left: 2rem;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.line {
+  border-left: 3px solid #e5e7eb;
+  margin: 0;
+}
+
+p.h5 {
+  line-height: normal;
+}
+
+.pros {
+  background-color: #e4eef7;
+}
+
+.pros-container {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.box {
+  width: 2rem;
+  height: 2rem;
+  background: #66b2db;
+  position: relative;
+  border-radius: 10%;
+}
+
+.box_inner {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 150%;
+  font-weight: 300;
+}
+
+p.step_title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: sans-serif;
+  color: #2f4656;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.step_detail {
+  color: #2f4656;
+}
+
+.step-box {
+  border: solid #2f4656 1px;
+  border-radius: 2rem;
+}
+
+div.example {
+  background-color: #f5f8fa;
+}
+
+div.example-box {
+  box-shadow: 2px 5px 5px #a7a7a7;
+  border-radius: 2rem;
+  background-color: #fff;
+  display: table;
+}
+
+div.example_inner {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+/*タブ切り替え全体のスタイル*/
+
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*タブのスタイル*/
+
+.tab_item {
+  width: calc(100% / 2);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+/*選択されているタブのコンテンツのみを表示*/
+
+#consulter:checked ~ #consulter_content,
+#consultant:checked ~ #consultant_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+
+.tabs input:checked + .tab_item {
+  background-color: #ffeb3b;
+  color: #007fc3;
+  font-weight: normal;
+}
+
+.btn_register {
+  background-color: #ffeb3b;
+  color: #007fc3;
+  display: block;
+  font-size: 180%;
+}
+
+.underbar_brown {
+  background-color: #5c472b;
+  height: 3px;
+  width: 26%;
+  margin: 46px auto;
+}
+
+.consulter_merit {
+  background-color: #d3cbc4;
+}
+
+.flow {
+  background-color: #fff;
+}

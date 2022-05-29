@@ -33,10 +33,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function index()
-    {
-        return view('auth.login.index');
-    }
 
     protected function validateLogin(Request $request)
     {
@@ -53,7 +49,7 @@ class LoginController extends Controller
         if ($role_id === Role::getIntervieweeId()) {
             return '/search';
         } elseif ($role_id === Role::getSolverId()) {
-            return '/message';
+            return '/schedule_interview';
         } else {
             return '/admin';
         }
@@ -61,6 +57,6 @@ class LoginController extends Controller
 
     protected function loggedOut(Request $request)
     {
-        return redirect()->route('login.top');
+        return redirect()->route('login.email');
     }
 }

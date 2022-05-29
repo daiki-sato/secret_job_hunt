@@ -11401,6 +11401,10 @@ span.sub-title {
   padding-left: 10px;
 }
 
+.menu_item {
+  border-radius: 0 !important;
+}
+
 /*--------------------------------------
 footer
 --------------------------------------*/
@@ -11550,12 +11554,12 @@ p.h5 {
 
 .pros-container {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .box {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   background: #66b2db;
   position: relative;
   border-radius: 10%;
@@ -11575,7 +11579,7 @@ p.h5 {
 }
 
 p.step_title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
   font-family: sans-serif;
   color: #2f4656;
@@ -11598,8 +11602,6 @@ div.example {
 }
 
 div.example-box {
-  margin-left: 5rem;
-  margin-right: 5rem;
   box-shadow: 2px 5px 5px #a7a7a7;
   border-radius: 2rem;
   background-color: #fff;
@@ -11691,6 +11693,10 @@ input[name=tab_item] {
 
 .consulter_merit {
   background-color: #d3cbc4;
+}
+
+.flow {
+  background-color: #fff;
 }
 
 .mypage-index {
@@ -11828,6 +11834,79 @@ input[name=tab_item] {
 .sns-icon {
   width: 7rem;
   height: 7rem;
+}
+
+.line-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button-mail {
+  color: #fff;
+  background-color: #e3342f;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-google {
+  border: solid 1px #000;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-line {
+  color: #fff;
+  background-color: #5CC857;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-facebook {
+  color: #fff;
+  background-color: #0D6CE4;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.button-register {
+  font-weight: 800;
+}
+
+.form-control {
+  background-color: #fff;
+}
+
+.input-area,
+.login-save {
+  font-weight: bold;
+}
+
+.login-button {
+  background-color: #1E82F6;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-area {
+  background-color: #fff;
+}
+
+.register-button {
+  border: solid 2px #1E82F6;
+  width: 25%;
+}
+
+.register-button_text {
+  color: #1E82F6;
+  font-weight: bold;
+}
+
+.reset_password {
+  font-family: "Nunito", sans-serif;
+}
+
+.card_header {
+  background-color: #1E82F6;
 }
 
 /***** Common Setting *****/

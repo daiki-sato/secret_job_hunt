@@ -1,24 +1,26 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 /***** Import Common Settings  *****/
+
 @import './commons/header';
 @import './commons/footer';
 
 /***** Import Page Settings  *****/
+
 @import './admin/admin-index';
 @import './top/top-index';
 @import './mypage/mypage-index';
 @import './evaluation/evaluation';
-
+@import './login/login';
+@import './login/confirm-area';
 
 /***** Common Setting *****/
+
 body {
-  width: 100%;
+    width: 100%;
 }

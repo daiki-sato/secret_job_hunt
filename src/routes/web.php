@@ -7,9 +7,8 @@ Route::middleware([])->group(function () {
     Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
-            Route::get('/', 'RegisterController@index')->name('register');
             Route::get('/email', 'RegisterController@showRegistrationForm')->name('register.email');
-            Route::post('/', 'RegisterController@register')->name('register.post');
+            Route::post('/email', 'RegisterController@register')->name('register.post');
             Route::get('/main_register/{token}', 'RegisterController@showForm');
             Route::post('/main_register', 'RegisterController@mainRegister')->name('register.main.registered');
         });
@@ -24,7 +23,6 @@ Route::middleware([])->group(function () {
 
         // ログイン
         Route::prefix('login')->group(function () {
-            Route::get('/', 'LoginController@index')->name('login.top');
             Route::get('/email', 'LoginController@showLoginForm')->name('login.email');
             Route::post('/email', 'LoginController@login')->name('login.post');
         });
@@ -55,8 +53,6 @@ Route::middleware(['auth'])->group(function () {
         // スレッド
         Route::prefix('thread')->group(function () {
             Route::get('/', 'ThreadController@index')->name('thread');
-            Route::get('/get/{userId}/{roleId}', 'Ajax\GetThreadController@index');
-            Route::get('/getNickname/{userId}', 'Ajax\GetThreadController@getNickname');
         });
 
         // メッセージ
@@ -110,7 +106,6 @@ Route::middleware(['auth'])->group(function () {
         //面談予約
         Route::prefix('schedule_interview')->group(function () {
             Route::get('/', 'ScheduleController@index')->name('schedule');
-            Route::get('/solver', 'ScheduleController@solver')->name('schedule_solver');
         });
     });
 

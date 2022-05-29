@@ -101,8 +101,13 @@
                                         <td class="px-4 py-3">対応状況</td>
                                     </tr>
                                     @foreach ($users as $user)
+<<<<<<< HEAD
                                         @foreach ($user->contacts as $contact)
                                             <tr class="p-3 mx-3 my-5 chart-top small">
+=======
+                                        @foreach ($user->contacts()->orderBy('contact_date', 'desc')->get() as $contact)
+                                            <tr class="p-3 mx-3 my-5 chart-top">
+>>>>>>> 93bfce4093ccd99f0219d2e28528623eb457126f
                                                 <td class="px-4 py-3">
                                                     {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
                                                 <td class="px-4 py-3">

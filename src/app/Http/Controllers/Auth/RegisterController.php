@@ -27,10 +27,6 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    public function index()
-    {
-        return view('auth.index');
-    }
 
     /**
      * Where to redirect users after registration.
@@ -133,9 +129,8 @@ class RegisterController extends Controller
         $user->working_period = $request->working_period;
         $user->save();
 
-        // TODO:遷移先どうする？https://github.com/posse-ap/teamdev-2022-posse1-team1B/issues/98
-        return redirect()->route('search');
-        return '/';
-        return view('top.index');
+        $this->guard()->login($user);
+
+        return redirect()->route('home');
     }
 }

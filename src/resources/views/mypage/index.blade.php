@@ -4,7 +4,7 @@
     <div class="px-5 py-3 mypage-index">
         <div class="p-4 mypage-container">
             <div class="m-5 mypage-container_top">
-                <p class="mr-5 contact-title">お問い合せ</p>
+                <a href="{{ route('contact') }}" class="mr-5 contact-title">お問い合せ</a>
             </div>
             <div class="py-4 m-2 d-flex mypage-wrapper">
                 <div class="mx-5 text-center profile_top">
@@ -58,7 +58,8 @@
                                             </div>
                                         @endif
                                         <p class="m-0 h4 ticket_number">{{ $balance / 1.2 }}円</p>
-                                        <button class="px-5 mx-4 mt-3 py-2 exchange-button btn btn-danger" type="button"
+                                        <button $balance < 1 ? disabled
+                                            class="px-5 mx-4 mt-3 py-2 exchange-button btn btn-danger" type="button"
                                             data-toggle="modal" data-target="#pointtomoney">
                                             換金申請
                                         </button>
@@ -116,7 +117,7 @@
                                                 <img class="img-fluid h-50 w-50 " src="{{ asset('img/paypay_1.jpg') }}"
                                                     alt="">
                                                 <p>月末に毎月15日までに換金申請されたものをご登録された電話番号宛にpaypayでお支払いします。</p>
-                                                <p>5000円以上、手数料無料（通常：220円）</p>
+                                                <p>5000円以上の換金で、手数料無料（通常：220円）</p>
                                                 <form action="{{ route('toMoney') }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="money_value" value="{{ $balance / 1.2 }}">
@@ -154,6 +155,10 @@
                                             <tr>
                                                 <td class="py-3">メールアドレス</td>
                                                 <td class="pl-4 py-3">{{ $user->email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3">電話番号</td>
+                                                <td class="pl-4 py-3">{{ $user->phone_number }}</td>
                                             </tr>
                                             <tr>
                                                 <td class="py-3">性別</td>
