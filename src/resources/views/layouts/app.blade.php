@@ -69,6 +69,10 @@
                             </li>
                         @else
                         <li class="nav-item">
+                            <a href="{{ route('admin') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">管理画面へ</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('logout') }}"
                                 class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
                         </li>
