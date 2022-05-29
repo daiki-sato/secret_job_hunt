@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\LoginRequest;
-use Illuminate\Http\Request;
 use App\Models\Role;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -20,7 +19,7 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
     use AuthenticatesUsers;
 
@@ -34,11 +33,12 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+
     protected function validateLogin(Request $request)
     {
         $request->validate([
             $this->username() => 'required|string|email',
-            'password'        => 'required|string',
+            'password' => 'required|string',
         ]);
     }
 
@@ -46,15 +46,17 @@ class LoginController extends Controller
     {
         $role_id = Auth::user()->role_id;
 
-        if ($role_id === Role::getAdminId() || $role_id === Role::getDeliveryAgentId()) {
-            return '/delivery-list';
+        if ($role_id === Role::getIntervieweeId()) {
+            return '/search';
+        } elseif ($role_id === Role::getSolverId()) {
+            return '/schedule_interview';
         } else {
-            return '/';
+            return '/admin';
         }
     }
 
     protected function loggedOut(Request $request)
     {
-        return redirect()->route('login');
+        return redirect()->route('login.email');
     }
 }

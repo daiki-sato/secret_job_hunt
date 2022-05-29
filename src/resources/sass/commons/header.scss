@@ -1,14 +1,46 @@
+/*--------------------------------------
+header
+--------------------------------------*/
+
+.logo {
+    width: 50px;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+.nav-link {
+    padding: 0.8rem 1rem;
+}
+
+a.nav-link {
+    color: #ffff;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
 .navbar-green {
-    background: #5C462B;
-    color: #fff;
+    background: #2b4261;
+    color: #000;
 }
 
 .navbar-green a {
-    color: #fff;
+    font-family: Metrophobic;
+    color: #ffff;
 }
 
+span.sub-title {
+    color: #98a2b0;
+    font-size: 50%;
+    padding-left: 10px;
+}
 
-.icon-white {
-    color: #fff;
-    font-size: 30px;
+.menu_item {
+    border-radius: 0 !important;
 }

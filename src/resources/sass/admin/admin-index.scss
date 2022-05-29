@@ -1,0 +1,32 @@
+// サイドメニューバー 
+.menu_item {
+    display: block;
+    text-align: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+a.nav-link .menu_item {
+    background-color: #fff;
+    color: #000;
+}
+
+.menu_content {
+    display: none;
+    clear: both;
+    overflow: hidden;
+}
+
+// コンテンツ
+.admin-wrapper {
+    background-color: #E4EEF7;
+}
+
+.admin-inner {
+    background-color: #fff;
+}
+
+.chart-top {
+    background-color: #E4EEF7;
+    overflow: hidden;
+}

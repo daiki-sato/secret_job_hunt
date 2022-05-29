@@ -2,23 +2,31 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Role;
 
 class User extends Authenticatable
 {
     use SoftDeletes, Notifiable;
 
     protected $fillable = [
-        'name',
         'email',
         'password',
-        'company_name',
+        'email_verified',
+        'email_verify_token',
+        'first_name',
+        'last_name',
+        'first_name_ruby',
+        'last_name_ruby',
+        'phone_number',
+        'nickname',
+        'sex',
         'role_id',
+        'company',
+        'department',
+        'working_period',
         // 'remembe_token',
     ];
 
@@ -32,9 +40,36 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Role');
     }
 
-    public function delivery_addresses()
+    public function wallet()
     {
-        return $this->hasMany('App\Models\DeliveryAddress');
+        return $this->hasOne('App\Models\Wallet');
+    }
+
+
+    public function tomoney()
+    {
+        return $this->hasOne('App\Models\ToMoney');
+    }
+
+
+    public function interviews()
+    {
+        return $this->hasMany('App\Models\Interview');
+    }
+
+    public function threads()
+    {
+        return $this->hasMany('App\Models\Thread');
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Contact');
+    }
+
+    public function calls()
+    {
+        return $this->hasMany('App\Models\Call');
     }
 
     public function hasRole(string $role)

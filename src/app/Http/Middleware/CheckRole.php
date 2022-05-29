@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use App\Models\Role;
+use Closure;
 
 class CheckRole
 {
@@ -13,23 +13,22 @@ class CheckRole
         if (!$user->hasRole($role)) {
             $role_id = $user->role_id;
 
-            if ($role_id === Role::getAdminId() || $role_id === Role::getDeliveryAgentId()) {
+            if ($role_id === Role::getIntervieweeId() || $role_id === Role::getSolverId()) {
                 return redirect()
-                        ->route('delivery-list')
-                        ->with([
-                            'flush.message' => 'ページ閲覧権限がありません',
-                            'flush.alert_type' => 'danger',
-                        ]);
+                    ->route('home')
+                    ->with([
+                        'flush.message' => 'ページ閲覧権限がありません',
+                        'flush.alert_type' => 'danger',
+                    ]);
             } else {
                 return redirect()
-                        ->route('home')
-                        ->with([
-                            'flush.message' => 'ページ閲覧権限がありません',
-                            'flush.alert_type' => 'danger',
-                        ]);;
+                    ->route('admin')
+                    ->with([
+                        'flush.message' => 'ページ閲覧権限がありません',
+                        'flush.alert_type' => 'danger',
+                    ]);
             }
         }
-
         return $next($request);
     }
 }

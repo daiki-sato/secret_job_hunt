@@ -1,0 +1,93 @@
+.mypage-index {
+  background-color: #fff;
+  overflow: hidden;
+  .mypage-container {
+    background-color: #fff;
+    width: 75%;
+    margin: 0 auto;
+  }
+  .mypage-container_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  h2.mypage-title {
+    text-align: center;
+  }
+  p.contact-title {
+    text-align: right;
+    position: absolute;
+    right: 0;
+    font-size: 120%;
+    color: #0047ff;
+  }
+  .profile_img {
+    width: 10rem;
+    height: 10rem;
+    border: #000 1px;
+  }
+  .ticket_container {
+    width: 60%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .info_title {
+    border-bottom: 5px solid #5c462b;
+  }
+  .ticket_detail {
+    display: flex;
+  }
+  .exchange-button {
+    background-color: #ff0202;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  .profile_container {
+    width: 60%;
+  }
+  .profile_table {
+    border-collapse: separate;
+    border-spacing: 2rem 0.5rem;
+  }
+  .edit-button {
+    background-color: #66b2db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  .account-button {
+    background-color: #e2e0e0;
+    border: none;
+    margin: 1rem auto;
+    font-size: 150%;
+    font-weight: 400;
+  }
+  .submit-button {
+    background-color: #66b2db;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+  }
+  .evaluation-comment {
+    color: #007fc3;
+    text-decoration: underline;
+  }
+  .thumbs-up::before {
+    color: #ff0202;
+  }
+  .thumbs-down::before {
+    color: #2b509e;
+  }
+  // .mypage-tab:active {
+  //   background-color: #7fc6f7;
+  //   color: #ffff;
+  //   font-weight: bold;
+  //   letter-spacing: 0.15rem;
+  //   nav-index: -1;
+  // }
+  .nav-pills .nav-link.active {
+    background-color: red;
+  }
+}

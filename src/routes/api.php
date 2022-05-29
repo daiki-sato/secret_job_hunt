@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,8 +11,15 @@ use Illuminate\Http\Request;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::post('/interviewsData', 'Api\InterviewController@post');
+Route::get('/userBalance/{userId}', 'Api\GetUserBalanceController@index');
+Route::get('/callRoomId/{threadId}', 'Api\GetCallController@index');
+Route::get('getCompany/{keyword}', "Api\GetCompany@search");
+Route::get('/getThreadUser/{userId}/{roleId}', 'Ajax\GetThreadController@index');
+Route::get('/getMessages/{threadId}/', 'Ajax\GetThreadController@messages');
+Route::get('/getNickname/{userId}/{roleId}', 'Ajax\GetThreadController@getNickname');
