@@ -19,9 +19,6 @@ const Call = (props) => {
       const videoElm = document.getElementById("my-video");
       videoElm.srcObject = stream;
       videoElm.play();
-
-      console.log(stream);
-      console.log(videoElm);
       localStream = stream;
     })
     .catch((error) => {
@@ -35,8 +32,6 @@ const Call = (props) => {
       mode: "sfu",
       stream: localStream,
     });
-    console.log("click");
-    console.log(peer, "peer");
     setEventListener(mediaConnection);
   };
 

@@ -13,7 +13,6 @@ class ConsentController extends Controller
     }
     public function add(Request $request)
     {
-        // TODO::後でinterview_id、from_what_time、to_what_timeを可変にします
         InterviewTime::create(
             [
                 'interview_id' => $request->interview_id,
