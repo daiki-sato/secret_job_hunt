@@ -80,7 +80,6 @@
             <div class="d-flex flex-column">
                 <div class="px-5 py-1 text-muted">
                     <ul class="pb-3 navbar-nav footer_nav">
-                        <li class="nav-item px-2 ml-3">よくある質問</li>
                         <li class="nav-item px-2 ml-3">利用規約</li>
                         <li class="nav-item px-2 ml-3">個人情報の取り扱い</li>
                     </ul>
