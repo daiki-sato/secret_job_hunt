@@ -33,6 +33,20 @@
                                         <td class="px-4 py-3">金額</td>
                                         <td class="px-4 py-3">日時</td>
                                     </tr>
+                                    @foreach ($users as $user)
+                                        @foreach ($user->wallet()->orderBy('created_at', 'desc')->get()
+        as $eachwallet)
+                                            <tr class="p-3 mx-3 my-5 chart-top">
+                                                <td class="px-4 py-3">
+                                                    {{ $user->first_name }}{{ $user->last_name }}
+                                                </td>
+                                                <td class="px-4 py-3">{{ $eachwallet->balance / 1200 }}</td>
+                                                <td class="px-4 py-3">{{ $eachwallet->balance }}</td>
+                                                <td class="px-4 py-3">
+                                                    {{ $eachwallet->created_at }}</td>
+                                            </tr>
+                                        @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -74,7 +88,8 @@
                                     <form action="{{ route('mv_done') }}" method="POST">
                                         @csrf
                                         @foreach ($users as $user)
-                                            @foreach ($user->contacts()->where('is_read',1)->orderBy('contact_date', 'desc')->get() as $contact)
+                                            @foreach ($user->contacts()->where('is_read', 1)->orderBy('contact_date', 'desc')->get()
+        as $contact)
                                                 <tr class="p-3 mx-3 my-5 chart-top">
                                                     <td class="px-4 py-3">
                                                         {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
@@ -86,7 +101,7 @@
                                                     <td class="px-4 py-3">{{ $contact->contact_type }}</td>
                                                     <td class="px-4 py-3">{{ $contact->comment }}</td>
                                                     <td class="px-4 py-3">
-                                                        <input type="checkbox" name="status[]" value={{$contact->id}}>
+                                                        <input type="checkbox" name="status[]" value={{ $contact->id }}>
                                                         <label for="status"></label>
                                                     </td>
                                                 </tr>
@@ -118,7 +133,8 @@
                                     <form action="{{ route('mv_backlog') }}" method="POST">
                                         @csrf
                                         @foreach ($users as $user)
-                                            @foreach ($user->contacts()->where('is_read', 0)->orderBy('contact_date', 'desc')->get() as $contact)
+                                            @foreach ($user->contacts()->where('is_read', 0)->orderBy('contact_date', 'desc')->get()
+        as $contact)
                                                 <tr class="p-3 mx-3 my-5 chart-top">
                                                     <td class="px-4 py-3">
                                                         {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
@@ -130,7 +146,7 @@
                                                     <td class="px-4 py-3">{{ $contact->contact_type }}</td>
                                                     <td class="px-4 py-3">{{ $contact->comment }}</td>
                                                     <td class="px-4 py-3">
-                                                        <input type="checkbox" name="status[]" value={{$contact->id}}>
+                                                        <input type="checkbox" name="status[]" value={{ $contact->id }}>
                                                         <label for="status"></label>
                                                     </td>
                                                 </tr>
@@ -147,5 +163,3 @@
         </div>
     </div>
 @endsection
-
-
