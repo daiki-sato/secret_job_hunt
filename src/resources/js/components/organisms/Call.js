@@ -29,7 +29,9 @@ const Call = (props) => {
       return;
     });
   const handleCall = () => {
-    const mediaConnection = peer.joinRoom(props.callRoomId, {
+    const targetDom = document.getElementById("call");
+    const callRoomId = "targetDom.dataset.callRoomId";
+    const mediaConnection = peer.joinRoom(callRoomId, {
       mode: "sfu",
       stream: localStream,
     });
@@ -105,3 +107,6 @@ const Call = (props) => {
 };
 
 export default Call;
+if (document.getElementById("call")) {
+  ReactDOM.render(<Call />, document.getElementById("call"));
+}

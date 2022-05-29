@@ -46,10 +46,10 @@
         "pusher-js": "^7.0.6",
         "react-chat-elements": "^11.0.1",
         "react-hook-form": "^7.30.0",
-        "skyway-js": "^4.4.4",
         "react-native": "^0.68.2",
         "react-native-vector-icons": "^9.1.0",
         "react-web-gifted-chat": "^0.6.7",
+        "skyway-js": "^4.4.4",
         "styled-components": "^5.3.5"
     }
 }
