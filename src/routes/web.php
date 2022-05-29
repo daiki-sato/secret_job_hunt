@@ -7,9 +7,8 @@ Route::middleware([])->group(function () {
     Route::namespace('Auth')->group(function () {
         // 登録
         Route::prefix('register')->group(function () {
-            Route::get('/', 'RegisterController@index')->name('register');
             Route::get('/email', 'RegisterController@showRegistrationForm')->name('register.email');
-            Route::post('/', 'RegisterController@register')->name('register.post');
+            Route::post('/email', 'RegisterController@register')->name('register.post');
             Route::get('/main_register/{token}', 'RegisterController@showForm');
             Route::post('/main_register', 'RegisterController@mainRegister')->name('register.main.registered');
         });
@@ -24,8 +23,7 @@ Route::middleware([])->group(function () {
 
         // ログイン
         Route::prefix('login')->group(function () {
-            Route::get('/', 'LoginController@index')->name('login.top');
-            Route::get('/', 'LoginController@showLoginForm')->name('login.email');
+            Route::get('/email', 'LoginController@showLoginForm')->name('login.email');
             Route::post('/email', 'LoginController@login')->name('login.post');
         });
 

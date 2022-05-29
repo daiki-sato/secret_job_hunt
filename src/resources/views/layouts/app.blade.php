@@ -20,7 +20,7 @@
     @section('header')
         <nav class="navbar sticky-top navbar-expand-sm navbar-green shadow-sm bg-body">
             <a class="navbar-brand" href="{{ route('search') }}">
-                <img src="{{ asset('img/logo.png') }}" alt="logo">
+                <img class="logo" src="{{ asset('img/logo.png') }}" alt="logo">
                 Anovey<span class="sub-title">匿名転職相談サービス</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4"
                 aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +80,6 @@
             <div class="d-flex flex-column">
                 <div class="px-5 py-1 text-muted">
                     <ul class="pb-3 navbar-nav footer_nav">
-                        <li class="nav-item px-2 ml-3">よくある質問</li>
                         <li class="nav-item px-2 ml-3">利用規約</li>
                         <li class="nav-item px-2 ml-3">個人情報の取り扱い</li>
                     </ul>
