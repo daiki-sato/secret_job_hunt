@@ -23,14 +23,31 @@ class AdminController extends Controller
         return view('admin.index', compact('users'));
     }
 
-    public function UpdatePaymentStatus(Request $request)
+    public function MovePaymentStatusDone(Request $request)
     {
 
-        $id = Auth::id();
-        $cash = Cash::where('user_id', $id)->get();
-        dd($cash);
-        $cash->status = $request->input('status');
-        $cash->save();
-        return redirect()->route('admin');;
+        $ids = $request->status;
+
+        foreach ($ids as $id) {
+            Cash::where('id', $id)
+                ->update([
+                    'status' => 1,
+                ]);
+        }
+        return redirect('admin');
     }
+    public function MovePaymentStatusBacklog(Request $request)
+    {
+
+        $ids = $request->status;
+
+        foreach ($ids as $id) {
+            Cash::where('id', $id)
+                ->update([
+                    'status' => 0,
+                ]);
+        }
+        return redirect('admin');
+    }
+    
 }
