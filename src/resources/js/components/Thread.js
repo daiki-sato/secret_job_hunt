@@ -12,10 +12,15 @@ import {
   MessageList,
   ChatItem,
   MeetingItem,
+  MeetingLink,
+  Avatar,
 } from "react-chat-elements";
 import { Button, Row, Col, Divider, Input, message } from "antd";
-import { Box, Paper, Grid } from "@mui/material";
+import { Box, Paper, Grid, Link } from "@mui/material";
+import CallIcon from "@mui/icons-material/Call";
+
 import { styled } from "@mui/material/styles";
+import Call from "./organisms/Call";
 const { TextArea } = Input;
 
 import "react-chat-elements/dist/main.css";
@@ -31,9 +36,22 @@ const ChatWidget = (props) => {
   const [user, setUser] = useState(props.clickUser);
   const [msgDataList, setMsgDataList] = useState([null]);
   const [sendMsg, setSendMsg] = useState("");
+  const [callRoomId, setCallRoomId] = useState("");
+
+  const getCallRoomId = () => {
+    const threadId = props.messages[0].messages[0].thread_id;
+
+    axios
+      .get(`http://localhost/api/callRoomId/${threadId}`)
+      .then((response) => {
+        setCallRoomId(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
     createMessage();
+    getCallRoomId();
   }, [props.clickUser, props.messages]);
 
   const createMessage = () => {
@@ -89,6 +107,15 @@ const ChatWidget = (props) => {
           }}
         >
           {user == null ? "" : user.title}
+
+          <Link
+            href={`/call/${callRoomId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="inherit"
+          >
+            <CallIcon color="primary"></CallIcon>
+          </Link>
         </Col>
       </Row>
       <Row>
@@ -127,6 +154,7 @@ const ChatWidget = (props) => {
           <Button type="primary" onClick={clickButton}>
             发送
           </Button>
+          {/* <Call callRoomId={callRoomId} /> */}
         </Col>
       </Row>
     </Col>
