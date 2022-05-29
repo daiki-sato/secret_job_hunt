@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link href={{ asset('/img/logo.png') }} rel="shortcut icon" >
+    <link href={{ asset('/img/logo.png') }} rel="shortcut icon">
     <meta http-equiv="content-type" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -29,26 +29,28 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
                 <ul class="navbar-nav">
                     @auth
-                        <li class="nav-item">
-                            <a href="{{ route('schedule') }}"
-                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">予約一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('thread') }}"
-                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('search') }}"
-                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">検索画面へ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('my-page') }}"
-                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('logout') }}"
-                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
-                        </li>
+                        @if (!Auth::user()->role_id === 1)
+                            <li class="nav-item">
+                                <a href="{{ route('schedule') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">予約一覧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('thread') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('search') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">検索画面へ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('my-page') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
+                            </li>
+                        @endif
                     @endauth
                     @guest
                         <li class="nav-item">

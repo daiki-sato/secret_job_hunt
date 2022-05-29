@@ -177,7 +177,7 @@ class UserTableSeeder extends Seeder
                 'phone_number' => '080-3333-1111',
                 'nickname' => "かんり",
                 'sex' => "男",
-                'role_id' => 1,
+                'role_id' => Role::getAdminId(),
                 'company' => "株式会社アンチパターン",
                 'department' => "エンジニア部門",
                 'working_period' => "2",
