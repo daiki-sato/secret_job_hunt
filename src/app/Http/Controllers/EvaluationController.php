@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Foundation\Console\Presets\React;
-use Illuminate\Http\Request;
 use App\Models\Call;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 
 class EvaluationController extends Controller
 {
@@ -30,6 +27,6 @@ class EvaluationController extends Controller
                 'evaluation_comment' => $request->evaluation_comment,
             ]
         );
-        return redirect('evaluation')->with('message','送信が完了しました');
+        return redirect('evaluation')->with('message', '送信が完了しました');
     }
 }
