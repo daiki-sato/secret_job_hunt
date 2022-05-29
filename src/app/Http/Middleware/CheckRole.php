@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use App\Models\Role;
+use Closure;
 
 class CheckRole
 {
@@ -28,22 +28,6 @@ class CheckRole
                         'flush.alert_type' => 'danger',
                     ]);
             }
-
-            //     if ($role_id === Role::getAdminId()) {
-            //         return redirect()
-            //             ->route('admin')
-            //             ->with([
-            //                 'flush.message' => 'ページ閲覧権限がありません',
-            //                 'flush.alert_type' => 'danger',
-            //             ]);
-            //     } else {
-            //         return redirect()
-            //             ->route('home')
-            //             ->with([
-            //                 'flush.message' => 'ページ閲覧権限がありません',
-            //                 'flush.alert_type' => 'danger',
-            //             ]);
-            //     }
         }
         return $next($request);
     }

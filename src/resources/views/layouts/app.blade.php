@@ -29,53 +29,37 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
                 <ul class="navbar-nav">
                     @auth
+                        <li class="nav-item">
+                            <a href="{{ route('schedule') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">予約一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('thread') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
+                        </li>
                         @if (Auth::user()->role_id === 2)
-                            <li class="nav-item">
-                                <a href="{{ route('schedule') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">予約一覧</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('thread') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
-                            </li>
                             <li class="nav-item">
                                 <a href="{{ route('search') }}"
                                     class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">検索画面へ</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ route('my-page') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('logout') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
-                            </li>
-                        @elseif(Auth::user()->role_id === 3)
-                            <li class="nav-item">
-                                <a href="{{ route('schedule') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">予約一覧</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('thread') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">スレッドへ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('my-page') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('logout') }}"
-                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
-                            </li>
-                        @else
+                        @endif
                         <li class="nav-item">
-                            <a href="{{ route('admin') }}"
-                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">管理画面へ</a>
+                            <a href="{{ route('my-page') }}"
+                                class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">マイページへ</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('logout') }}"
                                 class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
                         </li>
+                        @if (Auth::user()->role_id === 1)
+                            <li class="nav-item">
+                                <a href="{{ route('admin') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">管理画面へ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('logout') }}"
+                                    class="nav-link px-5 ml-3 shadow-sm bg-body rounded header_item">ログアウト</a>
+                            </li>
                         @endif
                     @endauth
                     @guest
