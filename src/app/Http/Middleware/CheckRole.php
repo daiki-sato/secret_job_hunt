@@ -13,21 +13,37 @@ class CheckRole
         if (!$user->hasRole($role)) {
             $role_id = $user->role_id;
 
-            if (!$role_id === Role::getIntervieweeId() || !$role_id === Role::getSolverId()) {
+            if ($role_id === Role::getIntervieweeId() || $role_id === Role::getSolverId()) {
                 return redirect()
-                    ->route('admin')
+                    ->route('home')
                     ->with([
                         'flush.message' => 'ページ閲覧権限がありません',
                         'flush.alert_type' => 'danger',
                     ]);
             } else {
                 return redirect()
-                    ->route('home')
+                    ->route('admin')
                     ->with([
                         'flush.message' => 'ページ閲覧権限がありません',
                         'flush.alert_type' => 'danger',
-                    ]);;
-            };
+                    ]);
+            }
+
+            //     if ($role_id === Role::getAdminId()) {
+            //         return redirect()
+            //             ->route('admin')
+            //             ->with([
+            //                 'flush.message' => 'ページ閲覧権限がありません',
+            //                 'flush.alert_type' => 'danger',
+            //             ]);
+            //     } else {
+            //         return redirect()
+            //             ->route('home')
+            //             ->with([
+            //                 'flush.message' => 'ページ閲覧権限がありません',
+            //                 'flush.alert_type' => 'danger',
+            //             ]);
+            //     }
         }
         return $next($request);
     }
