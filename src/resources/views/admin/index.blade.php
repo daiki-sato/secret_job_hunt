@@ -13,6 +13,9 @@
                 <a class="nav-link py-2 my-0 h2 menu_item" id="v-pills-contact-tab" data-toggle="pill"
                     href="#v-pills-contact" role="tab" aria-controls="v-pills-contact" aria-selected="false"><i
                         class="pr-2 fa-solid fa-comment-dots"></i>お問合せ</a>
+                <a class="nav-link py-2 my-0 h2 menu_item" id="v-pills-contact-done-tab" data-toggle="pill"
+                    href="#v-pills-contact-done" role="tab" aria-controls="v-pills-contact-done" aria-selected="false"><i
+                        class="pr-2 fa-solid fa-comment-dots"></i>お問合せ(対応済み)</a>
             </div>
         </div>
         <div class="px-0 col-9">
@@ -66,13 +69,12 @@
                                         <td class="px-4 py-3">電話番号</td>
                                         <td class="px-4 py-3">項目</td>
                                         <td class="px-4 py-3">メッセージ内容</td>
-                                        <td class="px-4 py-3">対応状況</td>
+                                        <td class="px-4 py-3">対応済みにする</td>
                                     </tr>
-                                    <form action="{{ route('save') }}" method="POST">
+                                    <form action="{{ route('mv_done') }}" method="POST">
                                         @csrf
                                         @foreach ($users as $user)
-                                            @foreach ($user->contacts()->orderBy('contact_date', 'desc')->get()
-        as $contact)
+                                            @foreach ($user->contacts()->where('is_read',1)->orderBy('contact_date', 'desc')->get() as $contact)
                                                 <tr class="p-3 mx-3 my-5 chart-top">
                                                     <td class="px-4 py-3">
                                                         {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
@@ -84,9 +86,7 @@
                                                     <td class="px-4 py-3">{{ $contact->contact_type }}</td>
                                                     <td class="px-4 py-3">{{ $contact->comment }}</td>
                                                     <td class="px-4 py-3">
-                                                        <input {{ $contact->is_read == 1 ? 'checked' : '' }}
-                                                            type="checkbox" id="" name="status[]"
-                                                            value={{ $contact->id }}>
+                                                        <input type="checkbox" name="status[]" value={{$contact->id}}>
                                                         <label for="status"></label>
                                                     </td>
                                                 </tr>
@@ -96,7 +96,50 @@
                             </table>
                             <button class="btn-dark" type="submit">送信する</button>
                             </form>
-
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade menu_content" id="v-pills-contact-done" role="tabpanel"
+                    aria-labelledby="v-pills-contact-done-tab">
+                    <div class="p-5 admin-wrapper">
+                        <div class="p-5 m-5 admin-inner">
+                            <h2 class="pt-2 pb-5">お問合せ</h2>
+                            <table class="w-100 profile_table">
+                                <tbody class="text-center">
+                                    <tr class="p-3 mx-3 my-5 chart-top">
+                                        <td class="px-4 py-3">お問合せ日時</td>
+                                        <td class="px-4 py-3">名前</td>
+                                        <td class="px-4 py-3">メアド</td>
+                                        <td class="px-4 py-3">電話番号</td>
+                                        <td class="px-4 py-3">項目</td>
+                                        <td class="px-4 py-3">メッセージ内容</td>
+                                        <td class="px-4 py-3">未対応にする</td>
+                                    </tr>
+                                    <form action="{{ route('mv_backlog') }}" method="POST">
+                                        @csrf
+                                        @foreach ($users as $user)
+                                            @foreach ($user->contacts()->where('is_read', 0)->orderBy('contact_date', 'desc')->get() as $contact)
+                                                <tr class="p-3 mx-3 my-5 chart-top">
+                                                    <td class="px-4 py-3">
+                                                        {{ $contact->contact_date->format('Y-m-d H:i') }}</td>
+                                                    <td class="px-4 py-3">
+                                                        {{ $user->first_name }}{{ $user->last_name }}
+                                                    </td>
+                                                    <td class="px-4 py-3">{{ $user->email }}</td>
+                                                    <td class="px-4 py-3">{{ $user->phone_number }}</td>
+                                                    <td class="px-4 py-3">{{ $contact->contact_type }}</td>
+                                                    <td class="px-4 py-3">{{ $contact->comment }}</td>
+                                                    <td class="px-4 py-3">
+                                                        <input type="checkbox" name="status[]" value={{$contact->id}}>
+                                                        <label for="status"></label>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endforeach
+                                </tbody>
+                            </table>
+                            <button class="btn-dark" type="submit">送信する</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -104,3 +147,5 @@
         </div>
     </div>
 @endsection
+
+
