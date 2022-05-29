@@ -16,10 +16,10 @@ class ConsentController extends Controller
         // TODO::後でinterview_id、from_what_time、to_what_timeを可変にします
         InterviewTime::create(
             [
-                'interview_id' => 11,
+                'interview_id' => $request->interview_id,
                 'is_agreement' => $request->consent_type,
-                'from_what_time' => '2022-05-11',
-                'to_what_time' => '2022-05-11',
+                'from_what_time' => $request->from_what_time,
+                'to_what_time' => $request->to_what_time,
             ]
         );
         return view('consent.index');

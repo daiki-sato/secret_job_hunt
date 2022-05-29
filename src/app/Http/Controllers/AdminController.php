@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
-use App\Models\Wallet;
 use App\Models\User;
 use App\Models\Cash;
 use Carbon\Carbon;
 use PhpParser\Node\Expr\AssignOp\Concat;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -50,4 +49,30 @@ class AdminController extends Controller
         return redirect('admin');
     }
     
+
+    public function mv_done(Request $request)
+    {
+        $ids = $request->status;
+        foreach ($ids as $id) {
+            Contact::where('id', $id)
+                ->update([
+                    'is_read' => 0,
+                ]);
+        }
+        
+        return redirect('admin');
+    }
+
+    public function mv_backlog(Request $request)
+    {
+        $ids = $request->status;
+        foreach ($ids as $id) {
+            Contact::where('id', $id)
+                ->update([
+                    'is_read' => 1,
+                ]);
+        }
+        
+        return redirect('admin');
+    }
 }

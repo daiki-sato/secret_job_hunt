@@ -72,8 +72,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Call');
     }
 
-    // public function hasRole(string $role)
-    // {
-    //     return $this->role->id === Role::getAdminId() || $this->role->name === $role;
-    // }
+    public function hasRole(string $role)
+    {
+        return $this->role->id === Role::getAdminId() || $this->role->name === $role;
+    }
 }
