@@ -2,9 +2,11 @@
 
 @section('content')
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#evaluationModal">
-        通話を終了する
-    </button>
+
+        <button type="button" class="mt-4 mb-2 px-2 btn btn-primary" data-toggle="modal" data-target="#evaluationModal">
+            通話を終了する
+        </button>
+        
 
     <!-- Modal -->
     <div class="modal fade" id="evaluationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

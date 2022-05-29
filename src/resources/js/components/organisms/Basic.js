@@ -124,8 +124,6 @@ function Basic(props) {
           <Box
             sx={{
               display: "flex",
-              // flexDirection: "column",
-              // justifyContent: "space-between",
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -138,7 +136,6 @@ function Basic(props) {
                     title: newValue,
                   });
                 } else if (newValue && newValue.inputValue) {
-                  // Create a new value from the user input
                   setValue({
                     title: newValue.inputValue,
                   });

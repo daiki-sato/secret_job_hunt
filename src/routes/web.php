@@ -73,6 +73,13 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/add', 'EvaluationController@add')->name('evaluation_add');
     });
 
+    // メッセージ
+    Route::prefix('message')->group(function () {
+        Route::get('/get/{threadId}', 'Ajax\MessageController@get')->name('message.get');
+        Route::post('/post', 'Ajax\MessageController@create'); // チャット登録
+        Route::post('/delete/{messageId}', 'Ajax\MessageController@delete');
+    });
+
     //支払い(paypay)
     Route::prefix('paypay')->group(function () {
         //ルーティングで支払いができないように適当な文字列を追加
@@ -117,6 +124,8 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('/', 'AdminController@index')->name('admin');
+            Route::post('/move', 'AdminController@MovePaymentStatusDone')->name('MovePaymentStatusDone');
+            Route::post('/move2', 'AdminController@MovePaymentStatusBacklog')->name('MovePaymentStatusBacklog');
             Route::post('/save/mv_done', 'AdminController@mv_done')->name('mv_done');
             Route::post('/save/mv_backlog', 'AdminController@mv_backlog')->name('mv_backlog');
         });
