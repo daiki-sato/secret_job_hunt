@@ -167,6 +167,21 @@ class UserTableSeeder extends Seeder
                 'department' => "経営部門",
                 'working_period' => 11,
             ],
+            [
+                'email' => 'admin1@com',
+                'password' => bcrypt('password'),
+                'first_name' => "管理",
+                'last_name' => "者",
+                'first_name_ruby' => "カンリ",
+                'last_name_ruby' => "シャ",
+                'phone_number' => '080-3333-1111',
+                'nickname' => "かんり",
+                'sex' => "男",
+                'role_id' => 1,
+                'company' => "株式会社アンチパターン",
+                'department' => "エンジニア部門",
+                'working_period' => "2",
+            ],
         ];
         DB::table('users')->insert($params);
     }
