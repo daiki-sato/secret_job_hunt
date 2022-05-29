@@ -1,27 +1,11 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  createRef,
-  useLayoutEffect,
-} from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import {
-  ChatList,
-  MessageList,
-  ChatItem,
-  MeetingItem,
-  MeetingLink,
-  Avatar,
-} from "react-chat-elements";
-import { Button, Row, Col, Divider, Input, message } from "antd";
-import { Box, Paper, Grid, Link } from "@mui/material";
+import { ChatList, MessageList } from "react-chat-elements";
+import { Box, Paper, Grid, Link, TextField, Button } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 import CallIcon from "@mui/icons-material/Call";
-
 import { styled } from "@mui/material/styles";
-import Call from "./organisms/Call";
-const { TextArea } = Input;
 
 import "react-chat-elements/dist/main.css";
 const Item = styled(Paper)(({ theme }) => ({
@@ -40,7 +24,6 @@ const ChatWidget = (props) => {
 
   const getCallRoomId = () => {
     const threadId = props.messages[0].messages[0].thread_id;
-
     axios
       .get(`http://localhost/api/callRoomId/${threadId}`)
       .then((response) => {
@@ -81,83 +64,70 @@ const ChatWidget = (props) => {
       })
       .then(() => {
         setSendMsg("");
-        createMessage();
+        props.getThreadUser();
       });
   };
 
   return (
-    <Col
-      style={{
-        width: 700,
-        height: 600,
-        display: "inline-block",
-        borderRight: "3px solid",
-        borderTop: "3px solid",
-        borderBottom: "3px solid",
-      }}
-    >
-      <Row>
-        <Col
-          style={{
-            width: 700,
-            height: 40,
-            textAlign: "left",
-            verticalAlign: "middle",
-            fontSize: 20,
-          }}
-        >
-          {user == null ? "" : user.title}
+    <>
+      <Grid item xs={12}>
+        <Item sx={{ border: 1, p: 2, fontWeight: "bold" }}>
+          <Box>
+            {user == null ? "" : user.title}
+            <Link
+              href={`/call/${callRoomId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+            >
+              <CallIcon color="primary"></CallIcon>
+            </Link>
+          </Box>
+        </Item>
+      </Grid>
 
-          <Link
-            href={`/call/${callRoomId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="inherit"
-          >
-            <CallIcon color="primary"></CallIcon>
-          </Link>
-        </Col>
-      </Row>
-      <Row>
-        <div
-          style={{
-            width: 700,
-            height: 420,
-            textAlign: "center",
-            verticalAlign: "middle",
-            fontSize: 20,
-            overflow: "auto",
-            backgroundColor: "\t#C0C0C0",
-          }}
-        >
-          <MessageList className="message-list" dataSource={msgDataList} />
-        </div>
-      </Row>
-
-      <Row>
-        <Col
-          style={{
-            width: 700,
-            textAlign: "center",
-            verticalAlign: "middle",
-            fontSize: 20,
-          }}
-        >
-          <TextArea
-            rows={4}
-            onChange={(e) => {
-              setSendMsg(e.target.value);
+      <Grid item xs={12}>
+        <Item sx={{ border: 1 }}>
+          <Box sx={{ p: 4 }}>
+            <MessageList className="message-list" dataSource={msgDataList} />
+          </Box>
+          <Box
+            sx={{
+              mt: 5,
+              width: 1,
+              maxWidth: "100%",
+              display: "flex",
+              p: 4,
             }}
-            value={sendMsg}
-            placeholder="メッセージを入力"
-          />
-          <Button type="primary" onClick={clickButton}>
-            发送
-          </Button>
-          {/* <Call callRoomId={callRoomId} /> */}
-        </Col>
-      </Row>
-    </Col>
+          >
+            <TextField
+              fullWidth
+              id="standard-basic"
+              label="メッセージを入力"
+              variant="standard"
+              onChange={(e) => {
+                setSendMsg(e.target.value);
+              }}
+              value={sendMsg}
+            />
+            <Box
+              sx={{
+                width: 200,
+                maxWidth: "100%",
+              }}
+            >
+              <Button
+                variant="contained"
+                endIcon={<SendIcon />}
+                onClick={clickButton}
+              >
+                送信
+              </Button>
+            </Box>
+          </Box>
+        </Item>
+      </Grid>
+    </>
   );
 };
 
@@ -219,36 +189,18 @@ const ChatPage = () => {
   }, [threadUsers, nicknames]);
 
   return (
-    <>
-      <div>
-        <Divider
-          orientation="left"
-          style={{
-            color: "#333",
-            fontWeight: "normal",
-          }}
-        >
-          私信列表
-        </Divider>
-        <Row>
-          <Col
-            style={{
-              width: 400,
-              height: 600,
-              display: "inline-block",
-              border: "3px solid",
-              overflow: "auto",
-            }}
-          >
-            <ChatList
-              // showVideoCall={true}
-              className="chat-list"
-              onClick={(e) => setClickUser(e)}
-              dataSource={userList}
-            />
-          </Col>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container>
+        <Grid item xs={3} sx={{ border: 1 }}>
+          <ChatList
+            className="chat-list"
+            onClick={(e) => setClickUser(e)}
+            dataSource={userList}
+          />
+        </Grid>
+        <Grid item xs={9}>
           {userList.length == 0 ? (
-            <div>ないよー</div>
+            <div>チャット相手がいません。</div>
           ) : (
             <ChatWidget
               clickUser={clickUser}
@@ -259,9 +211,9 @@ const ChatPage = () => {
               getThreadUser={() => getThreadUser()}
             />
           )}
-        </Row>
-      </div>
-    </>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 export default ChatPage;
