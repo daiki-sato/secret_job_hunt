@@ -58,7 +58,7 @@
                                     <form action="{{ route('MovePaymentStatusDone') }}" method="POST">
                                         @csrf
                                         @foreach ($users as $user)
-                                            @foreach ($user->cashes()->where('status' , 0)->get() as $each_cash)
+                                            @foreach ($user->cashes()->where('is_read' , 0)->get() as $each_cash)
                                                 <tr class="p-3 mx-3 my-5 chart-top small">
                                                     <td class="px-4 py-3">
                                                         {{ $each_cash->created_at->format('Y-m-d H:i') }}</td>
@@ -105,7 +105,7 @@
                                     <form action="{{ route('MovePaymentStatusBacklog') }}" method="POST">
                                         @csrf
                                         @foreach ($users as $user)
-                                            @foreach ($user->cashes()->where('status' , 1)->get() as $each_cash)
+                                            @foreach ($user->cashes()->where('is_read' , 1)->get() as $each_cash)
                                                 <tr class="p-3 mx-3 my-5 chart-top small">
                                                     <td class="px-4 py-3">
                                                         {{ $each_cash->created_at->format('Y-m-d H:i') }}</td>

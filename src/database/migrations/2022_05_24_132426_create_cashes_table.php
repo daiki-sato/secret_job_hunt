@@ -19,6 +19,7 @@ class CreateCashesTable extends Migration
             $table->integer('value');
             $table->string('status');
             $table->integer('commission');
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
     }

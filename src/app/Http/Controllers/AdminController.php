@@ -31,7 +31,7 @@ class AdminController extends Controller
         foreach ($ids as $id) {
             Cash::where('id', $id)
                 ->update([
-                    'status' => 1,
+                    'is_read' => 1,
                 ]);
         }
         return redirect('admin');
@@ -44,7 +44,7 @@ class AdminController extends Controller
         foreach ($ids as $id) {
             Cash::where('id', $id)
                 ->update([
-                    'status' => 0,
+                    'is_read' => 0,
                 ]);
         }
         return redirect('admin');
