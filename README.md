@@ -1,49 +1,3 @@
-# 開発のフロー
-1.ブランチは、feature/issue番号で切る(例）feature/41
-  
-2.プルリクエストを出したら、だいきorまゆなにレビューしてもらう。
-
-3.LGTMをもらったら、だいきorまゆながマージする。
-
-### ⚠レビューなしでマージ禁止
-
-
-### ⚠issue番号と合致したブランチを使用する。
-
-
-### ⚠不要な変更が入らないようにプルリクエストを出す際に確認する。
-
-### ⚠コミットメッセージ、issue、プルリクエストは分かりやすく記載する
-→コミットメッセージ：https://qiita.com/itosho/items/9565c6ad2ffc24c09364
-
-
-
-----
-
-
-
-
-
-# teamdev-2022-posse1-team1B
-
-### MVPとは
-顧客のニーズを満たす最小限のプロダクトです。
-
-### バックログのURL
-https://docs.google.com/spreadsheets/d/14Tzry6vR5MDXCyXmSo8Mhk05u9zpoyu4FT1xdyhM5yk/edit#gid=1382531569
-
-### FigmaのURL
-https://www.figma.com/file/TJMMQBKs9Yp0zCCOIzMnO0/fertilizer?node-id=0%3A1
-
-### Goggle DriveのURL
-https://drive.google.com/drive/folders/0APws78aegjXNUk9PVA
-
-### チーム開発キックオフ資料
-https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvytok/edit#slide=id.gce243821c3_0_260
-
-----
-
-
 # 環境構築手順
 
 1. `git clone git@github.com:posse-ap/teamdev-2022-posse1-team1B.git`
@@ -64,11 +18,23 @@ https://docs.google.com/presentation/d/1EVVXT5Sd8KNqqcGqWtywhzxlgqhCaXOOQvXLBdvy
 
 8. `php artisan migrate:refresh --seed`
 
-9. `npm install`
+9. `npm install skyway-js`
 
-10. `npm run watch`
+10. `npm install react-chat-elements --save`
 
-11. Please try to access `http://localhost:80`
+11. `npm install @mui/material @emotion/react @emotion/styled`
+
+12. `npm install @mui/x-data-grid`
+
+13. `npm install`
+
+14. `npm run dev`
+
+15. `npm install`
+
+16. `npm run watch`
+
+17. Please try to access `http://localhost:80`
 
 ```
 ※CSSについて
