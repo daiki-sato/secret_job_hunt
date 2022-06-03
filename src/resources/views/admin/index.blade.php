@@ -37,7 +37,7 @@
                                         <td class="px-4 py-3">日時</td>
                                     </tr>
                                     @foreach ($users as $user)
-                                        @foreach ($user->wallet()->orderBy('created_at', 'desc')->get()
+                                        @foreach ($user->wallets()->orderBy('created_at', 'desc')->get()
         as $eachwallet)
                                             <tr class="p-3 mx-3 my-5 chart-top">
                                                 <td class="px-4 py-3">
